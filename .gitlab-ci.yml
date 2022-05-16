@@ -3,8 +3,8 @@ image: registry.gitlab.com/liquiduniverse/docgen:latest
 stages:
    - build 
    - build-core
-   # test
-   # test-core
+   - test
+   - test-core
    # pages
 
 before_script:
@@ -25,6 +25,16 @@ build-core:
   artifacts:
      paths:
        - ./build/
+
+test:
+   stage: test
+   script:
+      - dotnet test AtomicMarketApiClient.Test/AtomicMarketApiClient.Test.csproj
+  
+test-core:
+   stage: test-core
+   script:
+      - dotnet test AtomicMarketApiClient.Core.Test/AtomicMarketApiClient.Core.Test.csproj
        
     
          
