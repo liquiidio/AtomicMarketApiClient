@@ -1,0 +1,31 @@
+image: registry.gitlab.com/liquiduniverse/docgen:latest
+
+stages:
+   - build 
+   - build-core
+   # test
+   # test-core
+   # pages
+
+before script:
+   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+     -dotnet build
+  artifacts:
+     paths:
+       - ./build/
+
+build-core:
+  stage: build-core
+  script:
+     - dotnet build
+  artifacts:
+     paths:
+       - ./build/
+       
+    
+         
+
