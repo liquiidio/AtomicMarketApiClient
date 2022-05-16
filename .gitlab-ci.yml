@@ -3,8 +3,8 @@ image: registry.gitlab.com/liquiduniverse/docgen:latest
 stages:
    # build 
    # build-core
-   - test
-   - test-core
+   #- test
+   #- test-core
    # pages
 
 before_script:
@@ -26,15 +26,27 @@ before_script:
      #paths:
        #- ./build/
 
-test:
-   stage: test
-   script:
-      - dotnet test AtomicMarketApiClient.Test/AtomicMarketApiClient.Test.csproj
+#test:
+   #stage: test
+   #script:
+      #- dotnet test AtomicMarketApiClient.Test/AtomicMarketApiClient.Test.csproj
   
-test-core:
-   stage: test-core
+#test-core:
+   #stage: test-core
+   #script:
+      #- dotnet test AtomicMarketApiClient.Core.Test/AtomicMarketApiClient.Core.Test.csproj
+
+pages:
+   stage: page
    script:
-      - dotnet test AtomicMarketApiClient.Core.Test/AtomicMarketApiClient.Core.Test.csproj
+      - doxygen documentation/doxygen/Doxyfile
+      - doxybook2 --input  documentation/doxyoutput/xml --output  documentation/gitbook --config documentation/doxybook-config/gitbook/.doxybook/config.json --summary-input documentation/doxybook-config/gitbook/SUMMARY.md.tmpl --summary-output documentation/gitbook/SUMMARY.md 
+    
+      - gitbook build documentation/gitbook public
+   artifacts:
+      paths:
+         - public
+         - documentation
        
     
          
