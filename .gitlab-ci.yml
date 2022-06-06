@@ -5,7 +5,7 @@ stages:
    # build-core
    #- test
    #- test-core
-   - pages
+   #- pages
    - update-parent
 
 before_script:
@@ -37,29 +37,29 @@ before_script:
    #script:
       #- dotnet test AtomicMarketApiClient.Core.Test/AtomicMarketApiClient.Core.Test.csproj
 
-pages:
-   stage: pages
-   script:
-      - doxygen documentation/doxygen/Doxyfile
-      - doxybook2 --input  documentation/doxyoutput/xml --output  documentation/gitbook --config documentation/doxybook-config/gitbook/.doxybook/config.json --summary-input documentation/doxybook-config/gitbook/SUMMARY.md.tmpl --summary-output documentation/gitbook/SUMMARY.md 
+#pages:
+   #stage: pages
+  # script:
+     # - doxygen documentation/doxygen/Doxyfile
+     # - doxybook2 --input  documentation/doxyoutput/xml --output  documentation/gitbook --config documentation/doxybook-config/gitbook/.doxybook/config.json --summary-input documentation/doxybook-config/gitbook/SUMMARY.md.tmpl --summary-output documentation/gitbook/SUMMARY.md 
     
-      - gitbook build documentation/gitbook_output
-      - cp -r documentation/gitbook_output public
-   artifacts:
-      paths:
-         - public
-         - documentation
+      #- gitbook build documentation/gitbook_output
+      #- cp -r documentation/gitbook_output public
+   #artifacts:
+      #paths:
+         #- public
+        # - documentation
        
     
 update-parent:
   stage: update-parent
   script:
    
-    - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/Wax-atomic
+    - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/wax-atomic
    # - chmod -R 755 wax-developer/documentation/gitbook_output
-    - mkdir -p Wax-atomic/documentation/gitbook_output
-    - cp -r documentation/gitbook_output  Wax-atomic/documentation/gitbook_output
-    - cd Wax-atomic
+    - mkdir -p wax-atomic/documentation/gitbook_output
+    - cp -r documentation/gitbook_output  wax-atomic/documentation/gitbook_output
+    - cd wax-atomic
     - git config --global user.email "ashleewawa17@gmail.com"
     - git add .
     - git commit -m"Updating"
