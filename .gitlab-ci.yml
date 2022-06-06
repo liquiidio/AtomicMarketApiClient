@@ -5,7 +5,7 @@ stages:
    # build-core
    #- test
    #- test-core
-   #- pages
+   - pages
    - update-parent
 
 before_script:
