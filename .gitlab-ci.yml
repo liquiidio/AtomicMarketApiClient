@@ -6,6 +6,7 @@ stages:
    #- test
    #- test-core
    - pages
+   - update-parent
 
 before_script:
    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
@@ -42,12 +43,25 @@ pages:
       - doxygen documentation/doxygen/Doxyfile
       - doxybook2 --input  documentation/doxyoutput/xml --output  documentation/gitbook --config documentation/doxybook-config/gitbook/.doxybook/config.json --summary-input documentation/doxybook-config/gitbook/SUMMARY.md.tmpl --summary-output documentation/gitbook/SUMMARY.md 
     
-      - gitbook build documentation/gitbook public
+      - gitbook build documentation/gitbook_output
+      - cp -r documentation/gitbook_output public
    artifacts:
       paths:
          - public
          - documentation
        
     
-         
+update-parent:
+  stage: update-parent
+  script:
+   
+    - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/wax-developer
+   # - chmod -R 755 wax-developer/documentation/gitbook_output
+    - mkdir -p wax-developer/documentation/gitbook_output
+    - cp -r documentation/gitbook_output  wax-developer/documentation/gitbook_output
+    - cd wax-developer
+    - git config --global user.email "ashleewawa17@gmail.com"
+    - git add .
+    - git commit -m"Updating"
+    - git push
 
