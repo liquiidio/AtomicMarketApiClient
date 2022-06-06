@@ -58,7 +58,7 @@ update-parent:
     - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/Wax-atomic
    # - chmod -R 755 wax-developer/documentation/gitbook_output
     - mkdir -p Wax-atomic/documentation/gitbook_output
-    - cp -r documentation/gitbook_output  Wax-atomic /documentation/gitbook_output
+    - cp -r documentation/gitbook_output  Wax-atomic/documentation/gitbook_output
     - cd Wax-atomic
     - git config --global user.email "ashleewawa17@gmail.com"
     - git add .
