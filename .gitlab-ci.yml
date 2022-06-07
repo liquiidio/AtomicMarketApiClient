@@ -56,7 +56,7 @@ update-parent:
   script:
    
     - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/wax-atomic
-   # - chmod -R 755 wax-developer/documentation/gitbook_output
+    #- chmod -R 755 wax-developer/documentation/gitbook_output
     - mkdir -p wax-atomic/documentation/gitbook_output
     - cp -r documentation/gitbook_output  wax-atomic/documentation/gitbook_output
     - cd wax-atomic
@@ -64,4 +64,4 @@ update-parent:
     - git add .
     - git commit -m"Updating"
     - git push
-
+    
