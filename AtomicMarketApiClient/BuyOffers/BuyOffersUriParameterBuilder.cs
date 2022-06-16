@@ -183,7 +183,7 @@ namespace AtomicMarketApiClient.BuyOffers
 /// </summary>
 /// <param name="marketplace">It filters by all sales where a certain marketplace is either taker or maker marketplace.</param>
 /// <returns>
-/// The AuctionsUriParameterBuilder object.
+/// The BuyOffersUriParameterBuilder object.
 /// </returns>
         public BuyOffersUriParameterBuilder WithMarketplace(string marketplace)
         {
@@ -295,7 +295,7 @@ namespace AtomicMarketApiClient.BuyOffers
 /// </summary>
 /// <param name="minTemplateMint">Min template mint.</param>
 /// <returns>
-/// The BuyOfferssUriParameterBuilder object.
+/// The BuyOffersUriParameterBuilder object.
 /// </returns>
         public BuyOffersUriParameterBuilder WithMinTemplateMint(int minTemplateMint)
         {
