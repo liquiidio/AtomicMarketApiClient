@@ -76,16 +76,17 @@ namespace AtomicMarketApiClient.BuyOffers
         private int? _limit;
 /* A nullable enum specifying the sortStrategy. */
         private SortStrategy? _sortStrategy;
+/* Declaring a private variable called _sort. */
         private string _sort;
 
 
+
 /// <summary>
-/// `WithState` is a function that takes an array of strings and returns an
-/// `BuyOffersUriParameterBuilder` object
+/// `WithState` takes a list of `State`s and returns a `BuyOffersUriParameterBuilder` with the `_state`
+/// property set to a comma separated list of the `int` values of the `State`s.
 /// </summary>
-/// <param name="state"> Filters by buyOffer state.</param>
 /// <returns>
-/// The AuctionsUriParameterBuilder object.
+/// The BuyOffersUriParameterBuilder object.
 /// </returns>
         public BuyOffersUriParameterBuilder WithState(params State[] states)
         {
@@ -107,11 +108,10 @@ namespace AtomicMarketApiClient.BuyOffers
             return this;
         }
 
-
 /// <summary>
-/// `WithMinAssets` sets the `_minAssets` variable 
+/// `WithMinAssets` sets the `_minAssets` variable to the value of the `minAssets` parameter
 /// </summary>
-/// <param name="minAssets">Min assets per listing returns.</param>
+/// <param name="minAssets">The minimum number of assets the offer must have.</param>
 /// <returns>
 /// The BuyOffersUriParameterBuilder object.
 /// </returns>
@@ -123,9 +123,11 @@ namespace AtomicMarketApiClient.BuyOffers
 
 
 /// <summary>
-/// `WithShowSellerContracts` sets the `_showSellerContracts` field to the value of the `showSellerContracts` parameter
+/// It sets the value of the private variable _showSellerContracts to the value of the parameter
+/// showSellerContracts.
 /// </summary>
-/// <param name="showSellerContracts">If false,no seller contracts are shown except if they are in contract whitelist.</param>
+/// <param name="showSellerContracts">If true, the response will include the seller's contract
+/// details.</param>
 /// <returns>
 /// The BuyOffersUriParameterBuilder object.
 /// </returns>
@@ -137,9 +139,11 @@ namespace AtomicMarketApiClient.BuyOffers
 
 
 /// <summary>
-/// `WithContractWhitelist` sets the `_contractWhitelist` field to the value of the `contractWhitelist` parameter
+/// `WithContractWhitelist` is a function that takes a boolean value and returns a
+/// `BuyOffersUriParameterBuilder` object
 /// </summary>
-/// <param name="contractWhitelist">Shows accounts even if they are contracts.</param>
+/// <param name="contractWhitelist">If true, only offers from contracts in the whitelist will be
+/// returned.</param>
 /// <returns>
 /// The BuyOffersUriParameterBuilder object.
 /// </returns>
@@ -221,9 +225,10 @@ namespace AtomicMarketApiClient.BuyOffers
 
 
 /// <summary>
-/// `WithSymbol` sets the `symbol` parameter
+/// `WithSymbol` is a function that takes a string as a parameter and returns a
+/// `BuyOffersUriParameterBuilder` object.
 /// </summary>
-/// <param name="symbol">Filters by symbol.</param>
+/// <param name="symbol">The symbol of the asset to get offers for.</param>
 /// <returns>
 /// The BuyOffersUriParameterBuilder object.
 /// </returns>
@@ -467,7 +472,7 @@ namespace AtomicMarketApiClient.BuyOffers
 /// </summary>
 /// <param name="ids">A comma-separated list of account IDs.</param>
 /// <returns>
-/// A string
+/// The BuyOffersUriParameterBuilder object.
 /// </returns>
         public BuyOffersUriParameterBuilder WithIds(string[] ids)
         {
@@ -573,6 +578,14 @@ namespace AtomicMarketApiClient.BuyOffers
             return this;
         }
 
+/// <summary>
+/// `WithSort` is a function that takes a string as a parameter and returns a
+/// `BuyOffersUriParameterBuilder` object
+/// </summary>
+/// <param name="sort">The sort order of the results.</param>
+/// <returns>
+/// A BuyOffersUriParameterBuilder object.
+/// </returns>
         public BuyOffersUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;

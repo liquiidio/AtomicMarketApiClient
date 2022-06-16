@@ -11,6 +11,12 @@ namespace AtomicMarketApiClient.Auctions
 
         internal AuctionsApi(string baseUrl) => _requestUriBase = baseUrl;
 
+/// <summary>  
+/// It returns a list of auctions.
+/// </summary>
+/// <return>
+/// AuctionsDto
+/// </return> 
         public AuctionsDto Auctions()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AuctionsUri()).Build();
@@ -20,6 +26,14 @@ namespace AtomicMarketApiClient.Auctions
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// It returns a list of auctions.
+/// </summary>
+/// <param name = "AuctionsUriParameterBuilder" >This is a class that contains all the parameters that can
+/// be passed to the API.</param>
+/// <return>
+/// AuctionsDto
+/// </return>
         public AuctionsDto Auctions(AuctionsUriParameterBuilder uriParametersBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AuctionsUri(uriParametersBuilder)).Build();

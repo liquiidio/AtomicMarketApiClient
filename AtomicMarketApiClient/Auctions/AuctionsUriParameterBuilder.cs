@@ -76,12 +76,12 @@ namespace AtomicMarketApiClient.Auctions
         private int? _limit;
 /* A nullable enum specifying the sortStrategy. */
         private SortStrategy? _sortStrategy;
+/* Declaring a private variable called _sort. */
         private string _sort;
 
 
 /// <summary>
-/// `WithState` is a function that takes an array of strings and returns an
-/// `AuctionsUriParameterBuilder` object
+///  `WithState` takes a list of `State`s and converts them to a comma separated string of integers
 /// </summary>
 /// <param name="state"> Filters by auction state.</param>
 /// <returns>
@@ -467,7 +467,7 @@ namespace AtomicMarketApiClient.Auctions
 /// </summary>
 /// <param name="ids">A comma-separated list of account IDs.</param>
 /// <returns>
-/// A string
+/// The AuctionsUriParameterBuilder object.
 /// </returns>
         public AuctionsUriParameterBuilder WithIds(string[] ids)
         {
@@ -573,6 +573,14 @@ namespace AtomicMarketApiClient.Auctions
             return this;
         }
 
+/// <summary>
+/// It sets the sort parameter to the value passed in.
+/// </summary>
+/// <param name="sort">The sort order of the results.</param>       
+/// <return>
+/// The AuctionsUriParameterBuilder.object     
+/// </return>      
+        
         public AuctionsUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;
