@@ -78,6 +78,15 @@ namespace AtomicMarketApiClient.Auctions
         private SortStrategy? _sortStrategy;
         private string _sort;
 
+
+/// <summary>
+/// `WithState` is a function that takes an array of strings and returns an
+/// `AuctionsUriParameterBuilder` object
+/// </summary>
+/// <param name="state"> Filters by auction state.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithState(params State[] states)
         {
             _state = string.Join(",", Array.ConvertAll(states, value => (int) value));
