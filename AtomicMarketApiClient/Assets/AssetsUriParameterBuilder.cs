@@ -11,7 +11,7 @@ namespace AtomicMarketApiClient.Assets
         private string _collectionName;
 /* A private variable that is used to store the value of the schemaName parameter. */
         private string _schemaName;
-/* A nullable boolean specfying the templateId. */
+/* A nullable integer specfying the templateId. */
         private int? _templateId;
 /* A private variable that is used to store the value of the match parameter. */
         private string _match;
