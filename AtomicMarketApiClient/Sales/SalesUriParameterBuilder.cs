@@ -76,6 +76,7 @@ namespace AtomicMarketApiClient.Sales
         private int? _limit;
 /* A nullable enum specifying the sortStrategy. */
         private SortStrategy? _sortStrategy;
+/* Declaring a private variable called _sort. */
         private string _sort;
 
 

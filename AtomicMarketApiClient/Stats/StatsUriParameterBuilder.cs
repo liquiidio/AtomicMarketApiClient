@@ -76,8 +76,15 @@ namespace AtomicMarketApiClient.Stats
         private int? _limit;
 /* A nullable enum specifying the sortStrategy. */
         private SortStrategy? _sortStrategy;
+/* Declaring a private variable called _sort. */
         private string _sort;
 
+/// <summary>
+/// `WithState` takes a list of `State`s and converts them to a comma separated string of integers
+/// </summary>
+/// <returns>
+/// A StatsUriParameterBuilder object.
+/// </returns>
         public StatsUriParameterBuilder WithState(params State[] states)
         {
             _state = string.Join(",", Array.ConvertAll(states, value => (int) value));
@@ -339,11 +346,10 @@ namespace AtomicMarketApiClient.Stats
 
 
 /// <summary>
-/// `WithCollectionName` is a function that takes a string as a parameter and returns an
-/* A C# code that is used to build a `StatsUriParameterBuilder` object. */
-/// `StatsUriParameterBuilder` object
+/// `WithCollectionName` is a function that takes a string as a parameter and returns a
+/// `StatsUriParameterBuilder` object.
 /// </summary>
-/// <param name="collectionName">The name of the collection you want to query.</param>
+/// <param name="collectionName">The name of the collection you want to get stats for.</param>
 /// <returns>
 /// The StatsUriParameterBuilder object.
 /// </returns>
@@ -459,7 +465,7 @@ namespace AtomicMarketApiClient.Stats
 /// </summary>
 /// <param name="ids">A comma-separated list of account IDs.</param>
 /// <returns>
-/// A string
+/// The StatsUriParameterBuilder object.
 /// </returns>
         public StatsUriParameterBuilder WithIds(string[] ids)
         {
@@ -565,6 +571,14 @@ namespace AtomicMarketApiClient.Stats
             return this;
         }
 
+/// <summary>
+/// `WithSort` is a function that takes a string as an argument and returns a `StatsUriParameterBuilder`
+/// object.
+/// </summary>
+/// <param name="sort">The field to sort by.</param>
+/// <returns>
+/// A StatsUriParameterBuilder object.
+/// </returns>
         public StatsUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;

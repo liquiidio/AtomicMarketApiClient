@@ -11,6 +11,12 @@ namespace AtomicMarketApiClient.Stats
 
         internal StatsApi(string baseUrl) => _requestUriBase = baseUrl;
 
+/// <summary>
+/// > This function will return a list of all collections in the database
+/// </summary>
+/// <returns>
+/// A list of collections
+/// </returns>
         public CollectionsDto Collections()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(CollectionsUri()).Build();
@@ -20,6 +26,15 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a `CollectionsDto` object that contains a list of `CollectionDto`
+/// objects
+/// </summary>
+/// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
+/// passed to the API.</param>
+/// <returns>
+/// A CollectionsDto object.
+/// </returns>
         public CollectionsDto Collections(StatsUriParameterBuilder uriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(CollectionsUri(uriParameterBuilder)).Build();
@@ -29,6 +44,25 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a `CollectionDto` object that contains the collection's name, the number
+/// of documents in the collection, the number of documents that have been deleted, the number of
+/// documents that are new (i.e. have not been persisted to disk), the number of documents that have
+/// been updated, the number of documents that have been replaced, the number of documents that have
+/// been removed, the number of documents that have been inserted, the number of documents that have
+/// been ignored, the number of documents that have been updated, the number of documents that have been
+/// replaced, the number of documents that have been removed, the number of documents that have been
+/// inserted, the number of documents that have been ignored, the number of documents that have been
+/// updated, the number of documents that have been replaced, the number of documents that have been
+/// removed, the number of documents that have been inserted, the number of documents that have been
+/// ignored, the number of documents that have been
+/// </summary>
+/// <param name="collectionName">The name of the collection you want to get stats for.</param>
+/// <param name="StatsUriParameterBuilder">This is a class that allows you to build the query string
+/// parameters for the API call.</param>
+/// <returns>
+/// A collection of documents.
+/// </returns>
         public CollectionDto Collection(string collectionName, StatsUriParameterBuilder uriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(CollectionUri(collectionName, uriParameterBuilder)).Build();
@@ -38,6 +72,12 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a list of accounts for the current user
+/// </summary>
+/// <returns>
+/// A list of accounts
+/// </returns>
         public AccountsDto Accounts()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AccountsUri()).Build();
@@ -47,6 +87,15 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a list of accounts that match the criteria specified in the
+/// `uriParameterBuilder` parameter
+/// </summary>
+/// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
+/// passed to the API.</param>
+/// <returns>
+/// A list of accounts.
+/// </returns>
         public AccountsDto Accounts(StatsUriParameterBuilder uriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AccountsUri(uriParameterBuilder)).Build();
@@ -56,6 +105,16 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return an AccountDto object that contains the account information for the
+/// account name passed in
+/// </summary>
+/// <param name="accountName">The name of the account you want to get information about.</param>
+/// <param name="StatsUriParameterBuilder">This is a class that allows you to build the query string
+/// parameters for the API call.</param>
+/// <returns>
+/// An AccountDto object.
+/// </returns>
         public AccountDto Account(string accountName, StatsUriParameterBuilder uriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AccountUri(accountName, uriParameterBuilder)).Build();
@@ -65,6 +124,13 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return the schema for the specified collection
+/// </summary>
+/// <param name="collectionName">The name of the collection you want to get the schema for.</param>
+/// <returns>
+/// A SchemaDto object
+/// </returns>
         public SchemaDto Schema(string collectionName)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(SchemasUri(collectionName)).Build();
@@ -74,6 +140,15 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function returns a schema for a given collection
+/// </summary>
+/// <param name="collectionName">The name of the collection you want to get the schema for.</param>
+/// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
+/// passed to the API.</param>
+/// <returns>
+/// A SchemaDto object.
+/// </returns>
         public SchemaDto Schema(string collectionName, StatsUriParameterBuilder uriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(SchemasUri(collectionName, uriParameterBuilder)).Build();
@@ -83,6 +158,12 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a `GraphDto` object that contains the graph data
+/// </summary>
+/// <returns>
+/// A GraphDto object
+/// </returns>
         public GraphDto Graph()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(GraphUri()).Build();
@@ -92,6 +173,12 @@ namespace AtomicMarketApiClient.Stats
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > The function sends a GET request to the API and returns the response as a SalesDto object
+/// </summary>
+/// <returns>
+/// A SalesDto object
+/// </returns>
         public SalesDto Sales()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(SalesUri()).Build();

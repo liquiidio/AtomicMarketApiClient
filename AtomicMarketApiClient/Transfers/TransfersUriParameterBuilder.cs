@@ -29,6 +29,7 @@ namespace AtomicMarketApiClient.Transfers
         private int? _limit;
 /* A nullable enum specifying the sortStrategy. */
         private SortStrategy? _sortStrategy;
+/* A private variable that is used to store the value of the sort parameter. */
         private string _sort;
 
 
@@ -203,6 +204,13 @@ namespace AtomicMarketApiClient.Transfers
             return this;
         }
 
+/// <summary>
+/// It sets the sort parameter for the request.
+/// </summary>
+/// <param name="sort">The order in which to sort the results.</param>
+/// <returns>
+/// A TransfersUriParameterBuilder object.
+/// </returns>
         public TransfersUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;
@@ -215,7 +223,6 @@ namespace AtomicMarketApiClient.Transfers
 /// </summary>
 /// <returns>
 /// A string that contains the parameters for the query.
-/* A comment that is used by the documentation generator. */
 /// </returns>
         public string Build()
         {
