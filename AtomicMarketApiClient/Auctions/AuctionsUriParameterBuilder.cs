@@ -551,7 +551,7 @@ namespace AtomicMarketApiClient.Auctions
 /// </summary>
 /// <param name="limit">The number of results to return.</param>
 /// <returns>
-/// The TemplatesUriParameterBuilder object.
+/// The AuctionsUriParameterBuilder object.
 /// </returns>
         public AuctionsUriParameterBuilder WithLimit(int limit)
         {
