@@ -137,11 +137,13 @@ namespace AtomicMarketApiClient.Sales
 
 
 /// <summary>
-/// `WithContractWhitelist` sets the `_contractWhitelist` field to the value of the `contractWhitelist` parameter
+/// It sets the value of the _contractWhitelist variable to the value of the contractWhitelist
+/// parameter.
 /// </summary>
-/// <param name="contractWhitelist">Shows accounts even if they are contracts.</param>
+/// <param name="contractWhitelist">If true, only contracts that are in the whitelist will be
+/// returned.</param>
 /// <returns>
-/// The BuyOffersUriParameterBuilder object.
+/// The SalesUriParameterBuilder object is being returned.
 /// </returns>
         public SalesUriParameterBuilder WithContractWhitelist(bool contractWhitelist)
         {
@@ -151,11 +153,12 @@ namespace AtomicMarketApiClient.Sales
 
 
 /// <summary>
-/// `WithSellerBlacklist` sets the `_sellerBlacklist` field to the value of the `sellerBlacklist` parameter
+/// `WithSellerBlacklist` is a function that takes a boolean value and returns a
+/// `SalesUriParameterBuilder` object
 /// </summary>
-/// <param name="sellerBlacklist">Doesnot show listing from sellers.</param>
+/// <param name="sellerBlacklist">If true, the seller will be added to the blacklist.</param>
 /// <returns>
-/// The BuyOffersUriParameterBuilder object.
+/// The SalesUriParameterBuilder object.
 /// </returns>
         public SalesUriParameterBuilder WithSellerBlacklist(bool sellerBlacklist)
         {
@@ -165,11 +168,11 @@ namespace AtomicMarketApiClient.Sales
 
 
 /// <summary>
-/// `WithAssetId` sets the `_assetId` variable to the value of the `asset_id` parameter
+/// `WithAssetId` is a function that takes an `int` and returns a `SalesUriParameterBuilder`
 /// </summary>
-/// <param name="assetId">Shows the asset id in the offer.</param>
+/// <param name="assetId">The ID of the asset you want to sell.</param>
 /// <returns>
-/// The BuyOffersUriParameterBuilder object.
+/// The SalesUriParameterBuilder object.
 /// </returns>
         public SalesUriParameterBuilder WithAssetId(int assetId)
         {
@@ -220,13 +223,14 @@ namespace AtomicMarketApiClient.Sales
         }
 
 
-/// <summary>
-/// `WithSymbol` sets the `symbol` parameter
-/// </summary>
-/// <param name="symbol">Filters by symbol.</param>
-/// <returns>
-/// The BuyOffersUriParameterBuilder object.
-/// </returns>
+
+ /// <summary>
+ /// A function that is used to set the symbol of the stock.
+ /// </summary>
+ /// <param name="symbol">The symbol of the stock you want to get the sales data for.</param>
+ /// <returns>
+ /// The SalesUriParameterBuilder object is being returned.
+ /// </returns>
         public SalesUriParameterBuilder WithSymbol(string symbol)
         {
             _symbol = symbol;
@@ -467,7 +471,7 @@ namespace AtomicMarketApiClient.Sales
 /// </summary>
 /// <param name="ids">A comma-separated list of account IDs.</param>
 /// <returns>
-/// A string
+/// The SalesUriParameterBuilder object.
 /// </returns>
         public SalesUriParameterBuilder WithIds(string[] ids)
         {
@@ -573,6 +577,13 @@ namespace AtomicMarketApiClient.Sales
             return this;
         }
 
+/// <summary>
+/// It sets the sort parameter to the value passed in.
+/// </summary>
+/// <param name="sort">The sort order of the results.</param>
+/// <returns>
+/// The SalesUriParameterBuilder object is being returned.
+/// </returns>
         public SalesUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;
