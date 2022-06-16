@@ -78,25 +78,54 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-
+/// <summary>
+/// `WithTemplateId` sets the `_templateId` variable to the value of the `templateId` parameter
+/// </summary>
+/// <param name="templateId">The templateId of the results to return.</param>
+/// <returns>
+/// The PricingUriParameterBuilder object.
+/// </returns>
         public PricingUriParametersBuilder WithTemplateId(string templateId)
         {
             _templateId = templateId;
             return this;
         }
 
+
+/// <summary>
+/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+/// </summary>
+/// <param name="isTransferable">The isTransferable parameter filters results.</param>
+/// <returns>
+/// The PricingUriParameterBuilder object.
+/// </returns>
         public PricingUriParametersBuilder WithIsTransferable(bool isTransferable)
         {
             _isTransferable = isTransferable;
             return this;
         }
 
+
+/// <summary>
+/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+/// </summary>
+/// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
+/// <returns>
+/// The PricingUriParameterBuilder object.
+/// </returns>
         public PricingUriParametersBuilder WithIsBurnable(bool isBurnable)
         {
             _isBurnable = isBurnable;
             return this;
         }
 
+
+/// <summary>
+/// It builds a query string based on the parameters that have been set
+/// </summary>
+/// <returns>
+/// A string that contains the parameters for the query.
+/// </returns>
         public string Build()
         {
             var parameterString = new StringBuilder("?");
