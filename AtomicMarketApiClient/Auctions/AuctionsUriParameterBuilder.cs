@@ -84,66 +84,154 @@ namespace AtomicMarketApiClient.Auctions
             return this;
         }
 
+
+/// <summary>
+/// `WithMaxAssets` sets the `_maxAssets` variable 
+/// </summary>
+/// <param name="maxAssets">Max assets per listing returns.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMaxAssets(int maxAssets)
         {
             _maxAssets = maxAssets;
             return this;
         }
 
+
+/// <summary>
+/// `WithMinAssets` sets the `_minAssets` variable 
+/// </summary>
+/// <param name="minAssets">Min assets per listing returns.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMinAssets(int minAssets)
         {
             _minAssets = minAssets;
             return this;
         }
 
+
+/// <summary>
+/// `WithShowSellerContracts` sets the `_showSellerContracts` field to the value of the `showSellerContracts` parameter
+/// </summary>
+/// <param name="showSellerContracts">If false,no seller contracts are shown except if they are in contract whitelist.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithShowSellerContracts(bool showSellerContracts)
         {
             _showSellerContracts = showSellerContracts;
             return this;
         }
 
+
+/// <summary>
+/// `WithContractWhitelist` sets the `_contractWhitelist` field to the value of the `contractWhitelist` parameter
+/// </summary>
+/// <param name="contractWhitelist">Shows accounts even if they are contracts.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithContractWhitelist(bool contractWhitelist)
         {
             _contractWhitelist = contractWhitelist;
             return this;
         }
 
+
+/// <summary>
+/// `WithSellerBlacklist` sets the `_sellerBlacklist` field to the value of the `sellerBlacklist` parameter
+/// </summary>
+/// <param name="sellerBlacklist">Doesnot show listing from sellers.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithSellerBlacklist(bool sellerBlacklist)
         {
             _sellerBlacklist = sellerBlacklist;
             return this;
         }
 
+
+/// <summary>
+/// `WithAssetId` sets the `_assetId` variable to the value of the `asset_id` parameter
+/// </summary>
+/// <param name="assetId">Shows the asset id in the offer.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithAssetId(int assetId)
         {
             _assetId = assetId;
             return this;
         }
 
+
+/// <summary>
+/// `WithMarketplace` sets the `marketplace` parameter
+/// </summary>
+/// <param name="marketplace">It filters by all sales where a certain marketplace is either taker or maker marketplace.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMarketplace(string marketplace)
         {
             _marketplace = marketplace;
             return this;
         }
 
+
+/// <summary>
+/// `WithMakerMarketplace` sets the `makerMarketplace` parameter
+/// </summary>
+/// <param name="makerMarketplace">separate multiple with ",".</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMakerMarketplace(string makerMarketplace)
         {
             _makerMarketplace = makerMarketplace;
             return this;
         }
 
+
+/// <summary>
+/// `WithTakerMarketplace` sets the `takerMarketplace` parameter
+/// </summary>
+/// <param name="takerMarketplace">separate multiple with ",".</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithTakerMarketplace(string takerMarketplace)
         {
             _takerMarketplace = takerMarketplace;
             return this;
         }
 
+
+/// <summary>
+/// `WithSymbol` sets the `symbol` parameter
+/// </summary>
+/// <param name="symbol">Filters by symbol.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithSymbol(string symbol)
         {
             _symbol = symbol;
             return this;
         }
 
+
+/// <summary>
+/// `WithSymbol` sets the `symbol` parameter
+/// </summary>
+/// <param name="symbol">Filters by symbol.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithSeller(string seller)
         {
             _seller = seller;
