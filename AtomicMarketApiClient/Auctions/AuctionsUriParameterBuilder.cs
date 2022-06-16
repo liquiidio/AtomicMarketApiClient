@@ -226,9 +226,9 @@ namespace AtomicMarketApiClient.Auctions
 
 
 /// <summary>
-/// `WithSymbol` sets the `symbol` parameter
+/// `WithSeller` sets the `seller` parameter
 /// </summary>
-/// <param name="symbol">Filters by symbol.</param>
+/// <param name="seller">Filter by seller.</param>
 /// <returns>
 /// The AuctionsUriParameterBuilder object.
 /// </returns>
@@ -238,30 +238,70 @@ namespace AtomicMarketApiClient.Auctions
             return this;
         }
 
+
+/// <summary>
+/// `WithBuyer` sets the `buyer` parameter
+/// </summary>
+/// <param name="buyer">Filter by buyer.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithBuyer(string buyer)
         {
             _buyer = buyer;
             return this;
         }
 
+
+/// <summary>
+/// `WithMinPrice` sets the `_minPrice` variable to the value of the `minPrice` parameter
+/// </summary>
+/// <param name="minPrice">The lower price limit.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMinPrice(int minPrice)
         {
             _minPrice = minPrice;
             return this;
         }
 
+
+/// <summary>
+/// `WithMaxPrice` sets the `_maxPrice` variable to the value of the `maxPrice` parameter
+/// </summary>
+/// <param name="maxPrice">The upper price limit.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMaxPrice(int maxPrice)
         {
             _maxPrice = maxPrice;
             return this;
         }
 
+
+/// <summary>
+/// `WithMinTemplateMint` sets the `_minTemplateMint` variable to the value of the `minTemplateMint` parameter
+/// </summary>
+/// <param name="minTemplateMint">Min template mint.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMinTemplateMint(int minTemplateMint)
         {
             _minTemplateMint = minTemplateMint;
             return this;
         }
 
+
+/// <summary>
+/// `WithMaxTemplateMint` sets the `_maxTemplateMint` variable to the value of the `maxTemplateMint` parameter
+/// </summary>
+/// <param name="maxTemplateMint">Max template mint.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMaxTemplateMint(int maxTemplateMint)
         {
             _maxTemplateMint = maxTemplateMint;
