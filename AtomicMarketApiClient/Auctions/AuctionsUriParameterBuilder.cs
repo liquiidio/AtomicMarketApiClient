@@ -308,108 +308,256 @@ namespace AtomicMarketApiClient.Auctions
             return this;
         }
 
+
+/// <summary>
+/// `WithOwner` sets the `owner` parameter
+/// </summary>
+/// <param name="owner">The owner parameter is used to filter the results. The owner parameter is a
+/// string that is matched against the account name.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithOwner(string owner)
         {
             _owner = owner;
             return this;
         }
 
+
+/// <summary>
+/// `WithBurned` sets the `_burned` field to the value of the `burned` parameter
+/// </summary>
+/// <param name="burned">It filters for burned assets.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithBurned(bool burned)
         {
             _burned = burned;
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionName` is a function that takes a string as a parameter and returns an
+/// `AuctionsUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionName">The name of the collection you want to query.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithCollectionName(string collectionName)
         {
             _collectionName = collectionName;
             return this;
         }
 
+
+/// <summary>
+/// > This function sets the schema name for the query
+/// </summary>
+/// <param name="schemaName">The name of the schema to use.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithSchemaName(string schemaName)
         {
             _schemaName = schemaName;
             return this;
         }
 
+
+/// <summary>
+/// It sets the value of the templateId variable.
+/// </summary>
+/// <param name="templateId">Results based on only transfers which cointain assets of template.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithTemplateId(string templateId)
         {
             _templateId = templateId;
             return this;
         }
 
+
+/// <summary>
+/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+/// </summary>
+/// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithIsTransferable(bool isTransferable)
         {
             _isTransferable = isTransferable;
             return this;
         }
 
+
+/// <summary>
+/// `WithIsBurnable` sets the `_isBurnable` field to the value of the `isBurnable` parameter
+/// </summary>
+/// <param name="isBurnable">Filters for burnable assets.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithIsBurnable(bool isBurnable)
         {
             _isBurnable = isBurnable;
             return this;
         }
 
+
+/// <summary>
+/// `WithMatch` sets the `match` parameter
+/// </summary>
+/// <param name="match"> Search for input in asset name on template data.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithMatch(string match)
         {
             _match = match;
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
+/// `AuctionsUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithCollectionBlacklist(string[] collectionBlacklist)
         {
             _collectionBlacklist = string.Join(",", collectionBlacklist);
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionWhitelist` is a function that takes an array of strings and returns an
+/// `AuctionsUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionWhitelist">A list of collections to include in the response.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithCollectionWhitelist(string[] collectionWhitelist)
         {
             _collectionWhitelist = string.Join(",", collectionWhitelist);
             return this;
         }
 
+
+/// <summary>
+/// > This function takes an array of strings and joins them together with a comma
+/// </summary>
+/// <param name="ids">A comma-separated list of account IDs.</param>
+/// <returns>
+/// A string
+/// </returns>
         public AuctionsUriParameterBuilder WithIds(string[] ids)
         {
             _ids = string.Join(",", ids);
             return this;
         }
 
+
+/// <summary>
+/// `WithLowerBound` sets the lower bound of the `account_ids` parameter
+/// </summary>
+/// <param name="lowerBound">The lower bound of the primary key</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithLowerBound(string lowerBound)
         {
             _lowerBound = lowerBound;
             return this;
         }
 
+
+/// <summary>
+/// `WithUpperBound` sets the upper bound of the range of accounts to be returned
+/// </summary>
+/// <param name="upperBound">The upper bound of the primary key.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithUpperBound(string upperBound)
         {
             _upperBound = upperBound;
             return this;
         }
 
+
+/// <summary>
+/// `WithBefore` sets the `_before` variable to the value of the `before` parameter
+/// </summary>
+/// <param name="before">The previous values of the results to return.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithBefore(int before)
         {
             _before = before;
             return this;
         }
 
+
+/// <summary>
+/// `WithAfter` sets the `_after` variable to the value of the `after` parameter
+/// </summary>
+/// <param name="after">The later values of the results to return.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithAfter(int after)
         {
             _after = after;
             return this;
         }
 
+
+/// <summary>
+/// `WithPage` sets the `_page` variable to the value of the `page` parameter
+/// </summary>
+/// <param name="page">The page number of the results to return.</param>
+/// <returns>
+/// The AuctionsUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithPage(int page)
         {
             _page = page;
             return this;
         }
 
+
+/// <summary>
+/// `WithLimit` sets the `_limit` variable to the value of the `limit` parameter
+/// </summary>
+/// <param name="limit">The number of results to return.</param>
+/// <returns>
+/// The TemplatesUriParameterBuilder object.
+/// </returns>
         public AuctionsUriParameterBuilder WithLimit(int limit)
         {
             _limit = limit;
             return this;
         }
 
+
+/// <summary>
+/// > This function sets the sort strategy for the query
+/// </summary>
+/// <param name="SortStrategy"></param>
+/// <returns>
+/// The builder object itself.
+/// </returns>
         public AuctionsUriParameterBuilder WithOrder(SortStrategy sorting)
         {
             _sortStrategy = sorting;
@@ -422,6 +570,13 @@ namespace AtomicMarketApiClient.Auctions
             return this;
         }
 
+
+/// <summary>
+/// It builds a query string based on the parameters that have been set
+/// </summary>
+/// <returns>
+/// A string that contains the parameters for the query.
+/// </returns>
         public string Build()
         {
             var parameterString = new StringBuilder("?");
