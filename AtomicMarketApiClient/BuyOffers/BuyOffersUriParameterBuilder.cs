@@ -434,7 +434,7 @@ namespace AtomicMarketApiClient.BuyOffers
 
 /// <summary>
 /// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
-/// `AuctionsUriParameterBuilder` object
+/// `BuyOffersUriParameterBuilder` object
 /// </summary>
 /// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
 /// <returns>

@@ -434,7 +434,7 @@ namespace AtomicMarketApiClient.Sales
 
 /// <summary>
 /// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
-/// `AuctionsUriParameterBuilder` object
+/// `SalesUriParameterBuilder` object
 /// </summary>
 /// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
 /// <returns>
@@ -449,7 +449,7 @@ namespace AtomicMarketApiClient.Sales
 
 /// <summary>
 /// `WithCollectionWhitelist` is a function that takes an array of strings and returns an
-/// `BuyOffersUriParameterBuilder` object
+/// `SalesUriParameterBuilder` object
 /// </summary>
 /// <param name="collectionWhitelist">A list of collections to include in the response.</param>
 /// <returns>
@@ -579,7 +579,7 @@ namespace AtomicMarketApiClient.Sales
             return this;
         }
 
-        
+
 /// <summary>
 /// It builds a query string based on the parameters that have been set
 /// </summary>
