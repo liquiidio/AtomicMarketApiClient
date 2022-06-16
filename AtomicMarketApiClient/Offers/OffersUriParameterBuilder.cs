@@ -57,150 +57,355 @@ namespace AtomicMarketApiClient.Offers
         private SortStrategy? _sortStrategy;
         private string _sort;
 
+
+/// <summary>
+/// `WithAccountWhitelist` sets the accountWhiteList parameter
+/// </summary>
+/// <param name="accountWhitelist">The accountWhitelist shows only offers sent by one of the accounts.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithAccountWhitelist(string accountWhitelist)
         {
             _accountWhitelist = accountWhitelist;
             return this;
         }
 
+
+/// <summary>
+/// `WithAccountBlacklist` sets the accounBlacklist parameter
+/// </summary>
+/// <param name="accountWhitelist">The accountBlackist excludes offers sent by one of the accounts.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithAccountBlacklist(string accountBlacklist)
         {
             _accountBlacklist = accountBlacklist;
             return this;
         }
 
+
+/// <summary>
+/// `WithSenderAssetWhitelist` sets the senderAssetWhitelist parameter
+/// </summary>
+/// <param name="senderAssetWhitelist">The senderAssetWhitelist only shows offers that contain these assets.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithSenderAssetWhitelist(string senderAssetwhitelist)
         {
             _senderAssetWhitelist = senderAssetwhitelist;
             return this;
         }
 
+
+/// <summary>
+/// `WithSenderAssetBlacklist` sets the senderAssetBlacklist parameter
+/// </summary>
+/// <param name="senderAssetBlacklistlist">The senderAssetBlacklist excludes offers that contain assets.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithSenderAssetBlacklist(string senderAssetBlacklist)
         {
             _senderAssetBlacklist = senderAssetBlacklist;
             return this;
         }
 
+
+/// <summary>
+/// `WithRecipientAssetWhitelist` sets the recipientAssetWhitelist parameter
+/// </summary>
+/// <param name="recipientAssetWhitelist">The recipientAssetWhitelist only shows offers that contain assets recieved.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithRecipientAssetWhitelist(string recipientAssetwhitelist)
         {
             _recipientAssetWhitelist = recipientAssetwhitelist;
             return this;
         }
 
+
+/// <summary>
+/// `WithRecipientAssetBlacklist` sets the recipientAssetBlacklist parameter
+/// </summary>
+/// <param name="recipientAssetBlacklist">The recipientAssetBlacklist excludes offers that contain assets recieved.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithRecipientAssetBlacklist(string recipientAssetBlacklist)
         {
             _recipientAssetBlacklist = recipientAssetBlacklist;
             return this;
         }
 
+
+/// <summary>
+/// `WithAccount` sets the `account` parameter
+/// </summary>
+/// <param name="account">The account parameter is used to filter the results. The account parameter is a
+/// string that is matched against the account .</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithAccount(string account)
         {
             _account = account;
             return this;
         }
 
+
+/// <summary>
+/// `WithSender` sets the `sender` parameter
+/// </summary>
+/// <param name="sender">The sender parameter is used to filter the results. The sender parameter is a
+/// string that is matched against the account name.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithSender(string sender)
         {
             _sender = sender;
             return this;
         }
 
+
+/// <summary>
+/// `WithRecipient` sets the `recipient` parameter
+/// </summary>
+/// <param name="recipient">The recipient parameter is used show offers recieved by a recipient.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithRecipient(string recipient)
         {
             _recipient = recipient;
             return this;
         }
 
+
+/// <summary>
+/// `WithRecipient` sets the `state` parameter
+/// </summary>
+/// <param name="state">The state parameter filters results depending on the state of the offer.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithState(string state)
         {
             _state = state;
             return this;
         }
 
+
+/// <summary>
+/// `WithIsRecipientContract` sets the `_isRecipientContract` variable.
+/// </summary>
+/// <param name="isRecipientContract">Filters offers where recipient is a contract.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithIsRecipientContract(bool isRecipientContract)
         {
             _isRecipientContract = isRecipientContract;
             return this;
         }
 
+
+/// <summary>
+/// `WithAssetId` sets the assetId parameter
+/// </summary>
+/// <param name="assetId">The assetId parameter shows offers based on a certain assetId.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithAssetId(string assetId)
         {
             _assetId = assetId;
             return this;
         }
 
+
+/// <summary>
+/// It sets the value of the templateId variable.
+/// </summary>
+/// <param name="templateId">Results based on only offers which contain assets of template.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithTemplateId(string temlpateId)
         {
             _templateId = temlpateId;
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionName` is a function that takes a string as a parameter and returns an
+/// `OffersUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionName">The name of the collection you want to query.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithCollectionName(string collectionName)
         {
             _collectionName = collectionName;
             return this;
         }
 
+
+/// <summary>
+/// > This function sets the schema name for the query
+/// </summary>
+/// <param name="schemaName">The name of the schema to use.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithSchemaName(string schemaName)
         {
             _schemaName = schemaName;
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
+/// `OffersUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithCollectionBlacklist(string[] collectionBlacklist)
         {
             _collectionBlacklist = string.Join(",", collectionBlacklist);
             return this;
         }
 
+
+/// <summary>
+/// `WithCollectionWhitelist` is a function that takes an array of strings and returns an
+/// `OffersUriParameterBuilder` object
+/// </summary>
+/// <param name="collectionWhitelist">A list of collections to include in the response.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithCollectionWhitelist(string[] collectionWhitelist)
         {
             _collectionWhitelist = string.Join(",", collectionWhitelist);
             return this;
         }
 
+
+/// <summary>
+/// > This function takes an array of strings and joins them together with a comma
+/// </summary>
+/// <param name="ids">A comma-separated list of account IDs.</param>
+/// <returns>
+/// A string
+/// </returns>
         public OffersUriParameterBuilder WithIds(string[] ids)
         {
             _ids = string.Join(",", ids);
             return this;
         }
 
+
+/// <summary>
+/// `WithLowerBound` sets the lower bound of the primary key
+/// </summary>
+/// <param name="lowerBound">The lower bound of primary key.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithLowerBound(string lowerBound)
         {
             _lowerBound = lowerBound;
             return this;
         }
 
+
+/// <summary>
+/// `WithUpperBound` sets the upper bound of the range of primary key
+/// </summary>
+/// <param name="upperBound">The upper bound of primary key.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithUpperBound(string upperBound)
         {
             _upperBound = upperBound;
             return this;
         }
 
+
+/// <summary>
+/// `WithBefore` sets the `_before` variable to the value of the `before` parameter
+/// </summary>
+/// <param name="before">The previous values of the results to return.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithBefore(int before)
         {
             _before = before;
             return this;
         }
 
+
+/// <summary>
+/// `WithAfter` sets the `_after` variable to the value of the `after` parameter
+/// </summary>
+/// <param name="after">The next values of the results to return.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithAfter(int after)
         {
             _after = after;
             return this;
         }
 
+
+/// <summary>
+/// `WithPage` sets the `_page` variable to the value of the `page` parameter
+/// </summary>
+/// <param name="page">The page number of the results to return.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithPage(int page)
         {
             _page = page;
             return this;
         }
 
+
+/// <summary>
+/// `WithLimit` sets the `_limit` variable to the value of the `limit` parameter
+/// </summary>
+/// <param name="limit">The number of results to return.</param>
+/// <returns>
+/// The OffersUriParameterBuilder object.
+/// </returns>
         public OffersUriParameterBuilder WithLimit(int limit)
         {
             _limit = limit;
             return this;
         }
 
+
+/// <summary>
+/// > This function sets the sort strategy for the query
+/// </summary>
+/// <param name="SortStrategy"></param>
+/// <returns>
+/// The builder object itself.
+/// </returns>
         public OffersUriParameterBuilder WithOrder(SortStrategy sorting)
         {
             _sortStrategy = sorting;
@@ -213,6 +418,14 @@ namespace AtomicMarketApiClient.Offers
             return this;
         }
 
+
+/// <summary>
+/// It builds a query string based on the parameters that have been set
+/// </summary>
+/// <returns>
+/// A string that contains the parameters for the query.
+/* A comment that is used by the documentation generator. */
+/// </returns>
         public string Build()
         {
             var parameterString = new StringBuilder("?");
