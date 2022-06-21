@@ -54,14 +54,13 @@ pages:
 update-parent:
   stage: update-parent
   script:
-   
-    - git clone https://ashleewawa17:Gamedesignerlee1@gitlab.com/ashleewawa17/wax-atomic
-    #- chmod -R 755 wax-developer/documentation/gitbook_output
-    - mkdir -p wax-atomic/documentation/gitbook_output
-    - cp -r documentation/gitbook_output  wax-atomic/documentation/gitbook_output
-    - cd wax-atomic
-    - git config --global user.email "ashleewawa17@gmail.com"
-    - git add .
-    - git commit -m"Updating"
-    - git push
+   - export GIT_SSL_CAINFO="$CI_SERVER_TLS_CA_FILE"
+   - git clone https://gitlab.com/liquiduniverse/unityeosclientplugins/wax-developer.git
+   #- chmod -R 755 wax-developer/documentation/gitbook_output
+   - mkdir -p wax-developer/atomicmarket_docs
+   - cp -r documentation/gitbook_output wax-developer/atomicmarket_client_docs
+   - cd wax-developer
+   - git add .
+   - git commit -m "Updating AtomicMarketClient-Docs"
+   - git push
     
