@@ -1,4 +1,11 @@
-﻿# LiquidStudiosApi
+<div align="center">
+
+[![builds](https://github.com/liquiidio/HyperionApiClient-Private/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/liquiidio/HyperionApiClient-Private/actions/workflows/dotnet-build.yml)
+[![tests](https://github.com/liquiidio/HyperionApiClient-Private/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/liquiidio/HyperionApiClient-Private/actions/workflows/dotnet-test.yml)
+       
+</div>
+
+
  ## Usage
 
  The entry point to the APIs is in the AtomicMarketApiFactory. You can initialise any supported API from there.
