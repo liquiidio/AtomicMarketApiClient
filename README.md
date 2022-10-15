@@ -1,4 +1,14 @@
-﻿# LiquidStudiosApi
+<div align="center">
+
+[![builds](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/dotnet-build.yml)
+[![tests](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/dotnet-test.yml)
+       
+</div>
+
+# AtomicMarketApiClient
+
+.NET and Unity3D-compatible (Desktop, Mobile, WebGL) ApiClient for AtomicMarket
+
  ## Usage
 
  The entry point to the APIs is in the AtomicMarketApiFactory. You can initialise any supported API from there.
