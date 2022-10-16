@@ -9,6 +9,8 @@ namespace AtomicMarketApiClient.Test.Pricing
     [TestFixture]
     public class PricingApiTests
     {
+        private const string TEST_COLLECTION = "elementblobs";
+
         [Test]
         public void Sales()
         {
@@ -21,10 +23,9 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Days()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Days().Should().BeOfType<PricesDto>();
-            AtomicMarketApiFactory.Version1.PricingApi.Days().Data.Should().BeOfType<PricesDto.DataDto[]>();
-            AtomicMarketApiFactory.Version1.PricingApi.Days().Data.Should().HaveCountGreaterThan(1);
-            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithSymbol("WAX")).Data.ToList().ForEach(d => Assert.True(d.TokenSymbol == "WAX"));
+            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Should().BeOfType<PricesDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Data.Should().BeOfType<PricesDto.DataDto[]>();
+            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION).WithSymbol("WAX")).Data.ToList().ForEach(d => Assert.True(d.TokenSymbol == "WAX"));
         }
 
         [Test]
@@ -39,10 +40,9 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Assets()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Assets().Should().BeOfType<AssetsDto>();
-            AtomicMarketApiFactory.Version1.PricingApi.Assets().Data.Should().BeOfType<AssetsDto.DataDto[]>();
-            AtomicMarketApiFactory.Version1.PricingApi.Assets().Data.Should().HaveCountGreaterThan(1);
-            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithBurned(true)).Data.ToList().ForEach(d => Assert.True(d.Burnable));
+            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Should().BeOfType<AssetPricingDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Data.Should().BeOfType<AssetPricingDto.DataDto[]>();
+            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Data.Should().HaveCount(1);
         }
     }
 }

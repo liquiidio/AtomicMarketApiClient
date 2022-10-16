@@ -34,7 +34,7 @@ namespace AtomicMarketApiClient.Sales
             public PriceDto Price { get; set; }
 
             [JsonProperty("listing_price")]
-            public int LostingPrice{ get; set; }
+            public long ListingPrice{ get; set; }
 
             [JsonProperty("listing_symbol")]
             public string ListingSymbol { get; set; }

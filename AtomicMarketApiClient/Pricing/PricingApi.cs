@@ -75,12 +75,12 @@ namespace AtomicMarketApiClient.Pricing
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
-        public AssetsDto Assets(PricingUriParametersBuilder uriParametersBuilder)
+        public AssetPricingDto Assets(PricingUriParametersBuilder uriParametersBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri(uriParametersBuilder)).Build();
             var apiResponse = Client.SendAsync(apiRequest).Result;
             if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AssetsDto>();
+                return apiResponse.ContentAs<AssetPricingDto>();
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 

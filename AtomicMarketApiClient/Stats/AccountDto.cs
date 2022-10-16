@@ -15,8 +15,8 @@ namespace AtomicMarketApiClient.Stats
             [JsonProperty("symbol")]
             public SymbolDto Symbol { get; set; }
 
-            [JsonProperty("results")]
-            public ResultDto[] Results { get; set; }
+            [JsonProperty("result")]
+            public ResultDto Result { get; set; }
 
             public class SymbolDto
             {
