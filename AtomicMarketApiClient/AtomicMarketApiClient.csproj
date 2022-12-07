@@ -8,4 +8,8 @@
     <ProjectReference Include="..\AtomicMarketApiClient.Core\AtomicMarketApiClient.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Offers\" />
+  </ItemGroup>
+
 </Project>
