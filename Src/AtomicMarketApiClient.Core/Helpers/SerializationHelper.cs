@@ -392,6 +392,7 @@ namespace AtomicMarketApiClient.Core.Helpers
             var str = new[] { '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.', '.' };
 
             var tmp = BitConverter.ToUInt64(binary, 0);
+
             for (uint i = 0; i <= 12; ++i)
             {
                 var c = CharMap[tmp & (ulong)(i == 0 ? 0x0f : 0x1f)];
