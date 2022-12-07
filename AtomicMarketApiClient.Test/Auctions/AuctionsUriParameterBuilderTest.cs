@@ -1,5 +1,5 @@
-using AtomicMarketApiClient.Auctions;
 using AtomicMarketApiClient.Core;
+using AtomicMarketApiClient.Core.Auctions;
 using FluentAssertions;
 using NUnit.Framework;
 
