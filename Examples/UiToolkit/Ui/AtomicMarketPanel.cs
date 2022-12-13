@@ -131,29 +131,32 @@ public class AtomicMarketPanel : MonoBehaviour
         _templateIdLabel.text = asset.Data.Template.TemplateId;
         //_propertiesBurnableLabel.text = auction.Data.Template.Transferable
     }
-
     private void Rebind(SaleDto sales)
     {
         _collectionNameLabel.text = sales.Data.Collection.CollectionName;
-        _ownerLabel.text = sales.Data.Collection.Author;
-        _nftNameLabel.text = sales.Data.Collection.Name;
-        _idLabel.text = $"#{sales.Data.SaleId}";
+        _ownerLabel.text = sales.Data.Assets[0].Owner;
+        _nftNameLabel.text = sales.Data.Assets[0].Name;
+        _idLabel.text = $"#{sales.Data.Assets[0].AssetId}";
         _priceLabel.text = $"{Convert.ToDecimal(sales.Data.Price.Amount)/100000000}  {sales.Data.Price.TokenSymbol}";
         _sellerLabel.text = sales.Data.Seller;
         _tradeOfferIdLabel.text = $"#{sales.Data.OfferId}";
+        _mintNumberLabel.text = $"{sales.Data.Assets[0].TemplateMint} of {sales.Data.Assets[0].Template.IssuedSupply}" ;
+        _backedTokenLabel.text = sales.Data.Assets[0].BackedTokens.Length.ToString();
+        _schemaNameLabel.text = sales.Data.Assets[0].Schema.SchemaName;
+        _templateIdLabel.text = sales.Data.Assets[0].Template.TemplateId;
     }
     private void Rebind(AuctionDto auction)
     {
-        _collectionNameLabel.text = auction.Data.Collection.Name;
-        _ownerLabel.text = auction.Data.Collection.Author;
+        _collectionNameLabel.text = auction.Data.Collection.CollectionName;
+        _ownerLabel.text = auction.Data.Assets[0].Owner;
+        _nftNameLabel.text = auction.Data.Assets[0].Name;
+        _idLabel.text = $"#{auction.Data.Assets[0].AssetId}";
+        _priceLabel.text = $"{Convert.ToDecimal(auction.Data.Price.Amount) / 100000000}  {auction.Data.Price.TokenSymbol}";
         _sellerLabel.text = auction.Data.Seller;
-        _nftNameLabel.text = auction.Data.Collection.CollectionName;
-        _idLabel.text = auction.Data.AuctionId;
-        //_mintNumberLabel.text = auction.Data.MintedAtBlock;
-        //_backedTokenLabel.text = auction.Data.TemplateMint;
-        _schemaNameLabel.text = auction.Data.MarketContract;
-        //_templateIdLabel.text = auction.Data.Template.TemplateId;
-        //_propertiesBurnableLabel.text = auction.Data.Template.Transferable
+        _mintNumberLabel.text = $"{auction.Data.Assets[0].TemplateMint} of {auction.Data.Assets[0].Template.IssuedSupply}";
+        _backedTokenLabel.text = auction.Data.Assets[0].BackedTokens.Length.ToString();
+        _schemaNameLabel.text = auction.Data.Assets[0].Schema.SchemaName;
+        _templateIdLabel.text = auction.Data.Assets[0].Template.TemplateId;
     }
     #endregion
 
@@ -200,8 +203,6 @@ public class AtomicMarketPanel : MonoBehaviour
                 Debug.LogError($"Content: {ex.Content}");
             }
         }
-
-        
     }
     #endregion
 }

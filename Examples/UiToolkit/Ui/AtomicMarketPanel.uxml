@@ -67,7 +67,7 @@
                         </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement style="align-items: flex-start; margin-left: 70px; flex-direction: row;">
+                <ui:VisualElement style="align-items: flex-start; margin-left: 70px; flex-direction: row; margin-bottom: 10px;">
                     <ui:Label text="Price:" display-tooltip-when-elided="true" name="price-text" style="-unity-font-style: bold; font-size: 22px; color: rgb(255, 255, 255); width: 71px;" />
                     <ui:Label display-tooltip-when-elided="true" name="price-label" style="-unity-font-style: bold; font-size: 22px; color: rgb(0, 166, 13);" />
                 </ui:VisualElement>
