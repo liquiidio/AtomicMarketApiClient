@@ -131,7 +131,6 @@ public class AtomicMarketPanel : MonoBehaviour
         _templateIdLabel.text = asset.Data.Template.TemplateId;
         //_propertiesBurnableLabel.text = auction.Data.Template.Transferable
     }
-
     private void Rebind(SaleDto sales)
     {
         _collectionNameLabel.text = sales.Data.Collection.CollectionName;
