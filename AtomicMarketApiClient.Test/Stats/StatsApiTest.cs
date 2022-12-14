@@ -1,6 +1,5 @@
 ﻿using System;
-using AtomicMarketApiClient.Core;
-using AtomicMarketApiClient.Core.Stats;
+using AtomicMarketApiClient.Stats;
 using FluentAssertions;
 using NUnit.Framework;
 

@@ -1,4 +1,4 @@
-﻿using AtomicMarketApiClient.Core.Transfers;
+﻿using AtomicMarketApiClient.Transfers;
 using FluentAssertions;
 using NUnit.Framework;
 

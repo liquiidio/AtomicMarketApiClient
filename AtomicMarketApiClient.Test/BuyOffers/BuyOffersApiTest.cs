@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
-using AtomicMarketApiClient.Core;
-using AtomicMarketApiClient.Core.BuyOffers;
+using AtomicMarketApiClient.BuyOffers;
 using FluentAssertions;
 using NUnit.Framework;
 

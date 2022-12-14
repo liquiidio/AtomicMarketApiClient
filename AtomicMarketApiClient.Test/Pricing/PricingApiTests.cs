@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using AtomicMarketApiClient.Core.Pricing;
+using AtomicMarketApiClient.Pricing;
 using FluentAssertions;
 using NUnit.Framework;
 

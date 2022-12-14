@@ -1,4 +1,4 @@
-﻿using AtomicMarketApiClient.Core.Config;
+﻿using AtomicMarketApiClient.Config;
 using FluentAssertions;
 using NUnit.Framework;
 
