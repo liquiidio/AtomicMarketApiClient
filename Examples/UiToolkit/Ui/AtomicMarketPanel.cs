@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AtomicMarketApiClient;
 using AtomicMarketApiClient.Assets;
 using AtomicMarketApiClient.Auctions;
-using AtomicMarketApiClient.Exceptions;
-using AtomicMarketApiClient.Sales;
 using AtomicMarketApiClient.BuyOffers;
+using AtomicMarketApiClient.Exceptions;
 using AtomicMarketApiClient.MarketPlaces;
 using AtomicMarketApiClient.Pricing;
+using AtomicMarketApiClient.Sales;
 using UnityEngine;
 using UnityEngine.UIElements;
-using AtomicMarketApiClient;
 
 public class AtomicMarketPanel : MonoBehaviour
 {
