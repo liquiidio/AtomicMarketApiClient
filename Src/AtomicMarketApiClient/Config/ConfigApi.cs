@@ -1,12 +1,24 @@
-﻿using AtomicMarketApiClient.Core.Config;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.Config
 {
-    public class ConfigApi : ConfigApiBase
+    public class ConfigApi
     {
-        internal ConfigApi(string baseUrl) : base(baseUrl, new HttpHandler())
-        {
+        private readonly string _requestUriBase;
+        private readonly IHttpHandler _httpHandler;
 
+        internal ConfigApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
         }
+
+        public async Task<ConfigDto> Config()
+        {
+            return await _httpHandler.GetJsonAsync<ConfigDto>(ConfigUri().OriginalString);
+        }
+
+        private Uri ConfigUri() => new Uri($"{_requestUriBase}/config");
     }
 }

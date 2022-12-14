@@ -1,19 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AtomicMarketApiClient.Core.Assets;
-using AtomicMarketApiClient.Core.Auctions;
-using AtomicMarketApiClient.Core.Exceptions;
-using AtomicMarketApiClient.Core.Sales;
-using AtomicMarketApiClient.Unity3D.Assets;
-using AtomicMarketApiClient.Unity3D.Auctions;
-using AtomicMarketApiClient.Unity3D.BuyOffers;
-using AtomicMarketApiClient.Unity3D.MarketPlaces;
-using AtomicMarketApiClient.Unity3D.Pricing;
-using AtomicMarketApiClient.Unity3D.Sales;
+using AtomicMarketApiClient.Assets;
+using AtomicMarketApiClient.Auctions;
+using AtomicMarketApiClient.Exceptions;
+using AtomicMarketApiClient.Sales;
+using AtomicMarketApiClient.BuyOffers;
+using AtomicMarketApiClient.MarketPlaces;
+using AtomicMarketApiClient.Pricing;
 using UnityEngine;
 using UnityEngine.UIElements;
-using AtomicMarketApiFactory = AtomicMarketApiClient.Unity3D.AtomicMarketApiFactory;
+using AtomicMarketApiClient;
 
 public class AtomicMarketPanel : MonoBehaviour
 {
