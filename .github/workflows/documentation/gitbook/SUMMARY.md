@@ -63,7 +63,7 @@
 	* [TransfersDto](docs/AtomicMarketApiClient--Transfers--TransfersDto.md)
 	* [TransfersUriParameterBuilder](docs/AtomicMarketApiClient--Transfers--TransfersUriParameterBuilder.md)
 
-* [Accounts](docs/AtomicMarketApiClient--AtomicMarketApiFactory.md)
-* [Accounts](docs/AtomicMarketApiClient.md)	
-* [Accounts](docs/AtomicMarketApiClient--LogsDto.md)
+* [AtomicMarketApiFactory](docs/AtomicMarketApiClient--AtomicMarketApiFactory.md)
+* [AtomicMarketApiClient](docs/AtomicMarketApiClient.md)	
+* [LogsDto](docs/AtomicMarketApiClient--LogsDto.md)
 * [StatsDto](docs/AtomicMarketApiClient--StatsDto.md)
