@@ -11,6 +11,12 @@ namespace AtomicMarketApiClient.BuyOffers
 
         internal BuyOffersApi(string baseUrl) => _requestUriBase = baseUrl;
 
+/// <summary>
+/// > This function will return a list of buy offers for a given market
+/// </summary>
+/// <returns>
+/// A list of buy offers.
+/// </returns>
         public BuyOffersDto BuyOffers()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri()).Build();
@@ -20,6 +26,16 @@ namespace AtomicMarketApiClient.BuyOffers
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// It takes a `BuyOffersUriParameterBuilder` object as a parameter, builds a `HttpRequestMessage`
+/// object, sends it to the API, and returns a `BuyOffersDto` object
+/// </summary>
+/// <param name="BuyOffersUriParameterBuilder">This is a class that inherits from the
+/// IUriParameterBuilder interface. This interface is used to build the query string parameters for the
+/// API call.</param>
+/// <returns>
+/// A BuyOffersDto object.
+/// </returns>
         public BuyOffersDto BuyOffers(BuyOffersUriParameterBuilder uriParametersBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri((IUriParameterBuilder) uriParametersBuilder)).Build();
@@ -29,6 +45,13 @@ namespace AtomicMarketApiClient.BuyOffers
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a BuyOfferDto object from the API
+/// </summary>
+/// <param name="id">The id of the buy offer you want to retrieve.</param>
+/// <returns>
+/// A BuyOfferDto object
+/// </returns>
         public BuyOfferDto BuyOffer(int id)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri(id)).Build();
@@ -38,6 +61,13 @@ namespace AtomicMarketApiClient.BuyOffers
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// This function returns a list of logs for a specific buy offer
+/// </summary>
+/// <param name="id">The id of the buy offer.</param>
+/// <returns>
+/// A list of logs for the buy offer with the given id.
+/// </returns>
         public LogsDto BuyOffersLogs(int id)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersLogsUri(id)).Build();
@@ -47,6 +77,15 @@ namespace AtomicMarketApiClient.BuyOffers
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// This function returns a list of logs for a specific buy offer
+/// </summary>
+/// <param name="id">The id of the buy offer</param>
+/// <param name="BuyOffersUriParameterBuilder">This is a class that contains all the parameters that can
+/// be passed to the API.</param>
+/// <returns>
+/// A list of logs for the buy offer.
+/// </returns>
         public LogsDto BuyOffersLogs(int id, BuyOffersUriParameterBuilder uriParametersBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersLogsUri(id, uriParametersBuilder)).Build();

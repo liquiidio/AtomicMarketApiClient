@@ -11,6 +11,12 @@ namespace AtomicMarketApiClient.Assets
 
         internal AssetsApi(string baseUrl) => _requestUriBase = baseUrl;
 
+/// <summary>
+/// > This function will return a list of all the assets that are available for trading on the exchange
+/// </summary>
+/// <returns>
+/// A list of assets.
+/// </returns>
         public AssetsDto Assets()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri()).Build();
@@ -20,6 +26,14 @@ namespace AtomicMarketApiClient.Assets
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a list of assets based on the parameters passed in
+/// </summary>
+/// <param name="AssetsUriParameterBuilder">This is a class that contains all the parameters that can be
+/// passed to the API.</param>
+/// <returns>
+/// A list of assets.
+/// </returns>
         public AssetsDto Assets(AssetsUriParameterBuilder assetsUriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri(assetsUriParameterBuilder)).Build();
@@ -29,6 +43,13 @@ namespace AtomicMarketApiClient.Assets
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return an AssetDto object from the API
+/// </summary>
+/// <param name="assetId">The id of the asset you want to retrieve.</param>
+/// <returns>
+/// An AssetDto object
+/// </returns>
         public AssetDto Asset(string assetId)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetUri(assetId)).Build();
@@ -38,6 +59,13 @@ namespace AtomicMarketApiClient.Assets
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function returns the statistics of an asset
+/// </summary>
+/// <param name="assetId">The asset id of the asset you want to get the stats for.</param>
+/// <returns>
+/// A StatsDto object
+/// </returns>
         public StatsDto AssetStats(string assetId)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetStatsUri(assetId)).Build();
@@ -47,6 +75,13 @@ namespace AtomicMarketApiClient.Assets
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// This function returns a list of logs for a given asset
+/// </summary>
+/// <param name="assetId">The asset id of the asset you want to get the logs for.</param>
+/// <returns>
+/// A list of logs for the asset.
+/// </returns>
         public LogsDto AssetLogs(string assetId)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetLogsUri(assetId)).Build();
@@ -56,6 +91,15 @@ namespace AtomicMarketApiClient.Assets
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// This function returns a list of logs for a given asset
+/// </summary>
+/// <param name="assetId">The id of the asset you want to get logs for.</param>
+/// <param name="AssetsUriParameterBuilder">This is a class that contains all the parameters that can be
+/// passed to the API.</param>
+/// <returns>
+/// A list of logs for the asset.
+/// </returns>
         public LogsDto AssetLogs(string assetId, AssetsUriParameterBuilder assetsUriParameterBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetLogsUri(assetId, assetsUriParameterBuilder)).Build();

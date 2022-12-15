@@ -11,6 +11,12 @@ namespace AtomicMarketApiClient.MarketPlaces
 
         internal MarketPlacesApi(string baseUrl) => _requestUriBase = baseUrl;
 
+/// <summary>
+/// > This function will return a list of marketplaces that are available to the user
+/// </summary>
+/// <returns>
+/// A list of marketplaces.
+/// </returns>
         public MarketplacesDto Marketplaces()
         {
             var apiRequest = HttpRequestBuilder.GetRequest(MarketplacesUri()).Build();
@@ -20,6 +26,13 @@ namespace AtomicMarketApiClient.MarketPlaces
             throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
         }
 
+/// <summary>
+/// > This function will return a `MarketplaceDto` object from the API
+/// </summary>
+/// <param name="name">The name of the marketplace you want to retrieve.</param>
+/// <returns>
+/// A MarketplaceDto object
+/// </returns>
         public MarketplaceDto Marketplace(string name)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(MarketplaceUri(name)).Build();
