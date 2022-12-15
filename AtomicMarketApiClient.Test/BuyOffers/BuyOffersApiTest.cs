@@ -10,22 +10,23 @@ namespace AtomicMarketApiClient.Test.BuyOffers
     [TestFixture]
     public class BuyOffersApiTest
     {
+        private const string TEST_COLLECTION = "elementblobs";
+
         [Test]
         public void BuyOffers()
         {
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers().Should().BeOfType<BuyOffersDto>();
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers().Data.Should().BeOfType<BuyOffersDto.DataDto[]>();
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers().Data.Should().HaveCountGreaterThan(1);
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithLimit(1)).Data.Should().HaveCount(1);
+            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithLimit(1)).Should().BeOfType<BuyOffersDto>();
+            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithLimit(1)).Data.Should().BeOfType<BuyOffersDto.DataDto[]>();
+            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithLimit(1)).Data.Should().HaveCount(1);
 
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithOrder(SortStrategy.Ascending)).Should().BeOfType<BuyOffersDto>();
-            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithOrder(SortStrategy.Ascending)).Data.Should().BeOfType<BuyOffersDto.DataDto[]>();
+            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithOrder(SortStrategy.Ascending)).Should().BeOfType<BuyOffersDto>();
+            AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithOrder(SortStrategy.Ascending)).Data.Should().BeOfType<BuyOffersDto.DataDto[]>();
         }
 
         [Test]
         public void BuyOffer()
         {
-            var buyOfferIdToFind = Convert.ToInt32(AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers().Data.First().BuyOfferId);
+            var buyOfferIdToFind = Convert.ToInt32(AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithLimit(1)).Data.First().BuyOfferId);
             AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffer(buyOfferIdToFind).Should().BeOfType<BuyOfferDto>();
             AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffer(buyOfferIdToFind).Data.Should().BeOfType<BuyOfferDto.DataDto>();
         }
@@ -33,7 +34,7 @@ namespace AtomicMarketApiClient.Test.BuyOffers
         [Test]
         public void BuyOfferLogs()
         {
-            var buyOfferIdToFind = Convert.ToInt32(AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers().Data.First().BuyOfferId);
+            var buyOfferIdToFind = Convert.ToInt32(AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffers(new BuyOffersUriParameterBuilder().WithCollectionName(TEST_COLLECTION).WithLimit(1)).Data.First().BuyOfferId);
             AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffersLogs(buyOfferIdToFind).Should().BeOfType<LogsDto>();
             AtomicMarketApiFactory.Version1.BuyOffersApi.BuyOffersLogs(buyOfferIdToFind).Data.Should().BeOfType<LogsDto.DataDto[]>();
         }

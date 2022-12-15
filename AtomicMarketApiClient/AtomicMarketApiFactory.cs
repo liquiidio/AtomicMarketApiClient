@@ -14,7 +14,7 @@ namespace AtomicMarketApiClient
     public class AtomicMarketApiFactory
     {
         private readonly string _baseUrl;
-        private const string Version1BaseUrl = "https://api.wax.liquidstudios.io/atomicmarket/v1";
+        private const string Version1BaseUrl = "https://wax.api.atomicassets.io/atomicmarket/v1";
 
         private AtomicMarketApiFactory(string baseUrl) => _baseUrl = baseUrl;
 

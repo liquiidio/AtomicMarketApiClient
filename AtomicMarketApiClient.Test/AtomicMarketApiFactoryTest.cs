@@ -1,4 +1,5 @@
-﻿using AtomicMarketApiClient.Assets;
+﻿using System.Threading;
+using AtomicMarketApiClient.Assets;
 using AtomicMarketApiClient.Auctions;
 using AtomicMarketApiClient.BuyOffers;
 using AtomicMarketApiClient.Config;
@@ -9,6 +10,8 @@ using AtomicMarketApiClient.Sales;
 using AtomicMarketApiClient.Stats;
 using AtomicMarketApiClient.Transfers;
 using NUnit.Framework;
+
+[assembly: Apartment(ApartmentState.STA)]
 
 namespace AtomicMarketApiClient.Test
 {
