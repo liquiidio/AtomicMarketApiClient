@@ -53,7 +53,12 @@ jobs:
             
             - name: update gitbook repo
               shell: bash
-              run: cd .github/workflows/documentation/gitbook & git config --global --add safe.directory '*' & git add . & git commit -m "updating generated files" & git push
+              run: | 
+                cd .github/workflows/documentation/gitbook
+                git config --global --add safe.directory '*' 
+                git add .
+                git commit -m "updating generated files"
+                git push
             
  #           - name: Upload gitbook markdown files to artifacts
  #             if: always()
