@@ -28,13 +28,14 @@ namespace AtomicMarketApiClient.Core
                 RequestUri = uri
             });
 
-        public static HttpRequestBuilder PatchRequest(Uri uri) 
+#if !UNITY_2020 && !UNITY_2019 && !UNITY_2018
+    public static HttpRequestBuilder PatchRequest(Uri uri) 
             => new HttpRequestBuilder(new HttpRequestMessage
             {
                 Method = HttpMethod.Patch, 
                 RequestUri = uri
             });
-
+#endif
         public HttpRequestBuilder WithContent(string content)
         {
             _content = content;
