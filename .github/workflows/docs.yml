@@ -55,6 +55,8 @@ jobs:
               shell: bash
               run: | 
                 cd .github/workflows/documentation/gitbook
+                git config --global user.email ${{secrets.USER_EMAIL}} 
+                git config --global user.name ${{secrets.USER_NAME}} 
                 git config --global --add safe.directory '*' 
                 git add .
                 git commit -m "updating generated files"
