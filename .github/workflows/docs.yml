@@ -43,6 +43,13 @@ jobs:
               shell: bash
               run: cp -r .github/workflows/documentation/md .github/workflows/documentation/gitbook/docs
             
+            - name: Upload gitbook markdown files to artifacts
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                name: Gitbook Files
+                path:  .github/workflows/documentation/gitbook
+            
             - name: install gitbook plugins
               shell: bash
               run: npm install --prefix .github/workflows/documentation/gitbook gitbook-plugin-github-buttons gitbook-plugin-back-to-top-button gitbook-plugin-copy-code-button gitbook-plugin-cuav-chapters gitbook-plugin-heading-anchors gitbook-plugin-theme-gestalt gitbook-plugin-styles-sass-fix
