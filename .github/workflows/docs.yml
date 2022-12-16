@@ -21,7 +21,7 @@ jobs:
               uses: actions/checkout@v3
               with:
                 repository: liquiidio/UnityPluginSuiteGitbook
-                token: ${{ secrets.GITBOOK_DEPLOY_KEY }}
+                token: ${{ secrets.FG_L_PAT }}
                 ref: atomicmarketapiclient
                 path: .github/workflows/documentation/gitbook
                     
