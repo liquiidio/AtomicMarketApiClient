@@ -16,7 +16,13 @@ jobs:
                 id-token: write
        steps:
             - uses: actions/checkout@v2
-            
+              with:
+                ssh-key: ${{ secrets.GITBOOK_DEPLOY_KEY }}
+                    
+            - name: checkout gitbook repo
+              shell: bash
+              run: git clone -b atomicmarketapiclient git@github.com:liquiidio/UnityPluginSuiteGitbook.git .github/workflows/documentation/gitbook
+                    
             - name: generate docs with doxygen
               shell: bash
               run: doxygen .github/workflows/documentation/Doxyfile
@@ -41,34 +47,38 @@ jobs:
             
             - name: copy files to gitbook-folder 
               shell: bash
-              run: cp -r .github/workflows/documentation/md .github/workflows/documentation/gitbook/docs
+              run: cp -rf .github/workflows/documentation/md .github/workflows/documentation/gitbook/docs
             
-            - name: Upload gitbook markdown files to artifacts
-              if: always()
-              uses: actions/upload-artifact@v3
-              with:
-                name: Gitbook Files
-                path:  .github/workflows/documentation/gitbook
-            
-            - name: install gitbook plugins
+            - name: update gitbook repo
               shell: bash
-              run: npm install --prefix .github/workflows/documentation/gitbook gitbook-plugin-github-buttons gitbook-plugin-back-to-top-button gitbook-plugin-copy-code-button gitbook-plugin-cuav-chapters gitbook-plugin-heading-anchors gitbook-plugin-theme-gestalt gitbook-plugin-styles-sass-fix
+              run: cd .github/workflows/documentation/gitbook & git add . & git commit -m "updating generated files" & git push
+            
+ #           - name: Upload gitbook markdown files to artifacts
+ #             if: always()
+ #             uses: actions/upload-artifact@v3
+ #             with:
+ #               name: Gitbook Files
+ #               path:  .github/workflows/documentation/gitbook
+            
+#            - name: install gitbook plugins
+#              shell: bash
+#              run: npm install --prefix .github/workflows/documentation/gitbook gitbook-plugin-github-buttons gitbook-plugin-back-to-top-button gitbook-plugin-copy-code-button gitbook-plugin-cuav-chapters gitbook-plugin-heading-anchors gitbook-plugin-theme-gestalt gitbook-plugin-styles-sass-fix
 
-            - name: build gitbook website
-              shell: bash
-              run: gitbook build .github/workflows/documentation/gitbook .github/workflows/documentation/gitbook_website 
+#            - name: build gitbook website
+#              shell: bash
+#              run: gitbook build .github/workflows/documentation/gitbook .github/workflows/documentation/gitbook_website 
             
           #  - name: build gitbook epub
            #   shell: bash
             #  run: gitbook epub .github/workflows/documentation/gitbook .github/workflows/documentation/docs.epub 
             
-            - name: Upload Gitbook Website to artifacts
-              if: always()
-              uses: actions/upload-pages-artifact@v1
-              with:
-                name: github-pages
-                path:  .github/workflows/documentation/gitbook_website 
-            
+ #           - name: Upload Gitbook Website to artifacts
+ #            if: always()
+ #             uses: actions/upload-pages-artifact@v1
+ #             with:
+ #               name: github-pages
+ #               path:  .github/workflows/documentation/gitbook_website 
+ #           
             #- name: Upload Gitbook Epub to artifacts
              # if: always()
               #uses: actions/upload-artifact@v3
