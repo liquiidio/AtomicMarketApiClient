@@ -95,10 +95,10 @@ jobs:
                # name: Gitbook PDF
                 #path:  .github/workflows/documentation/docs.epub 
 
-            - name : deploy
-              uses : actions/deploy-pages@v1
-              env:
-                 name: github-pages
-                 url: ${{ steps.deployment.outputs.page_url }}
+#            - name : deploy
+#              uses : actions/deploy-pages@v1
+#              env:
+#                 name: github-pages
+#                 url: ${{ steps.deployment.outputs.page_url }}
     
     
