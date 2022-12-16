@@ -16,12 +16,12 @@ jobs:
                 id-token: write
        steps:
             - uses: actions/checkout@v2
-              with:
-                ssh-key: ${{ secrets.GITBOOK_DEPLOY_KEY }}
                     
             - name: checkout gitbook repo
-              shell: bash
-              run: git clone -b atomicmarketapiclient git@github.com:liquiidio/UnityPluginSuiteGitbook.git .github/workflows/documentation/gitbook
+              uses: actions/checkout@v2
+              with:
+                ssh-key: ${{ secrets.GITBOOK_DEPLOY_KEY }}
+            - run: git clone -b atomicmarketapiclient git@github.com:liquiidio/UnityPluginSuiteGitbook.git .github/workflows/documentation/gitbook
                     
             - name: generate docs with doxygen
               shell: bash
