@@ -1,19 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AtomicMarketApiClient.Core.Assets;
-using AtomicMarketApiClient.Core.Auctions;
-using AtomicMarketApiClient.Core.Exceptions;
-using AtomicMarketApiClient.Core.Sales;
-using AtomicMarketApiClient.Unity3D.Assets;
-using AtomicMarketApiClient.Unity3D.Auctions;
-using AtomicMarketApiClient.Unity3D.BuyOffers;
-using AtomicMarketApiClient.Unity3D.MarketPlaces;
-using AtomicMarketApiClient.Unity3D.Pricing;
-using AtomicMarketApiClient.Unity3D.Sales;
+using AtomicMarketApiClient;
+using AtomicMarketApiClient.Assets;
+using AtomicMarketApiClient.Auctions;
+using AtomicMarketApiClient.BuyOffers;
+using AtomicMarketApiClient.Exceptions;
+using AtomicMarketApiClient.MarketPlaces;
+using AtomicMarketApiClient.Pricing;
+using AtomicMarketApiClient.Sales;
 using UnityEngine;
 using UnityEngine.UIElements;
-using AtomicMarketApiFactory = AtomicMarketApiClient.Unity3D.AtomicMarketApiFactory;
 
 public class AtomicMarketPanel : MonoBehaviour
 {
@@ -56,6 +53,7 @@ public class AtomicMarketPanel : MonoBehaviour
 
     private List<string> _searchTypes;
 
+    public AtomicMarketErrorPanel AtomicMarketErrorPanel;
 
     void Start()
     {
@@ -118,7 +116,10 @@ public class AtomicMarketPanel : MonoBehaviour
     #endregion
 
     #region Rebind
-
+    /// <summary>
+    /// Rebind Method for binding AssetDto api
+    /// </summary>
+    /// <param name="asset"></param>
     private void Rebind(AssetDto asset)
     {
         _collectionNameLabel.text = asset.Data.Collection.Name;
@@ -129,8 +130,12 @@ public class AtomicMarketPanel : MonoBehaviour
         _backedTokenLabel.text = asset.Data.TemplateMint;
         _schemaNameLabel.text = asset.Data.Schema.SchemaName;
         _templateIdLabel.text = asset.Data.Template.TemplateId;
-        //_propertiesBurnableLabel.text = auction.Data.Template.Transferable
     }
+
+    /// <summary>
+    /// Rebind Method for binding SaleDto api
+    /// </summary>
+    /// <param name="sales"></param>
     private void Rebind(SaleDto sales)
     {
         _collectionNameLabel.text = sales.Data.Collection.CollectionName;
@@ -140,11 +145,16 @@ public class AtomicMarketPanel : MonoBehaviour
         _priceLabel.text = $"{Convert.ToDecimal(sales.Data.Price.Amount)/100000000}  {sales.Data.Price.TokenSymbol}";
         _sellerLabel.text = sales.Data.Seller;
         _tradeOfferIdLabel.text = $"#{sales.Data.OfferId}";
-        _mintNumberLabel.text = $"{sales.Data.Assets[0].TemplateMint} of {sales.Data.Assets[0].Template.IssuedSupply}" ;
+        _mintNumberLabel.text = $"{sales.Data.Assets[0].TemplateMint} of {sales.Data.Assets[0].Template.IssuedSupply}";
         _backedTokenLabel.text = sales.Data.Assets[0].BackedTokens.Length.ToString();
         _schemaNameLabel.text = sales.Data.Assets[0].Schema.SchemaName;
         _templateIdLabel.text = sales.Data.Assets[0].Template.TemplateId;
     }
+
+    /// <summary>
+    /// Rebind Method for binding AuctionDto api
+    /// </summary>
+    /// <param name="auction"></param>
     private void Rebind(AuctionDto auction)
     {
         _collectionNameLabel.text = auction.Data.Collection.CollectionName;
@@ -162,6 +172,9 @@ public class AtomicMarketPanel : MonoBehaviour
 
     #region Others
 
+    /// <summary>
+    /// SearchAsset Method to evaluate input search for certain api
+    /// </summary>
     private async void SearchAsset()
     {
         if (_selectorDropdownField.value != null)
@@ -200,9 +213,36 @@ public class AtomicMarketPanel : MonoBehaviour
             }
             catch (ApiException ex)
             {
-                Debug.LogError($"Content: {ex.Content}");
+                AtomicMarketErrorPanel.ErrorText("Content Error", ex.Content);
+                Show(AtomicMarketErrorPanel.Root);
             }
         }
+    }
+
+    /// <summary>
+    /// Extension-method to show an UI Element (set it to visible)
+    /// </summary>
+    /// <param name="element"></param>
+    public void Show(VisualElement element)
+    {
+        if (element == null)
+            return;
+
+        element.style.visibility = Visibility.Visible;
+        element.style.display = DisplayStyle.Flex;
+    }
+
+    /// <summary>
+    /// Extension-method to hide an UI Element (set it to invisible)
+    /// </summary>
+    /// <param name="element"></param>
+    public void Hide(VisualElement element)
+    {
+        if (element == null)
+            return;
+
+        element.style.visibility = Visibility.Hidden;
+        element.style.display = DisplayStyle.None;
     }
     #endregion
 }

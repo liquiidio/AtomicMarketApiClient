@@ -301,64 +301,132 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1575427772
-GameObject:
+--- !u!1001 &1858981023147740059
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1575427774}
-  - component: {fileID: 1575427773}
-  - component: {fileID: 1575427775}
-  m_Layer: 5
-  m_Name: AtomicMarketPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1575427773
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919576036126805756, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372648452206911245, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+      propertyPath: m_Name
+      value: AtomicMarketErrorPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+--- !u!114 &1858981023147740060 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1561426265932436365, guid: 1b50c18bd3508d84c816cd7fa747ef32, type: 3}
+  m_PrefabInstance: {fileID: 1858981023147740059}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575427772}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Script: {fileID: 11500000, guid: 2b79bf89aa503c742a84447aab3fdcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: a187da3a40ccd1e4ea2045d93d878edb, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 714964088bb85f846b3ddf1dd0b020d8, type: 3}
-  m_SortingOrder: 1
---- !u!4 &1575427774
-Transform:
+--- !u!1001 &7790591815291162739
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575427772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1575427775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575427772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e9c922a76bf7348a6f60fdb3b76aab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7790591814303076044, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: AtomicMarketErrorPanel
+      value: 
+      objectReference: {fileID: 1858981023147740060}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076045, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790591814303076047, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
+      propertyPath: m_Name
+      value: AtomicMarketPanel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
