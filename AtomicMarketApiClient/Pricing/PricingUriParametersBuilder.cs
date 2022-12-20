@@ -5,29 +5,29 @@ namespace AtomicMarketApiClient.Pricing
 {
     public class PricingUriParametersBuilder : IUriParameterBuilder
     {
-/* A private variable that is used to store the value of the symbol parameter. */
+        /* A private variable that is used to store the value of the symbol parameter. */
         private string _symbol;
-/* A nullable boolean specfying burned assets. */
+        /* A nullable boolean specfying burned assets. */
         private bool? _burned;
-/* A private variable that is used to store the value of the collectionName parameter. */
+        /* A private variable that is used to store the value of the collectionName parameter. */
         private string _collectionName;
-/* A private variable that is used to store the value of the schemaName parameter. */
+        /* A private variable that is used to store the value of the schemaName parameter. */
         private string _schemaName;
-/* A private variable that is used to store the value of the templateId parameter. */
+        /* A private variable that is used to store the value of the templateId parameter. */
         private string _templateId;
-/* A nullable boolean specfying transferable assets. */
+        /* A nullable boolean specfying transferable assets. */
         private bool? _isTransferable;
-/* A nullable boolean specfying burnable assets. */
+        /* A nullable boolean specfying burnable assets. */
         private bool? _isBurnable;
 
 
-/// <summary>
-/// `WithSymbol` sets the `symbol` parameter
-/// </summary>
-/// <param name="symbol">Token symbols.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithSymbol` sets the `symbol` parameter
+        /// </summary>
+        /// <param name="symbol">Token symbols.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithSymbol(string symbol)
         {
             _symbol = symbol;
@@ -35,13 +35,13 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// `WithBurned` sets the `_burned` field to the value of the `burned` parameter
-/// </summary>
-/// <param name="burned">It filters for burned assets.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithBurned` sets the `_burned` field to the value of the `burned` parameter
+        /// </summary>
+        /// <param name="burned">It filters for burned assets.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithBurned(bool burned)
         {
             _burned = burned;
@@ -49,14 +49,14 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// `WithCollectionName` is a function that takes a string as a parameter and returns an
-/// `PricingUriParameterBuilder` object
-/// </summary>
-/// <param name="collectionName">The name of the collection you want to query.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithCollectionName` is a function that takes a string as a parameter and returns an
+        /// `PricingUriParameterBuilder` object
+        /// </summary>
+        /// <param name="collectionName">The name of the collection you want to query.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithCollectionName(string collectionName)
         {
             _collectionName = collectionName;
@@ -64,13 +64,13 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// This function sets the schema name for the query
-/// </summary>
-/// <param name="schemaName">The name of the schema to use.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// This function sets the schema name for the query
+        /// </summary>
+        /// <param name="schemaName">The name of the schema to use.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithSchemaName(string schemaName)
         {
             _schemaName = schemaName;
@@ -78,13 +78,13 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// `WithTemplateId` sets the `_templateId` variable to the value of the `templateId` parameter
-/// </summary>
-/// <param name="templateId">The templateId of the results to return.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithTemplateId` sets the `_templateId` variable to the value of the `templateId` parameter
+        /// </summary>
+        /// <param name="templateId">The templateId of the results to return.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithTemplateId(string templateId)
         {
             _templateId = templateId;
@@ -92,13 +92,13 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
-/// </summary>
-/// <param name="isTransferable">The isTransferable parameter filters results.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+        /// </summary>
+        /// <param name="isTransferable">The isTransferable parameter filters results.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithIsTransferable(bool isTransferable)
         {
             _isTransferable = isTransferable;
@@ -106,13 +106,13 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
-/// </summary>
-/// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
-/// <returns>
-/// The PricingUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+        /// </summary>
+        /// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
+        /// <returns>
+        /// The PricingUriParameterBuilder object.
+        /// </returns>
         public PricingUriParametersBuilder WithIsBurnable(bool isBurnable)
         {
             _isBurnable = isBurnable;
@@ -120,12 +120,12 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 
-/// <summary>
-/// It builds a query string based on the parameters that have been set
-/// </summary>
-/// <returns>
-/// A string that contains the parameters for the query.
-/// </returns>
+        /// <summary>
+        /// It builds a query string based on the parameters that have been set
+        /// </summary>
+        /// <returns>
+        /// A string that contains the parameters for the query.
+        /// </returns>
         public string Build()
         {
             var parameterString = new StringBuilder("?");

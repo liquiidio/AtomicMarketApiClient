@@ -13,6 +13,7 @@ namespace AtomicMarketApiClient.Pricing
         public DataDto[] Data { get; set; }
 
         [JsonProperty("query_time")]
+        // The time this Query took
         public long QueryTime { get; set; }
 
         public class DataDto
@@ -21,6 +22,7 @@ namespace AtomicMarketApiClient.Pricing
             public string SaleId { get; set; }
 
             [JsonProperty("assets_contract")]
+            // The Asset Smart Contract
             public string AssetsContract { get; set; }
 
             [JsonProperty("collection_name")]

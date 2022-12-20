@@ -13,6 +13,7 @@ namespace AtomicMarketApiClient
         public DataDto Data { get; set; }
 
         [JsonProperty("query_time")]
+        // The time this Query took
         public long QueryTime { get; set; }
 
         public class DataDto

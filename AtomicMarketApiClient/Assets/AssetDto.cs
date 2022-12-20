@@ -122,11 +122,11 @@ namespace AtomicMarketApiClient.Assets
 
                 [JsonProperty("is_transferable")]
                 // Indicates if an Asset is transferable
-            public bool Transferable { get; set; }
+                public bool Transferable { get; set; }
 
                 [JsonProperty("is_burnable")]
                 // Indicates if an Asset is burnable
-            public bool Burnable { get; set; }
+                public bool Burnable { get; set; }
 
                 [JsonProperty("issued_supply")]
                 // The issued Supply
@@ -152,7 +152,7 @@ namespace AtomicMarketApiClient.Assets
 
                     [JsonProperty("name")]
                     // The Name
-            public string Name { get; set; }
+                    public string Name { get; set; }
                 }
             }
 
@@ -178,7 +178,7 @@ namespace AtomicMarketApiClient.Assets
                 {
                     [JsonProperty("name")]
                     // The Name
-            public string Name { get; set; }
+                    public string Name { get; set; }
 
                     [JsonProperty("type")]
                     // The Type of an Attribute
@@ -194,7 +194,7 @@ namespace AtomicMarketApiClient.Assets
 
                 [JsonProperty("name")]
                 // The Name
-            public string Name { get; set; }
+                public string Name { get; set; }
 
                 [JsonProperty("img")]
                 public string Image { get; set; }

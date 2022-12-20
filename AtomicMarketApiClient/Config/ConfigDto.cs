@@ -15,42 +15,55 @@ namespace AtomicMarketApiClient.Config
         public class DataDto
         {
             [JsonProperty("atomicassets_contract")]
+            // The Name of the AtomicAssets Smart Contract
             public string AtomicAssetsContract { get; set; }
 
             [JsonProperty("atomicmarket_contract")]
+            // The Name of the AtomicMarket Smart Contract
             public string AtomicMarketContract { get; set; }
 
             [JsonProperty("delphioracle_contract")]
+            // The Name of the DelphiOracle Smart Contract
             public string DelphioracleContract { get; set; }
 
             [JsonProperty("version")]
+            // The Current Version
             public string Version { get; set; }
 
             [JsonProperty("maker_market_fee")]
+            // The Maker Market Fee
             public string MakerMarketFee { get; set; }
 
             [JsonProperty("taker_market_fee")]
+            // The Taker Market Fee
             public string TakerMarketFee { get; set; }
 
             [JsonProperty("minimum_auction_duration")]
+            // The minimum Auction Duration
             public string MinimumAuctionDuration { get; set; }
 
             [JsonProperty("maximum_auction_duration")]
+            // The maximum Auction Duration
             public string MaximumAuctionDuration { get; set; }
 
             [JsonProperty("minimum_bid_increase")]
+            // The minimum bid increase
             public string MinimumBidIncrease { get; set; }
 
             [JsonProperty("auction_reset_duration")]
+            // The auction reset duration
             public string AuctionResetDuration { get; set; }
 
             [JsonProperty("supported_tokens")]
+            // Array of supported Tokens
             public SupportedTokensDto[] SupportedTokens { get; set; }
 
             [JsonProperty("supported_pairs")]
+            // Array of supported Currency-/Token-Pairs
             public SupportedPairsDto[] SupportedPairs { get; set; }
 
             [JsonProperty("query_time")]
+            // The time this Query took
             public long QueryTime { get; set; }
 
             public class SupportedTokensDto
@@ -64,6 +77,7 @@ namespace AtomicMarketApiClient.Config
                 public string TokenSymbol { get; set; }
 
                 [JsonProperty("token_precision")]
+                // The Precision of the Token
                 public string TokenPrecision { get; set; }
             }
 
@@ -88,7 +102,7 @@ namespace AtomicMarketApiClient.Config
                 {
                     [JsonProperty("contract")]
                     // The name of the Smart Contract
-            public string Contract { get; set; }
+                    public string Contract { get; set; }
 
                     [JsonProperty("delphi_pair_name")]
                     public string DelphiPairName { get; set; }
@@ -113,11 +127,11 @@ namespace AtomicMarketApiClient.Config
 
                     [JsonProperty("updated_at_time")]
                     // Time this was last updated
-            public string UpdatedAtTime { get; set; }
+                    public string UpdatedAtTime { get; set; }
 
                     [JsonProperty("updated_at_block")]
                     // Block-Number this was last updated
-            public string UpdatedAtBlock { get; set; }
+                    public string UpdatedAtBlock { get; set; }
                 }
             }
         }

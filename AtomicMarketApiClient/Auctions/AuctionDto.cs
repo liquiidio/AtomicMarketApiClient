@@ -13,38 +13,49 @@ namespace AtomicMarketApiClient.Auctions
         public DataDto Data { get; set; }
 
         [JsonProperty("query_time")]
+        // The time this Query took
         public long QueryTime { get; set; }
 
         public class DataDto
         {
             [JsonProperty("market_contract")]
+            // The Market Smart Contract
             public string MarketContract { get; set; }
 
             [JsonProperty("assets_contract")]
+            // The Asset Smart Contract
             public string AssetsContract { get; set; }
 
             [JsonProperty("auction_id")]
+            // The unique Identifier of the auction
             public string AuctionId { get; set; }
 
             [JsonProperty("seller")]
+            // The name of the Seller Account
             public string Seller { get; set; }
 
             [JsonProperty("buyer")]
+            // The Name of the Buyer Account
             public string Buyer { get; set; }
 
             [JsonProperty("price")]
+            // Contains information about the Price
             public PriceDto Price { get; set; }
 
             [JsonProperty("assets")]
+            // The Assets
             public AssetDto[] Assets { get; set; }
 
             [JsonProperty("bids")]
+            // The Bids
             public BidsDto[] Bids { get; set; }
 
             [JsonProperty("maker_marketplace")]
+            // The Name of the Maker Marketplace
             public string MakerMarketplace { get; set; }
 
             [JsonProperty("taker_marketplace")]
+            // The Name of the Taker Marketplace
             public string TakerMarketplace { get; set; }
 
             [JsonProperty("collection")]
@@ -55,6 +66,7 @@ namespace AtomicMarketApiClient.Auctions
             public string State { get; set; }
 
             [JsonProperty("end_time")]
+            // The End Time
             public string EndTime { get; set; }
 
             [JsonProperty("updated_at_block")]
@@ -66,17 +78,21 @@ namespace AtomicMarketApiClient.Auctions
             public string UpdatedAtTime { get; set; }
 
             [JsonProperty("created_at_block")]
+            // The Bock Number this was created
             public string CreatedAtBlock { get; set; }
 
             [JsonProperty("created_at_time")]
+            // The Time this was created
             public string CreatedAtTime { get; set; }
 
             public class BidsDto
             {
                 [JsonProperty("number")]
+                // The Bid-Number
                 public string Number { get; set; }
 
                 [JsonProperty("account")]
+                // The Account Bidding
                 public string Account { get; set; }
 
                 [JsonProperty("amount")]
@@ -92,6 +108,7 @@ namespace AtomicMarketApiClient.Auctions
                 public string CreatedAtTime { get; set; }
 
                 [JsonProperty("txid")]
+                // The Transaction-ID
                 public string TxId { get; set; }
             }
 
@@ -118,154 +135,156 @@ namespace AtomicMarketApiClient.Auctions
             {
                 [JsonProperty("contract")]
                 // The name of the Smart Contract
-            public string Contract { get; set; }
+                public string Contract { get; set; }
 
                 [JsonProperty("asset_id")]
                 // The Unique Identifier of the Asset
-            public string AssetId { get; set; }
+                public string AssetId { get; set; }
 
                 [JsonProperty("owner")]
                 // The Owner
-            public string Owner { get; set; }
+                public string Owner { get; set; }
 
                 [JsonProperty("name")]
                 // The Name
-            public string Name { get; set; }
+                public string Name { get; set; }
 
                 [JsonProperty("is_transferable")]
                 // Indicates if an Asset is transferable
-            public bool Transferable { get; set; }
+                public bool Transferable { get; set; }
 
                 [JsonProperty("is_burnable")]
                 // Indicates if an Asset is burnable
-            public bool Burnable { get; set; }
+                public bool Burnable { get; set; }
 
                 [JsonProperty("template_mint")]
                 // The Mint-Number of this Template
-            public string TemplateMint { get; set; }
+                public string TemplateMint { get; set; }
 
                 [JsonProperty("collection")]
                 // The Collection this belongs to
-            public CollectionDto Collection { get; set; }
+                public CollectionDto Collection { get; set; }
 
                 [JsonProperty("schema")]
                 // The Schema this belongs to
-            public SchemaDto Schema { get; set; }
+                public SchemaDto Schema { get; set; }
 
                 [JsonProperty("template")]
                 // The Template this belongs to
-            public TemplateDto Template{ get; set; }
+                public TemplateDto Template{ get; set; }
 
                 [JsonProperty("mutable_data")]
                 // The Mutable Data
-            public object MutableData { get; set; }
+                public object MutableData { get; set; }
 
                 [JsonProperty("data")]
                 public object Data { get; set; }
 
                 [JsonProperty("immutable_data")]
                 // The Immutable Data
-            public object ImmutableData { get; set; }
+                public object ImmutableData { get; set; }
 
                 [JsonProperty("backed_tokens")]
                 // Tokens by which this Asset is backed
-            public BackedTokensDto[] BackedTokens { get; set; }
+                public BackedTokensDto[] BackedTokens { get; set; }
 
                 [JsonProperty("burned_by_account")]
                 public string BurnedByAccount { get; set; }
 
                 [JsonProperty("burned_at_block")]
+                // The Block-Number this was burned
                 public string BurnedAtBlock { get; set; }
 
                 [JsonProperty("burned_at_time")]
+                // The Time this was burned
                 public string BurnedAtTime { get; set; }
 
                 [JsonProperty("updated_at_block")]
                 // Block-Number this was last updated
-            public string UpdatedAtBlock { get; set; }
+                public string UpdatedAtBlock { get; set; }
 
                 [JsonProperty("updated_at_time")]
                 // Time this was last updated
-            public string UpdatedAtTime { get; set; }
+                public string UpdatedAtTime { get; set; }
 
                 [JsonProperty("transferred_at_block")]
                 // Block this was last transferred
-            public string TransferredAtBlock { get; set; }
+                public string TransferredAtBlock { get; set; }
 
                 [JsonProperty("transferred_at_time")]
                 // Time this was last transferred
-            public string TransferredAtTime { get; set; }
+                public string TransferredAtTime { get; set; }
 
                 [JsonProperty("minted_at_block")]
                 // Block this Asset was minted
-            public string MintedAtBlock { get; set; }
+                public string MintedAtBlock { get; set; }
 
                 [JsonProperty("minted_at_time")]
                 // Time this Asset was minted
-            public string MintedAtTime { get; set; }
+                public string MintedAtTime { get; set; }
 
                 public class BackedTokensDto
                 {
                     [JsonProperty("token_contract")]
                     // The Token Smart Contract
-                public string TokenContract { get; set; }
+                    public string TokenContract { get; set; }
 
                     [JsonProperty("token_symbol")]
                     // The Token Symbol
-                public string TokenSymbol { get; set; }
+                    public string TokenSymbol { get; set; }
 
                     [JsonProperty("token_precision")]
                     // The Token Precision
-                public int TokenPrecision { get; set; }
+                    public int TokenPrecision { get; set; }
 
                     [JsonProperty("amount")]
                     // The Amount
-                public string Amount { get; set; }
+                    public string Amount { get; set; }
                 }
 
                 public class TemplateDto
                 {
                     [JsonProperty("template_id")]
                     // The unique Identifier of a Template
-                public string TemplateId { get;set; }
+                    public string TemplateId { get;set; }
 
                     [JsonProperty("max_supply")]
                     // The Maximum Supply
-                public string MaxSupply { get;set; }
+                    public string MaxSupply { get;set; }
 
                     [JsonProperty("is_transferable")]
                     // Indicates if an Asset is transferable
-            public bool Transferable { get; set; }
+                    public bool Transferable { get; set; }
 
                     [JsonProperty("is_burnable")]
                     // Indicates if an Asset is burnable
-            public bool Burnable { get; set; }
+                    public bool Burnable { get; set; }
 
                     [JsonProperty("issued_supply")]
                     // The issued Supply
-                public string IssuedSupply { get; set; }
+                    public string IssuedSupply { get; set; }
 
                     [JsonProperty("created_at_block")]
                     // The Block Number this was created
-                public string CreatedAtBlock { get; set; }
+                    public string CreatedAtBlock { get; set; }
 
                     [JsonProperty("created_at_time")]
                     // The Time this was created
-                public string CreatedAtTime { get; set; }
+                    public string CreatedAtTime { get; set; }
 
                     [JsonProperty("immutable_data")]
                     // The immutable Data
-                public ImmutableDataDto ImmutableData { get; set; }
+                    public ImmutableDataDto ImmutableData { get; set; }
 
                     public class ImmutableDataDto
                     {
                         [JsonProperty("img")]
                         // The IPFS-CID of the Image
-                    public string Image { get; set; }
+                        public string Image { get; set; }
 
                         [JsonProperty("name")]
                         // The Name
-            public string Name { get; set; }
+                        public string Name { get; set; }
                     }
                 }
 
@@ -273,29 +292,29 @@ namespace AtomicMarketApiClient.Auctions
                 {
                     [JsonProperty("schema_name")]
                     // The Name of the Schema
-                public string SchemaName { get; set; }
+                    public string SchemaName { get; set; }
 
                     [JsonProperty("format")]
                     // The Format of the Schema
-                public FormatDto[] Format { get; set; }
+                    public FormatDto[] Format { get; set; }
 
                     [JsonProperty("created_at_block")]
                     // The Block Number this was created
-                public string CreatedAtBlock { get; set; }
+                    public string CreatedAtBlock { get; set; }
 
                     [JsonProperty("created_at_time")]
                     // The Time this was created
-                public string CreatedAtTime { get; set; }
+                    public string CreatedAtTime { get; set; }
 
                     public class FormatDto
                     {
                         [JsonProperty("name")]
                         // The Name
-            public string Name { get; set; }
+                        public string Name { get; set; }
 
                         [JsonProperty("type")]
                         // The Type of an Attribute
-                    public string Type { get; set; }
+                        public string Type { get; set; }
                     }
                 }
             }
@@ -308,7 +327,7 @@ namespace AtomicMarketApiClient.Auctions
 
                 [JsonProperty("name")]
                 // The Name
-            public string Name { get; set; }
+                public string Name { get; set; }
 
                 [JsonProperty("author")]
                 // The Author

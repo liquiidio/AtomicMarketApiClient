@@ -31,6 +31,7 @@ namespace AtomicMarketApiClient.Stats
                 public string TokenContract { get; set; }
 
                 [JsonProperty("token_precision")]
+                // The Precision of the Token
                 public string TokenPrecision { get; set; }
             }
 
@@ -38,7 +39,7 @@ namespace AtomicMarketApiClient.Stats
             {
                 [JsonProperty("contract")]
                 // The name of the Smart Contract
-            public string Contract { get; set; }
+                public string Contract { get; set; }
 
                 [JsonProperty("collection_name")]
                 // The Name of the Collection
@@ -46,9 +47,10 @@ namespace AtomicMarketApiClient.Stats
 
                 [JsonProperty("name")]
                 // The Name
-            public string Name { get; set; }
+                public string Name { get; set; }
 
                 [JsonProperty("img")]
+                // The IPFS-CID of this Image
                 public string Img { get; set; }
 
                 [JsonProperty("author")]

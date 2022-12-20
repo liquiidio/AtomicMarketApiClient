@@ -31,6 +31,7 @@ namespace AtomicMarketApiClient.Stats
                 public string TokenContract { get; set; }
 
                 [JsonProperty("token_precision")]
+                // The Precision of the Token
                 public string TokenPrecision { get; set; }
             }
 
