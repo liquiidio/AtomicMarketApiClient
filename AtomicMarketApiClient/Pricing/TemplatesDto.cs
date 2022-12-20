@@ -5,9 +5,11 @@ namespace AtomicMarketApiClient.Pricing
     public class TemplatesDto
     {
         [JsonProperty("success")]
+        // Whether the Request was Successfull or not
         public bool Success { get; set; }
 
         [JsonProperty("data")]
+        // The Data returned from the API
         public DataDto[] Data { get; set; }
 
         [JsonProperty("query_time")]

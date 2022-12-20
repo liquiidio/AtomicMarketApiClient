@@ -5,9 +5,11 @@ namespace AtomicMarketApiClient.Config
     public class ConfigDto
     {
         [JsonProperty("success")]
+        // Whether the Request was Successfull or not
         public bool Success { get; set; }
 
         [JsonProperty("data")]
+        // The Data returned from the Api
         public DataDto Data { get; set; }
 
         public class DataDto
@@ -54,9 +56,11 @@ namespace AtomicMarketApiClient.Config
             public class SupportedTokensDto
             {
                 [JsonProperty("token_contract")]
+                // The Token Smart Contract
                 public string TokenContract { get; set; }
 
                 [JsonProperty("token_symbol")]
+                // The Token Symbol
                 public string TokenSymbol { get; set; }
 
                 [JsonProperty("token_precision")]
@@ -83,7 +87,8 @@ namespace AtomicMarketApiClient.Config
                 public class PairsDataDto
                 {
                     [JsonProperty("contract")]
-                    public string Contract { get; set; }
+                    // The name of the Smart Contract
+            public string Contract { get; set; }
 
                     [JsonProperty("delphi_pair_name")]
                     public string DelphiPairName { get; set; }
@@ -107,10 +112,12 @@ namespace AtomicMarketApiClient.Config
                     public string MedianPrecision { get; set; }
 
                     [JsonProperty("updated_at_time")]
-                    public string UpdatedAtTime { get; set; }
+                    // Time this was last updated
+            public string UpdatedAtTime { get; set; }
 
                     [JsonProperty("updated_at_block")]
-                    public string UpdatedAtBlock { get; set; }
+                    // Block-Number this was last updated
+            public string UpdatedAtBlock { get; set; }
                 }
             }
         }
