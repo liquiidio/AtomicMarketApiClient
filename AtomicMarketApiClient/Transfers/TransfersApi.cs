@@ -12,7 +12,7 @@ namespace AtomicMarketApiClient.Transfers
         internal TransfersApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > This function will return a list of all transfers for the current user
+/// This function will return a list of all transfers for the current user
 /// </summary>
 /// <returns>
 /// A list of transfers

@@ -12,7 +12,7 @@ namespace AtomicMarketApiClient.Offers
         internal OffersApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > This function will make a GET request to the `/offers` endpoint and return the response as a
+/// This function will make a GET request to the `/offers` endpoint and return the response as a
 /// `OffersDto` object
 /// </summary>
 /// <returns>
@@ -46,7 +46,7 @@ namespace AtomicMarketApiClient.Offers
         }
 
 /// <summary>
-/// > It builds an HTTP GET request to the `OfferUri` endpoint, sends the request to the API, and
+/// It builds an HTTP GET request to the `OfferUri` endpoint, sends the request to the API, and
 /// returns the response as an `OfferDto` object
 /// </summary>
 /// <param name="offerId">The offer id of the offer you want to retrieve.</param>

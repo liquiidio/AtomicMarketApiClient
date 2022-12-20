@@ -12,7 +12,7 @@ namespace AtomicMarketApiClient.BuyOffers
         internal BuyOffersApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > This function will return a list of buy offers for a given market
+/// This function will return a list of buy offers for a given market
 /// </summary>
 /// <returns>
 /// A list of buy offers.
@@ -46,7 +46,7 @@ namespace AtomicMarketApiClient.BuyOffers
         }
 
 /// <summary>
-/// > This function will return a BuyOfferDto object from the API
+/// This function will return a BuyOfferDto object from the API
 /// </summary>
 /// <param name="id">The id of the buy offer you want to retrieve.</param>
 /// <returns>

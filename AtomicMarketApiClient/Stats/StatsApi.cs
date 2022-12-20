@@ -12,7 +12,7 @@ namespace AtomicMarketApiClient.Stats
         internal StatsApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > This function will return a list of all collections in the database
+/// This function will return a list of all collections in the database
 /// </summary>
 /// <returns>
 /// A list of collections
@@ -27,7 +27,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return a `CollectionsDto` object that contains a list of `CollectionDto`
+/// This function will return a `CollectionsDto` object that contains a list of `CollectionDto`
 /// objects
 /// </summary>
 /// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
@@ -45,7 +45,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return a `CollectionDto` object that contains the collection's name, the number
+/// This function will return a `CollectionDto` object that contains the collection's name, the number
 /// of documents in the collection, the number of documents that have been deleted, the number of
 /// documents that are new (i.e. have not been persisted to disk), the number of documents that have
 /// been updated, the number of documents that have been replaced, the number of documents that have
@@ -73,7 +73,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return a list of accounts for the current user
+/// This function will return a list of accounts for the current user
 /// </summary>
 /// <returns>
 /// A list of accounts
@@ -88,7 +88,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return a list of accounts that match the criteria specified in the
+/// This function will return a list of accounts that match the criteria specified in the
 /// `uriParameterBuilder` parameter
 /// </summary>
 /// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
@@ -106,7 +106,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return an AccountDto object that contains the account information for the
+/// This function will return an AccountDto object that contains the account information for the
 /// account name passed in
 /// </summary>
 /// <param name="accountName">The name of the account you want to get information about.</param>
@@ -125,7 +125,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return the schema for the specified collection
+/// This function will return the schema for the specified collection
 /// </summary>
 /// <param name="collectionName">The name of the collection you want to get the schema for.</param>
 /// <returns>
@@ -141,7 +141,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function returns a schema for a given collection
+/// This function returns a schema for a given collection
 /// </summary>
 /// <param name="collectionName">The name of the collection you want to get the schema for.</param>
 /// <param name="StatsUriParameterBuilder">This is a class that contains all the parameters that can be
@@ -159,7 +159,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > This function will return a `GraphDto` object that contains the graph data
+/// This function will return a `GraphDto` object that contains the graph data
 /// </summary>
 /// <returns>
 /// A GraphDto object
@@ -174,7 +174,7 @@ namespace AtomicMarketApiClient.Stats
         }
 
 /// <summary>
-/// > The function sends a GET request to the API and returns the response as a SalesDto object
+/// The function sends a GET request to the API and returns the response as a SalesDto object
 /// </summary>
 /// <returns>
 /// A SalesDto object

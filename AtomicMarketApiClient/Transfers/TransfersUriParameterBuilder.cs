@@ -106,7 +106,7 @@ namespace AtomicMarketApiClient.Transfers
 
 
 /// <summary>
-/// > This function sets the schema name for the query
+/// This function sets the schema name for the query
 /// </summary>
 /// <param name="schemaName">The name of the schema to use.</param>
 /// <returns>
@@ -192,7 +192,7 @@ namespace AtomicMarketApiClient.Transfers
 
 
 /// <summary>
-/// > This function sets the sort strategy for the query
+/// This function sets the sort strategy for the query
 /// </summary>
 /// <param name="SortStrategy"></param>
 /// <returns>

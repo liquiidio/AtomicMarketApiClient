@@ -12,7 +12,7 @@ namespace AtomicMarketApiClient.Sales
         internal SalesApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > It builds an HTTP request, sends it to the API, and returns the response as a SalesDto object
+/// It builds an HTTP request, sends it to the API, and returns the response as a SalesDto object
 /// </summary>
 /// <returns>
 /// A SalesDto object
@@ -27,7 +27,7 @@ namespace AtomicMarketApiClient.Sales
         }
 
 /// <summary>
-/// > This function will return a `SaleDto` object from the API
+/// This function will return a `SaleDto` object from the API
 /// </summary>
 /// <param name="id">The id of the sale you want to retrieve.</param>
 /// <returns>

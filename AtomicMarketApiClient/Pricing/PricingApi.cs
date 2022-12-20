@@ -13,7 +13,7 @@ namespace AtomicMarketApiClient.Pricing
         internal PricingApi(string baseUrl) => _requestUriBase = baseUrl;
 
 /// <summary>
-/// > This function will return a list of prices for all the sales that have been made
+/// This function will return a list of prices for all the sales that have been made
 /// </summary>
 /// <returns>
 /// A list of prices for the sales of the product.
@@ -28,7 +28,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of prices for a given product, based on the parameters passed in
+/// This function will return a list of prices for a given product, based on the parameters passed in
 /// the uriParametersBuilder
 /// </summary>
 /// <param name="PricingUriParametersBuilder">This is a class that contains the parameters that will be
@@ -46,7 +46,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of prices for the last 30 days
+/// This function will return a list of prices for the last 30 days
 /// </summary>
 /// <returns>
 /// A list of prices for the last 30 days.
@@ -61,7 +61,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a `PricesDto` object that contains the prices for the specified date
+/// This function will return a `PricesDto` object that contains the prices for the specified date
 /// range
 /// </summary>
 /// <param name="PricingUriParametersBuilder">This is a class that contains the parameters that are
@@ -79,7 +79,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of templates that are available for use
+/// This function will return a list of templates that are available for use
 /// </summary>
 /// <returns>
 /// A list of templates
@@ -94,7 +94,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of templates that are available for the given parameters
+/// This function will return a list of templates that are available for the given parameters
 /// </summary>
 /// <param name="PricingUriParametersBuilder">This is a class that contains the parameters that are
 /// required to make the request.</param>
@@ -111,7 +111,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of all the assets that are available for trading on the exchange
+/// This function will return a list of all the assets that are available for trading on the exchange
 /// </summary>
 /// <returns>
 /// A list of assets.
@@ -126,7 +126,7 @@ namespace AtomicMarketApiClient.Pricing
         }
 
 /// <summary>
-/// > This function will return a list of assets that are available for pricing
+/// This function will return a list of assets that are available for pricing
 /// </summary>
 /// <param name="PricingUriParametersBuilder">This is a class that contains all the parameters that can
 /// be passed to the API.</param>
