@@ -5,43 +5,43 @@ namespace AtomicMarketApiClient.Assets
 {
     public class AssetsUriParameterBuilder
     {
-        /* A private variable that is used to store the value of the owner parameter. */
+        //! A private variable that is used to store the value of the owner parameter. 
         private string _owner;
-        /* A private variable that is used to store the value of the collectionName parameter. */
+        //! A private variable that is used to store the value of the collectionName parameter. 
         private string _collectionName;
-        /* A private variable that is used to store the value of the schemaName parameter. */
+        //! A private variable that is used to store the value of the schemaName parameter. 
         private string _schemaName;
-        /* A nullable integer specfying the templateId. */
+        //! A nullable integer specfying the templateId. 
         private int? _templateId;
-        /* A private variable that is used to store the value of the match parameter. */
+        //! A private variable that is used to store the value of the match parameter. 
         private string _match;
-        /* A private variable that is used to store the value of the CollectionBlacklist parameter. */
+        //! A private variable that is used to store the value of the CollectionBlacklist parameter. 
         private string _collectionBlacklist;
-        /* A private variable that is used to store the value of the collectionWhitelist parameter. */
+        //! A private variable that is used to store the value of the collectionWhitelist parameter. 
         private string _collectionWhitelist;
-        /* A nullable boolean specfying if onlyDuplicatedTemplates should be shown. */
+        //! A nullable boolean specfying if onlyDuplicatedTemplates should be shown. 
         private bool? _onlyDuplicateTemplates;
-        /* A private variable that is used to store the value of the authorisedAccount parameter. */
+        //! A private variable that is used to store the value of the authorisedAccount parameter. 
         private string _authorisedAccount;
-        /* A nullable boolean specfying if offers should be hidden. */
+        //! A nullable boolean specfying if offers should be hidden. 
         private bool? _hideOffers;
-        /* A private variable that is used to store the value of the ids parameter. */
+        //! A private variable that is used to store the value of the ids parameter. 
         private string _ids;
-        /* A private variable that is used to store the value of the lowerBound parameter. */
+        //! A private variable that is used to store the value of the lowerBound parameter. 
         private string _lowerBound;
-        /* A private variable that is used to store the value of the upperBound parameter. */
+        //! A private variable that is used to store the value of the upperBound parameter. 
         private string _upperBound;
-        /* A nullable integer specifying the previous timestamp. */ 
+        //! A nullable integer specifying the previous timestamp.  
         private int? _before;
-        /* A nullable integer specifying the after timestamp. */ 
+        //! A nullable integer specifying the after timestamp.  
         private int? _after;
-        /* A nullable integer specifying the page. */ 
+        //! A nullable integer specifying the page.  
         private int? _page;
-        /* A nullable integer specifying the limit of returned values. */
+        //! A nullable integer specifying the limit of returned values. 
         private int? _limit;
-        /* A nullable enum specifying the sortStrategy. */
+        //! A nullable enum specifying the sortStrategy. 
         private SortStrategy? _sortStrategy;
-        /* Declaring a private variable called _sort. */
+        //! Declaring a private variable called _sort. 
         private string _sort;
 
 

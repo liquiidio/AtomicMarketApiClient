@@ -22,48 +22,39 @@ namespace AtomicMarketApiClient
 
         public SalesApi SalesApi => new SalesApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the AuctionsApi class.
-         * 
+         * A shorthand for creating a new instance of the AuctionsApi class.
          */
         public AuctionsApi AuctionsApi => new AuctionsApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the BuyOffersApi class.
-         * 
+         * A shorthand for creating a new instance of the BuyOffersApi class.
          */
         public BuyOffersApi BuyOffersApi => new BuyOffersApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the MarketPlacesApi class.
-         * 
+         * A shorthand for creating a new instance of the MarketPlacesApi class.
          */
         public MarketPlacesApi MarketPlacesApi => new MarketPlacesApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the OffersApi class.
-         * 
+         * A shorthand for creating a new instance of the OffersApi class.
          */
         public OffersApi OffersApi => new OffersApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the StatsApi class.
-         * 
+         * A shorthand for creating a new instance of the StatsApi class.
          */
         public StatsApi StatsApi => new StatsApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the ConfigApi class.
-         * 
+         * A shorthand for creating a new instance of the ConfigApi class.
          */
         public ConfigApi ConfigApi => new ConfigApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the AssetsApi class.
-         * 
+         * A shorthand for creating a new instance of the AssetsApi class.
          */
         public AssetsApi AssetsApi => new AssetsApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the TransfersApi class.
-         * 
+         * A shorthand for creating a new instance of the TransfersApi class.
          */
         public TransfersApi TransfersApi => new TransfersApi(_baseUrl);
         /**
-         * It's a shorthand for creating a new instance of the PricingApi class.
-         * 
+         * A shorthand for creating a new instance of the PricingApi class.
          */
         public PricingApi PricingApi => new PricingApi(_baseUrl);
     }

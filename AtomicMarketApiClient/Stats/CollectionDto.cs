@@ -5,11 +5,11 @@ namespace AtomicMarketApiClient.Stats
     public class CollectionDto
     {
         [JsonProperty("success")]
-        /* Whether the Request was Successfull or not
+        //! Whether the Request was Successfull or not
         public bool Success { get; set; }
 
         [JsonProperty("data")]
-        /* The Data returned from the Api
+        //! The Data returned from the Api
         public DataDto Data { get; set; }
 
         public class DataDto
@@ -23,38 +23,38 @@ namespace AtomicMarketApiClient.Stats
             public class SymbolDto
             {
                 [JsonProperty("token_symbol")]
-                /* The Token Symbol
+                //! The Token Symbol
                 public string TokenSymbol { get; set; }
 
                 [JsonProperty("token_contract")]
-                /* The Token Smart Contract
+                //! The Token Smart Contract
                 public string TokenContract { get; set; }
 
                 [JsonProperty("token_precision")]
-                /* The Precision of the Token
+                //! The Precision of the Token
                 public string TokenPrecision { get; set; }
             }
 
             public class ResultDto
             {
                 [JsonProperty("contract")]
-                /* The name of the Smart Contract
+                //! The name of the Smart Contract
                 public string Contract { get; set; }
 
                 [JsonProperty("collection_name")]
-                /* The Name of the Collection
+                //! The Name of the Collection
                 public string CollectionName { get; set; }
 
                 [JsonProperty("name")]
-                /* The Name
+                //! The Name
                 public string Name { get; set; }
 
                 [JsonProperty("img")]
-                /* The IPFS-CID of this Image */
+                //! The IPFS-CID of this Image 
                 public string Img { get; set; }
 
                 [JsonProperty("author")]
-                /* The Author */
+                //! The Author 
                 public string Author { get; set; }
 
                 [JsonProperty("allow_notify")]
@@ -64,7 +64,7 @@ namespace AtomicMarketApiClient.Stats
                 public string[] AuthorisedAccounts { get; set; }
 
                 [JsonProperty("notify_accounts")]
-                /* The Accounts being notified when minting */
+                //! The Accounts being notified when minting 
                 public string[] NotifyAccounts { get; set; }
 
                 [JsonProperty("market_fee")]
@@ -74,11 +74,11 @@ namespace AtomicMarketApiClient.Stats
                 public object Data { get; set; }
 
                 [JsonProperty("created_at_time")]
-                /* The Time this was created */
+                //! The Time this was created 
                 public string CreatedAtTime { get; set; }
 
                 [JsonProperty("created_at_block")]
-                /* The Block Number this was created */
+                //! The Block Number this was created 
                 public string CreatedAtBlock { get; set; }
 
                 [JsonProperty("volume")]

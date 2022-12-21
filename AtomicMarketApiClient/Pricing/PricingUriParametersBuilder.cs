@@ -5,19 +5,19 @@ namespace AtomicMarketApiClient.Pricing
 {
     public class PricingUriParametersBuilder : IUriParameterBuilder
     {
-        /* A private variable that is used to store the value of the symbol parameter. */
+        //! A private variable that is used to store the value of the symbol parameter. 
         private string _symbol;
-        /* A nullable boolean specfying burned assets. */
+        //! A nullable boolean specfying burned assets. 
         private bool? _burned;
-        /* A private variable that is used to store the value of the collectionName parameter. */
+        //! A private variable that is used to store the value of the collectionName parameter. 
         private string _collectionName;
-        /* A private variable that is used to store the value of the schemaName parameter. */
+        //! A private variable that is used to store the value of the schemaName parameter. 
         private string _schemaName;
-        /* A private variable that is used to store the value of the templateId parameter. */
+        //! A private variable that is used to store the value of the templateId parameter. 
         private string _templateId;
-        /* A nullable boolean specfying transferable assets. */
+        //! A nullable boolean specfying transferable assets. 
         private bool? _isTransferable;
-        /* A nullable boolean specfying burnable assets. */
+        //! A nullable boolean specfying burnable assets. 
         private bool? _isBurnable;
 
 

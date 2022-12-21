@@ -6,77 +6,77 @@ namespace AtomicMarketApiClient.Auctions
 {
     public class AuctionsUriParameterBuilder : IUriParameterBuilder
     {
-        /* A private variable that is used to store the value of the state parameter. */
+        //! A private variable that is used to store the value of the state parameter. 
         private string _state;
-        /* A nullable integer specfying max assets per listing. */
+        //! A nullable integer specfying max assets per listing. 
         private int? _maxAssets;
-        /* A nullable integer specfying min assets per listing */
+        //! A nullable integer specfying min assets per listing 
         private int? _minAssets;
-        /* A nullable boolean specfying which sellerContracts to show. */
+        //! A nullable boolean specfying which sellerContracts to show. 
         private bool? _showSellerContracts;
-        /* A nullable boolean specfying accounts with contracts. */
+        //! A nullable boolean specfying accounts with contracts. 
         private bool? _contractWhitelist;
-        /* A nullable boolean specfying listing from sellers. */
+        //! A nullable boolean specfying listing from sellers. 
         private bool? _sellerBlacklist;
-        /* A nullable integer specifying the assetId. */ 
+        //! A nullable integer specifying the assetId.  
         private int? _assetId;
-        /* A private variable that is used to store the value of the maketplace parameter. */
+        //! A private variable that is used to store the value of the maketplace parameter. 
         private string _marketplace;
-        /* A private variable that is used to store the value of the makerMarketplace parameter. */
+        //! A private variable that is used to store the value of the makerMarketplace parameter. 
         private string _makerMarketplace;
-        /* A private variable that is used to store the value of the takerMarketplace parameter. */
+        //! A private variable that is used to store the value of the takerMarketplace parameter. 
         private string _takerMarketplace;
-        /* A private variable that is used to store the value of the symbol parameter. */
+        //! A private variable that is used to store the value of the symbol parameter. 
         private string _symbol;
-        /* A private variable that is used to store the value of the seller parameter. */
+        //! A private variable that is used to store the value of the seller parameter. 
         private string _seller;
-        /* A private variable that is used to store the value of the buyer parameter. */
+        //! A private variable that is used to store the value of the buyer parameter. 
         private string _buyer;
-        /* A nullable integer specifying the min price. */ 
+        //! A nullable integer specifying the min price.  
         private int? _minPrice;
-        /* A nullable integer specifying the max price. */ 
+        //! A nullable integer specifying the max price.  
         private int? _maxPrice;
-        /* A nullable integer specifying the minTemplateMint. */ 
+        //! A nullable integer specifying the minTemplateMint.  
         private int? _minTemplateMint;
-        /* A nullable integer specifying the maxTemplateMint. */ 
+        //! A nullable integer specifying the maxTemplateMint.  
         private int? _maxTemplateMint;
-        /* A private variable that is used to store the value of the owner parameter. */
+        //! A private variable that is used to store the value of the owner parameter. 
         private string _owner;
-        /* A nullable boolean specfying burned assets. */
+        //! A nullable boolean specfying burned assets. 
         private bool? _burned;
-        /* A private variable that is used to store the value of the collectionName parameter. */
+        //! A private variable that is used to store the value of the collectionName parameter. 
         private string _collectionName;
-        /* A private variable that is used to store the value of the schemaName parameter. */
+        //! A private variable that is used to store the value of the schemaName parameter. 
         private string _schemaName;
-        /* A private variable that is used to store the value of the templateId parameter. */
+        //! A private variable that is used to store the value of the templateId parameter. 
         private string _templateId;
-        /* A nullable boolean specfying transferable assets. */
+        //! A nullable boolean specfying transferable assets. 
         private bool? _isTransferable;
-        /* A nullable boolean specfying burnable assets. */
+        //! A nullable boolean specfying burnable assets. 
         private bool? _isBurnable;
-        /* A private variable that is used to store the value of the match parameter. */
+        //! A private variable that is used to store the value of the match parameter. 
         private string _match;
-        /* A private variable that is used to store the value of the collectionBlacklist parameter. */
+        //! A private variable that is used to store the value of the collectionBlacklist parameter. 
         private string _collectionBlacklist;
-        /* A private variable that is used to store the value of the collectionWhitelist parameter. */
+        //! A private variable that is used to store the value of the collectionWhitelist parameter. 
         private string _collectionWhitelist;
-        /* A private variable that is used to store the value of the ids parameter. */
+        //! A private variable that is used to store the value of the ids parameter. 
         private string _ids;
-        /* A private variable that is used to store the value of the lowerBound parameter. */
+        //! A private variable that is used to store the value of the lowerBound parameter. 
         private string _lowerBound;
-        /* A private variable that is used to store the value of the upperBound parameter. */
+        //! A private variable that is used to store the value of the upperBound parameter. 
         private string _upperBound;
-        /* A nullable integer specifying the previous timestamp. */ 
+        //! A nullable integer specifying the previous timestamp.  
         private int? _before;
-        /* A nullable integer specifying the next timestamp. */ 
+        //! A nullable integer specifying the next timestamp.  
         private int? _after;
-        /* A nullable integer specifying the page. */ 
+        //! A nullable integer specifying the page.  
         private int? _page;
-        /* A nullable integer specifying the limit of returned values. */
+        //! A nullable integer specifying the limit of returned values. 
         private int? _limit;
-        /* A nullable enum specifying the sortStrategy. */
+        //! A nullable enum specifying the sortStrategy. 
         private SortStrategy? _sortStrategy;
-        /* Declaring a private variable called _sort. */
+        //! Declaring a private variable called _sort. 
         private string _sort;
 
 
