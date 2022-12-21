@@ -5,15 +5,15 @@ namespace AtomicMarketApiClient
     public class StatsDto
     {
         [JsonProperty("success")]
-        // Whether the Request was Successfull or not
+        /* Whether the Request was Successfull or not */
         public bool Success { get; set; }
 
         [JsonProperty("data")]
-        // The Data returned from the Api
+        /* The Data returned from the Api */
         public DataDto Data { get; set; }
 
         [JsonProperty("query_time")]
-        // The time this Query took
+        /* The time this Query took */
         public long QueryTime { get; set; }
 
         public class DataDto

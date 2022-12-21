@@ -5,11 +5,11 @@ namespace AtomicMarketApiClient.Stats
     public class GraphDto
     {
         [JsonProperty("success")]
-        // Whether the Request was Successfull or not
+        /* Whether the Request was Successfull or not */
         public bool Success { get; set; }
 
         [JsonProperty("data")]
-        // The Data returned from the Api
+        /* The Data returned from the Api */
         public DataDto Data { get; set; }
 
         public class DataDto
@@ -23,15 +23,15 @@ namespace AtomicMarketApiClient.Stats
             public class SymbolDto
             {
                 [JsonProperty("token_symbol")]
-                // The Token Symbol
+                /* The Token Symbol */
                 public string TokenSymbol { get; set; }
 
                 [JsonProperty("token_contract")]
-                // The Token Smart Contract
+                /* The Token Smart Contract */
                 public string TokenContract { get; set; }
 
                 [JsonProperty("token_precision")]
-                // The Precision of the Token
+                /* The Precision of the Token */
                 public string TokenPrecision { get; set; }
             }
 

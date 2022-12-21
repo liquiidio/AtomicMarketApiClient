@@ -5,33 +5,33 @@ namespace AtomicMarketApiClient.MarketPlaces
     public class MarketplacesDto
     {
         [JsonProperty("success")]
-        // Whether the Request was Successfull or not
+        /* Whether the Request was Successfull or not */
         public bool Success { get; set; }
 
         [JsonProperty("data")]
-        // The Data returned from the API
+        /* The Data returned from the API */
         public DataDto[] Data { get; set; }
 
         [JsonProperty("query_time")]
-        // The time this Query took
+        /* The time this Query took */
         public long QueryTime { get; set; }
 
         public class DataDto
         {
             [JsonProperty("marketplace_name")]
-            // The Name of the Marketplace Account
+            /* The Name of the Marketplace Account */
             public string MarketplaceName { get; set; }
 
             [JsonProperty("creator")]
-            // The Creator
+            /* The Creator */
             public string Creator { get; set; }
 
             [JsonProperty("created_at_block")]
-            // The Bock Number this was created
+            /* The Bock Number this was created */
             public string CreatedAtBlock { get; set; }
 
             [JsonProperty("created_at_time")]
-            // The Time this was created
+            /* The Time this was created */
             public string CreatedAtTime { get; set; }
         }
     }
