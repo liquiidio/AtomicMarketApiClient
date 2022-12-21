@@ -13,7 +13,7 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Sales()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Sales().Should().BeOfType<PricesDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Sales().GetAwaiter().GetResult().Should().BeOfType<PricesDto>();
             AtomicMarketApiFactory.Version1.PricingApi.Sales().GetAwaiter().GetResult().Data.Should().BeOfType<PricesDto.DataDto[]>();
             AtomicMarketApiFactory.Version1.PricingApi.Sales().GetAwaiter().GetResult().Data.Should().HaveCountGreaterThan(1);
             AtomicMarketApiFactory.Version1.PricingApi.Sales(new PricingUriParametersBuilder().WithSymbol("WAX")).GetAwaiter().GetResult().Data.ToList().ForEach(d => Assert.True(d.TokenSymbol == "WAX"));
@@ -22,7 +22,7 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Days()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Should().BeOfType<PricesDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).GetAwaiter().GetResult().Should().BeOfType<PricesDto>();
             AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).GetAwaiter().GetResult().Data.Should().BeOfType<PricesDto.DataDto[]>();
             AtomicMarketApiFactory.Version1.PricingApi.Days(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION).WithSymbol("WAX")).GetAwaiter().GetResult().Data.ToList().ForEach(d => Assert.True(d.TokenSymbol == "WAX"));
         }
@@ -30,7 +30,7 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Templates()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Templates().Should().BeOfType<TemplatesDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Templates().GetAwaiter().GetResult().Should().BeOfType<TemplatesDto>();
             AtomicMarketApiFactory.Version1.PricingApi.Templates().GetAwaiter().GetResult().Data.Should().BeOfType<TemplatesDto.DataDto[]>();
             AtomicMarketApiFactory.Version1.PricingApi.Templates().GetAwaiter().GetResult().Data.Should().HaveCountGreaterThan(1);
             AtomicMarketApiFactory.Version1.PricingApi.Templates(new PricingUriParametersBuilder().WithSymbol("WAX")).GetAwaiter().GetResult().Data.ToList().ForEach(d => Assert.True(d.TokenSymbol == "WAX"));
@@ -39,7 +39,7 @@ namespace AtomicMarketApiClient.Test.Pricing
         [Test]
         public void Assets()
         {
-            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).Should().BeOfType<AssetPricingDto>();
+            AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).GetAwaiter().GetResult().Should().BeOfType<AssetPricingDto>();
             AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).GetAwaiter().GetResult().Data.Should().BeOfType<AssetPricingDto.DataDto[]>();
             AtomicMarketApiFactory.Version1.PricingApi.Assets(new PricingUriParametersBuilder().WithCollectionName(TEST_COLLECTION)).GetAwaiter().GetResult().Data.Should().HaveCount(1);
         }
