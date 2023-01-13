@@ -1,5 +1,4 @@
 using AtomicMarketApiClient.BuyOffers;
-using AtomicMarketApiClient.Core;
 using FluentAssertions;
 using NUnit.Framework;
 

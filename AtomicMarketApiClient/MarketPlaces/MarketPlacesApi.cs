@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Core;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.MarketPlaces
 {
     public class MarketPlacesApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal MarketPlacesApi(string baseUrl) => _requestUriBase = baseUrl;
+        internal MarketPlacesApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
 
 /// <summary>
 /// > This function will return a list of marketplaces that are available to the user
@@ -17,13 +20,9 @@ namespace AtomicMarketApiClient.MarketPlaces
 /// <returns>
 /// A list of marketplaces.
 /// </returns>
-        public MarketplacesDto Marketplaces()
+        public async Task<MarketplacesDto> Marketplaces()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(MarketplacesUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<MarketplacesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<MarketplacesDto>(MarketplacesUri().OriginalString);
         }
 
 /// <summary>
@@ -33,13 +32,9 @@ namespace AtomicMarketApiClient.MarketPlaces
 /// <returns>
 /// A MarketplaceDto object
 /// </returns>
-        public MarketplaceDto Marketplace(string name)
+        public async Task<MarketplaceDto> Marketplace(string name)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(MarketplaceUri(name)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<MarketplaceDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<MarketplaceDto>(MarketplaceUri(name).OriginalString);
         }
 
 

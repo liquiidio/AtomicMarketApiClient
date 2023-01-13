@@ -1,9 +1,8 @@
-using AtomicMarketApiClient.Core;
 using AtomicMarketApiClient.Sales;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace AtomicMarketApiClient.Test.Sales
+namespace AtomicMarketApiClient.Core.Test.Sales
 {
     [TestFixture]
     public class SalesUriParameterBuilderTest

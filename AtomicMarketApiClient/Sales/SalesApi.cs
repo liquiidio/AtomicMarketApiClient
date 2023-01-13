@@ -1,29 +1,28 @@
 ﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Core;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.Sales
 {
     public class SalesApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal SalesApi(string baseUrl) => _requestUriBase = baseUrl;
-
+        internal SalesApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
+        
 /// <summary>
 /// > It builds an HTTP request, sends it to the API, and returns the response as a SalesDto object
 /// </summary>
 /// <returns>
 /// A SalesDto object
 /// </returns>
-        public SalesDto Sales()
+        public async Task<SalesDto> Sales()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<SalesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<SalesDto>(SalesUri().OriginalString);
         }
 
 /// <summary>
@@ -33,13 +32,9 @@ namespace AtomicMarketApiClient.Sales
 /// <returns>
 /// A SaleDto object
 /// </returns>
-        public SaleDto Sale(int id)
+        public async Task<SaleDto> Sale(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SaleUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<SaleDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<SaleDto>(SaleUri(id).OriginalString);
         }
 
 /// <summary>
@@ -50,13 +45,9 @@ namespace AtomicMarketApiClient.Sales
 /// <returns>
 /// A SalesDto object.
 /// </returns>
-        public SalesDto Sales(SalesUriParameterBuilder uriParameterBuilder)
+        public async Task<SalesDto> Sales(SalesUriParameterBuilder uriParameterBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesUri(uriParameterBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<SalesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<SalesDto>(SalesUri(uriParameterBuilder).OriginalString);
         }
 
 /// <summary>
@@ -67,13 +58,9 @@ namespace AtomicMarketApiClient.Sales
 /// <returns>
 /// A SalesDto object.
 /// </returns>
-        public SalesDto SalesByTemplate(SalesUriParameterBuilder uriParameterBuilder)
+        public async Task<SalesDto> SalesByTemplate(SalesUriParameterBuilder uriParameterBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SaleTemplatesUri(uriParameterBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<SalesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<SalesDto>(SaleTemplatesUri(uriParameterBuilder).OriginalString);
         }
 
 /// <summary>
@@ -83,13 +70,9 @@ namespace AtomicMarketApiClient.Sales
 /// <returns>
 /// A list of logs for a specific sale.
 /// </returns>
-        public LogsDto SalesLogs(int id)
+         public async Task<LogsDto> SalesLogs(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesLogsUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(SalesLogsUri(id).OriginalString);
         }
 
 /// <summary>
@@ -101,15 +84,10 @@ namespace AtomicMarketApiClient.Sales
 /// <returns>
 /// A LogsDto object
 /// </returns>
-        public LogsDto SalesLogs(int id, SalesUriParameterBuilder salesUriParameterBuilder)
+        public async Task<LogsDto> SalesLogs(int id, SalesUriParameterBuilder salesUriParameterBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesLogsUri(id, salesUriParameterBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(SalesLogsUri(id, salesUriParameterBuilder).OriginalString);
         }
-
 
         private Uri SalesUri() => new Uri($"{_requestUriBase}/sales");
         private Uri SalesUri(IUriParameterBuilder salesUriParameterBuilder) => new Uri($"{_requestUriBase}/sales{salesUriParameterBuilder.Build()}");

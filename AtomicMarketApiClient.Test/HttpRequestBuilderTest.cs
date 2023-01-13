@@ -5,7 +5,7 @@ using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace AtomicMarketApiClient.Core.Test
+namespace AtomicMarketApiClient.Test
 {
     [TestFixture]
     public class HttpRequestBuilderTest

@@ -1,16 +1,19 @@
-﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Assets;
-using AtomicMarketApiClient.Core;
+﻿using AtomicMarketApiClient.Assets;
+using System;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.Pricing
 {
     public class PricingApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal PricingApi(string baseUrl) => _requestUriBase = baseUrl;
+        internal PricingApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
 
 /// <summary>
 /// > This function will return a list of prices for all the sales that have been made
@@ -18,13 +21,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of prices for the sales of the product.
 /// </returns>
-        public PricesDto Sales()
+        public async Task<PricesDto> Sales()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<PricesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<PricesDto>(SalesUri().OriginalString);
         }
 
 /// <summary>
@@ -36,13 +35,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of prices for the given parameters.
 /// </returns>
-        public PricesDto Sales(PricingUriParametersBuilder uriParametersBuilder)
+        public async Task<PricesDto> Sales(PricingUriParametersBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(SalesUri(uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<PricesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<PricesDto>(SalesUri(uriParametersBuilder).OriginalString);
         }
 
 /// <summary>
@@ -51,13 +46,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of prices for the last 30 days.
 /// </returns>
-        public PricesDto Days()
+        public async Task<PricesDto> Days()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(DaysUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<PricesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<PricesDto>(DaysUri().OriginalString);
         }
 
 /// <summary>
@@ -69,13 +60,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of prices for the given date range.
 /// </returns>
-        public PricesDto Days(PricingUriParametersBuilder uriParametersBuilder)
+        public async Task<PricesDto> Days(PricingUriParametersBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(DaysUri(uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<PricesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<PricesDto>(DaysUri(uriParametersBuilder).OriginalString);
         }
 
 /// <summary>
@@ -84,13 +71,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of templates
 /// </returns>
-        public TemplatesDto Templates()
+        public async Task<TemplatesDto> Templates()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(TemplatesUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<TemplatesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<TemplatesDto>(TemplatesUri().OriginalString);
         }
 
 /// <summary>
@@ -101,13 +84,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A TemplatesDto object.
 /// </returns>
-        public TemplatesDto Templates(PricingUriParametersBuilder uriParametersBuilder)
+        public async Task<TemplatesDto> Templates(PricingUriParametersBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(TemplatesUri(uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<TemplatesDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<TemplatesDto>(TemplatesUri(uriParametersBuilder).OriginalString);
         }
 
 /// <summary>
@@ -116,13 +95,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of assets.
 /// </returns>
-        public AssetsDto Assets()
+        public async Task<AssetsDto> Assets()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AssetsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<AssetsDto>(AssetsUri().OriginalString);
         }
 
 /// <summary>
@@ -133,13 +108,9 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of assets.
 /// </returns>
-        public AssetPricingDto Assets(PricingUriParametersBuilder uriParametersBuilder)
+        public async Task<AssetPricingDto> Assets(PricingUriParametersBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri(uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AssetPricingDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<AssetPricingDto>(AssetsUri(uriParametersBuilder).OriginalString);
         }
 
         private Uri SalesUri() => new Uri($"{_requestUriBase}/prices/sales");

@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace AtomicMarketApiClient.Core
+namespace AtomicMarketApiClient
 {
     public class HttpRequestBuilder
     {

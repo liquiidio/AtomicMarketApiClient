@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using AtomicMarketApiClient.Core;
 
 namespace AtomicMarketApiClient.Offers
 {
