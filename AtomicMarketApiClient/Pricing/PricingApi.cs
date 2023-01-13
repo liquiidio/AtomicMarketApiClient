@@ -133,7 +133,6 @@ namespace AtomicMarketApiClient.Pricing
 /// <returns>
 /// A list of assets.
 /// </returns>
-        public AssetsDto Assets(PricingUriParametersBuilder uriParametersBuilder)
         public AssetPricingDto Assets(PricingUriParametersBuilder uriParametersBuilder)
         {
             var apiRequest = HttpRequestBuilder.GetRequest(AssetsUri(uriParametersBuilder)).Build();
