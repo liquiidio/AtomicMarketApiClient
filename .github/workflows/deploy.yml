@@ -78,6 +78,8 @@ jobs:
           find Src/ -name \*.meta >> metaList
       - name: Make directory for our unity package
         run: mkdir a
+      - name: Make directory for our project
+        run: mkdir ./Assets/AtomicMarket
       - name: Create Unity Package
         uses: pCYSl5EDgo/create-unitypackage@master
         with:
