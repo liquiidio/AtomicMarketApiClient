@@ -78,16 +78,11 @@ jobs:
           find Src/ -name \*.meta >> metaList
       - name: Make directory for our unity package
         run: mkdir a
-      - name: Make directory for our project
-        run: |
-          mkdir Assets
-          mkdir ./Assets/AtomicMarket
       - name: Create Unity Package
         uses: pCYSl5EDgo/create-unitypackage@master
         with:
           package-path: 'a/io.liquiid.atomicmarket.unitypackage'
           include-files: metaList
-          project-folder: ./Assets/AtomicMarket
       - name: Upload package
         uses: actions/upload-artifact@v1
         with:
