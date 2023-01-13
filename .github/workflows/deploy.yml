@@ -80,12 +80,15 @@ jobs:
           find Examples/ -name \*.meta >> metaList
           find Src/ -name \*.meta >> metaList
       - name: Make directory for our unity package
-        run: mkdir a
+        run: |
+          mkdir a
+          mkdir Assets/AtomicMarket
       - name: Create Unity Package
         uses: pCYSl5EDgo/create-unitypackage@master
         with:
           package-path: 'a/io.liquiid.atomicmarket.unitypackage'
           include-files: metaList
+          project-folder: Assets/AtomicMarket
       - name: Upload package
         uses: actions/upload-artifact@v1
         with:
@@ -95,7 +98,7 @@ jobs:
   release:
     runs-on: ubuntu-20.04
     needs: pack-unitypackage
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -126,7 +129,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: release
     name: Publish to GitHub
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -144,6 +147,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: release
     name: Publish to Nuget
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
@@ -161,6 +165,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: release
     name: Split UPM branch
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v3
         with:
