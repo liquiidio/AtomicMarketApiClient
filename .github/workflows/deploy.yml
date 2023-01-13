@@ -37,8 +37,8 @@ jobs:
         if: ${{ always() }}
 
   pack-nuget:
-    needs: build
     runs-on: ubuntu-20.04
+    needs: build
     name: Dotnet Pack
     if: github.event_name == 'push'
     steps:
