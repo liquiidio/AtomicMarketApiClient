@@ -79,7 +79,9 @@ jobs:
       - name: Make directory for our unity package
         run: mkdir a
       - name: Make directory for our project
-        run: mkdir ./Assets/AtomicMarket
+        run: |
+          mkdir Assets
+          mkdir ./Assets/AtomicMarket
       - name: Create Unity Package
         uses: pCYSl5EDgo/create-unitypackage@master
         with:
