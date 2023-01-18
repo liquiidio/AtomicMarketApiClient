@@ -17,14 +17,18 @@
 
  ## Example calling the /v1/assets endpoint
  ### Initialise the Assets API
+ ```csharp
  var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi();
+ ```
  
  ### Call the /assets endpoint
+ ```csharp
  var assets = assetsApi.Assets();
+ ```
  
- ### Example to Filter and search Assets by either collection name or asset ids
+ ### Example to Filter and search Assets by either Sales Id, Auction Id and Asset Id, 
 ```csharp
-  private async void SearchAsset()
+    private async void SearchAsset()
     {
         if (_selectorDropdownField.value != null)
         {
@@ -41,36 +45,42 @@
                         else Debug.Log("asset id not found");
                         break;
 
-                    case "Collection Name":
-                        var collectionDto = await _collectionsApi.Collection(_collectionNameOrAssetId.value);
-                        if (collectionDto != null)
+                    case "Sale ID":
+                        var saleDto = await _salesApi.Sale(Convert.ToInt32(_collectionNameOrAssetId.value));
+                        if (saleDto != null)
                         {
-                            Rebind(collectionDto);
+                            Rebind(saleDto);
                         }
-                        else Debug.Log("asset not found");
+                        else Debug.Log("sales id not found");
                         break;
 
-                    case "":
+                    case "Auction ID":
+                        var auctionDto = await _auctionsApi.Auction((Convert.ToInt32(_collectionNameOrAssetId.value)));
+                        if (auctionDto != null)
+                        {
+                            Rebind(auctionDto);
+                        }
+                        else Debug.Log("auction id not found");
                         break;
                 }
             }
             catch (ApiException ex)
             {
-                AtomicAssetsErrorPanel.ErrorText("Content Error", ex.Content);
-                Show(AtomicAssetsErrorPanel.Root);
+                AtomicMarketErrorPanel.ErrorText("Content Error", ex.Content);
+                Show(AtomicMarketErrorPanel.Root);
             }
         }
     }
+    
 ````
  
  ##### Example output
  
- ## Results Search for Asset Id "#1099849109724"
- 
-<img width="853" alt="image" src="https://user-images.githubusercontent.com/31707324/213101482-0371d6cb-4981-4ea5-af0d-688092087b67.png">
+ ## Results Search for Sales Id "#105106129"
+<img width="836" alt="image" src="https://user-images.githubusercontent.com/31707324/213105963-0916568e-eea2-456f-ac39-3758ad0f4514.png">
 
- ## Results Search for Collection Name "mrpotatogame"
-<img width="847" alt="image" src="https://user-images.githubusercontent.com/31707324/213101918-98ef30b5-d1ca-4b31-b4c7-2895a3681e89.png">
+ ## Results Search for Auction Id "#1016310"
+<img width="838" alt="image" src="https://user-images.githubusercontent.com/31707324/213106315-cd67121b-adb9-4ff3-a42f-610868206921.png">
 
  ...
  
