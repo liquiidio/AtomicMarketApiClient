@@ -18,11 +18,17 @@
  ## Example calling the /v1/assets endpoint
  ### Initialise the Assets API
  ```csharp
+ 
+ var salesApi = AtomicMarketApiFactory.Version1.SalesApi;
+ var auctionsApi = AtomicMarketApiFactory.Version1.AuctionsApi;
  var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi();
+
  ```
  
  ### Call the /assets endpoint
  ```csharp
+ var sales = salesApi.Sales();
+ var aution = auctionApi.Auction();
  var assets = assetsApi.Assets();
  ```
  
