@@ -15,13 +15,22 @@
  You can then call any endpoint from the initialised API.
  Each endpoint has its own set of parameters that you may build up and pass in to the relevant function.
 
- ## Example calling the /v1/assets endpoint
- ### Initialise the Assets API
+ ## Examples
+ ### Getting an Offer
  ```csharp
- 
- var salesApi = AtomicMarketApiFactory.Version1.SalesApi;
- var auctionsApi = AtomicMarketApiFactory.Version1.AuctionsApi;
- var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
+
+async Task GetOffer(string offerId)
+{
+
+    // Initialize the v1 offers API
+    var api = AtomicMarketApiFactory.Version1.OffersApi;
+
+    // Call the offers endpoint passing the offerId as an input
+    var sales = await api.Offer(offerId);
+
+    // Access different informations about the offer using the Data property in the result
+    Console.WriteLine(sales.Data.SenderName);
+}
 
  ```
  
