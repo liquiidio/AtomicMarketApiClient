@@ -75,7 +75,7 @@ async Task GetOffer(string offerId)
  ```
  ### Unity Examples
  
- Our unity packages comes with examples to help you get started as quickly as possible.
+ Our unity packages come with examples to help you get started as quickly as possible.
  
 An example showing the result for searching for a sale with ID #105106129
 
