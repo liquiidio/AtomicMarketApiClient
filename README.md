@@ -21,7 +21,7 @@
 
 async Task GettingAllTheAssets()
 {
-    // // Initialize the v1 assets API
+    // Initialize the v1 assets API
     var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
 
     //Getting all the assets that are available for trading on the exchange.
@@ -38,7 +38,7 @@ async Task GettingAllTheAssets()
 
 async Task GettingFilteredAssetsList()
 {
-    // // Initialize the v1 assets API
+    // Initialize the v1 assets API
     var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
 
     // Build up the AssetsParameters with the AssetsUriParameterBuilder
