@@ -21,7 +21,7 @@
  
  var salesApi = AtomicMarketApiFactory.Version1.SalesApi;
  var auctionsApi = AtomicMarketApiFactory.Version1.AuctionsApi;
- var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi();
+ var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
 
  ```
  
