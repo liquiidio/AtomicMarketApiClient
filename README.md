@@ -43,7 +43,7 @@
                 switch (_selectorDropdownField.value)
                 {
                     case "Asset ID":
-                        var assetDto = await _assetsApi.Asset(_collectionNameOrAssetId.value);
+                        var assetDto = await assetsApi.Asset(_collectionNameOrAssetId.value);
                         if (assetDto != null)
                         {
                             Rebind(assetDto);
@@ -52,7 +52,7 @@
                         break;
 
                     case "Sale ID":
-                        var saleDto = await _salesApi.Sale(Convert.ToInt32(_collectionNameOrAssetId.value));
+                        var saleDto = await salesApi.Sale(Convert.ToInt32(_collectionNameOrAssetId.value));
                         if (saleDto != null)
                         {
                             Rebind(saleDto);
@@ -61,7 +61,7 @@
                         break;
 
                     case "Auction ID":
-                        var auctionDto = await _auctionsApi.Auction((Convert.ToInt32(_collectionNameOrAssetId.value)));
+                        var auctionDto = await auctionsApi.Auction((Convert.ToInt32(_collectionNameOrAssetId.value)));
                         if (auctionDto != null)
                         {
                             Rebind(auctionDto);
