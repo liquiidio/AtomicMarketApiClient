@@ -1,9 +1,6 @@
 name: Deploy
 
-on:
-  push:
-    tags: 
-      - "[0-9]+.[0-9]+.[0-9]+*"
+on: [push]
 
 jobs:
   build:
@@ -54,7 +51,7 @@ jobs:
       - name: Determine version
         run: echo "VERSION=$(git describe --tags --dirty)" >> $GITHUB_ENV
       - name: Pack
-        run: dotnet pack --output ./artifacts --configuration Release -p:Version=$VERSION
+        run: dotnet pack --output ./artifacts --configuration Release -p:Version=1.0.7
       - name: Upload package
         uses: actions/upload-artifact@v1
         with:
@@ -74,11 +71,10 @@ jobs:
           fetch-depth: 0
       - name: Find all meta files
         run: |
-          echo "Examples.meta" > metaList
-          echo "Src.meta" > metaList
-          echo "README.md.meta" > metaList
-          find Examples/ -name \*.meta >> metaList
-          find Src/ -name \*.meta >> metaList
+          git mv . $UPM_ROOT
+          find $UPM_ROOT/ -name \*.meta >> metaList
+        env:
+          PKG_ROOT: Assets/AtomicMarketApiClient
       - name: Make directory for our unity package
         run: mkdir a
       - name: Create Unity Package
@@ -105,8 +101,8 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1.12.0
         with:
-          tag: ${{ env.VERSION }}
-          name: Release ${{ env.VERSION }}
+          tag: 1.0.7
+          name: Release 1.0.7
           body: ${{ env.VERSION }}
           makeLatest: true
       - name: Download unity package
