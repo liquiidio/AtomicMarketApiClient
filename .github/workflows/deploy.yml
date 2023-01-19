@@ -71,13 +71,13 @@ jobs:
           fetch-depth: 0
       - name: Find all meta files
         run: |
-          git mv Examples "$UPM_ROOT"
-          git mv Examples.meta $UPM_ROOT
-          git mv Src $UPM_ROOT
-          git mv Src.meta $UPM_ROOT
-          git mv README.md $UPM_ROOT
-          git mv README.md.meta $UPM_ROOT
-          find $UPM_ROOT/ -name \*.meta >> metaList
+          git mv Examples "$PKG_ROOT"
+          git mv Examples.meta $PKG_ROOT
+          git mv Src $PKG_ROOT
+          git mv Src.meta $PKG_ROOT
+          git mv README.md $PKG_ROOT
+          git mv README.md.meta $PKG_ROOT
+          find $PKG_ROOT/ -name \*.meta >> metaList
         env:
           PKG_ROOT: Assets/AtomicMarketApiClient
       - name: Make directory for our unity package
