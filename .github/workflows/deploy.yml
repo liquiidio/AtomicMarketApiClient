@@ -71,7 +71,7 @@ jobs:
           fetch-depth: 0
       - name: Find all meta files
         run: |
-          git mv Examples $UPM_ROOT
+          git mv Examples "$UPM_ROOT"
           git mv Examples.meta $UPM_ROOT
           git mv Src $UPM_ROOT
           git mv Src.meta $UPM_ROOT
