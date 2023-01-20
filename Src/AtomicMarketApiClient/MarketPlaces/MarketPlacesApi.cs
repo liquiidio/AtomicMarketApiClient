@@ -14,11 +14,24 @@ namespace AtomicMarketApiClient.MarketPlaces
             _httpHandler = httpHandler;
         }
 
+/// <summary>
+/// > This function will return a list of marketplaces that are available to the user
+/// </summary>
+/// <returns>
+/// A list of marketplaces.
+/// </returns>
         public async Task<MarketplacesDto> Marketplaces()
         {
             return await _httpHandler.GetJsonAsync<MarketplacesDto>(MarketplacesUri().OriginalString);
         }
 
+/// <summary>
+/// > This function will return a `MarketplaceDto` object from the API
+/// </summary>
+/// <param name="name">The name of the marketplace you want to retrieve.</param>
+/// <returns>
+/// A MarketplaceDto object
+/// </returns>
         public async Task<MarketplaceDto> Marketplace(string name)
         {
             return await _httpHandler.GetJsonAsync<MarketplaceDto>(MarketplaceUri(name).OriginalString);
