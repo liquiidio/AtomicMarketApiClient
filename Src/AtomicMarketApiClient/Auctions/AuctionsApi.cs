@@ -14,11 +14,25 @@ namespace AtomicMarketApiClient.Auctions
             _httpHandler = httpHandler;
         }
 
+/// <summary>  
+/// It returns a list of auctions.
+/// </summary>
+/// <return>
+/// AuctionsDto
+/// </return> 
         public async Task<AuctionsDto> Auctions()
         {
             return await _httpHandler.GetJsonAsync<AuctionsDto>(AuctionsUri().OriginalString);
         }
 
+/// <summary>
+/// It returns a list of auctions.
+/// </summary>
+/// <param name = "AuctionsUriParameterBuilder" >This is a class that contains all the parameters that can
+/// be passed to the API.</param>
+/// <return>
+/// AuctionsDto
+/// </return>
         public async Task<AuctionsDto> Auctions(AuctionsUriParameterBuilder uriParametersBuilder)
         {
             return await _httpHandler.GetJsonAsync<AuctionsDto>(AuctionsUri(uriParametersBuilder).OriginalString);
