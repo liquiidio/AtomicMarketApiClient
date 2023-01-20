@@ -71,6 +71,7 @@ jobs:
           fetch-depth: 0
       - name: Find all meta files
         run: |
+          mkdir $PKG_ROOT
           git mv Examples $PKG_ROOT
           git mv Examples.meta $PKG_ROOT
           git mv Src $PKG_ROOT
