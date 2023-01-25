@@ -108,8 +108,8 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1.12.0
         with:
-          tag: 1.0.91
-          name: Release 1.0.91
+          tag: 1.0.92
+          name: Release 1.0.92
           body: ${{ env.VERSION }}
           makeLatest: true
       - name: Download unity package
@@ -198,6 +198,6 @@ jobs:
             git commit -am "fix: Examples => Samples~"
           fi
           git push -f -u origin upm
-        env:
-          PKG_ROOT: Packages/https://github.com/atomicmarketapiclient.git#upm
+        #env:
+         # PKG_ROOT: Packages/https://github.com/atomicmarketapiclient.git#upm
         
