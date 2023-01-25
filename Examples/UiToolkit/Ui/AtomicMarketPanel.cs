@@ -14,7 +14,7 @@ using UnityEngine.UIElements;
 
 public class AtomicMarketPanel : MonoBehaviour
 {
-    /*
+    /**
      * Child-Controls
      */
     public VisualElement Root;
@@ -40,7 +40,7 @@ public class AtomicMarketPanel : MonoBehaviour
     private TextField _collectionNameOrAssetId;
 
     
-    /*
+    /**
      * Fields/Properties
      */
 
@@ -244,5 +244,19 @@ public class AtomicMarketPanel : MonoBehaviour
         element.style.visibility = Visibility.Hidden;
         element.style.display = DisplayStyle.None;
     }
+
+    /// <summary>Called when ctrl + v is pressed in browser (webgl)</summary>
+    /// <param name="pastedText">The pasted text.</param>
+    public void OnBrowserClipboardPaste(string pastedText)
+    {
+        if (string.IsNullOrEmpty(pastedText))
+            return;
+
+        if (_collectionNameOrAssetId != null && _collectionNameOrAssetId.focusController.focusedElement == _collectionNameOrAssetId)
+        {
+            _collectionNameOrAssetId.SetValueWithoutNotify(pastedText);
+        }
+    }
+
     #endregion
 }
