@@ -189,7 +189,7 @@ jobs:
         run : |
           git branch -d upm &> /dev/null || echo upm branch not found
           git subtree split -P "$PKG_ROOT" -b upm
-          git checkout upm
+          git checkout -b upm
           if [[ -d "Examples" ]]; then
             git mv Examples Samples~
             git rm -r .github || true 
