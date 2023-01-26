@@ -188,7 +188,8 @@ jobs:
       - name : split upm
         run : |
           git branch -d upm &> /dev/null || echo upm branch not found
-          git checkout -b upm
+          git subtree split -P "$PKG_ROOT" -b upm
+          git checkout upm
           if [[ -d "Examples" ]]; then
             git mv Examples Samples~
             git rm -r .github || true 
@@ -197,5 +198,5 @@ jobs:
             git commit -am "fix: Examples => Samples~"
           fi
           git push -f -u origin upm 
-        #env:
-         #PKG_ROOT: Assets/AtomicMarketApiClient
+        env:
+         PKG_ROOT: Packages/io.liquid.atomicmarket
