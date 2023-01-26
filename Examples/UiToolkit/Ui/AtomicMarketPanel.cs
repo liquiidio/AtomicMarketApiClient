@@ -37,7 +37,7 @@ public class AtomicMarketPanel : MonoBehaviour
     private Button _searchButton;
 
     private DropdownField _selectorDropdownField;
-    private TextField _collectionNameOrAssetId;
+    private static TextField _collectionNameOrAssetId;
 
     
     /**
@@ -247,7 +247,7 @@ public class AtomicMarketPanel : MonoBehaviour
 
     /// <summary>Called when ctrl + v is pressed in browser (webgl)</summary>
     /// <param name="pastedText">The pasted text.</param>
-    public void OnBrowserClipboardPaste(string pastedText)
+    public static void OnBrowserClipboardPaste(string pastedText)
     {
         if (string.IsNullOrEmpty(pastedText))
             return;
