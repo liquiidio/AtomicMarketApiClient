@@ -257,15 +257,5 @@ public class AtomicMarketExamplePanel : MonoBehaviour
         if (_collectionNameOrAssetId != null && _collectionNameOrAssetId.focusController.focusedElement == _collectionNameOrAssetId)
             _collectionNameOrAssetId.SetValueWithoutNotify(pastedText);
     }
-
-    /// <summary>
-    /// Called when ctrl + v is pressed in browser for the PluginSuiteMultiExample Scene (webgl)
-    /// </summary>
-    /// <param name="pastedText">The pasted text.</param>
-    public static void MultiExampleClipboardPaste(string pastedText)
-    {
-        if (_collectionNameOrAssetId != null && _collectionNameOrAssetId.focusController.focusedElement == _collectionNameOrAssetId)
-            _collectionNameOrAssetId.SetValueWithoutNotify(pastedText);
-    }
     #endregion
 }
