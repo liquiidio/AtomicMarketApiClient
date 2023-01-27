@@ -425,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 2353c6bae73901c4f9d0d7359b1f5d86, type: 2}
     - target: {fileID: 7790591814303076047, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
       propertyPath: m_Name
-      value: AtomicMarketPanel
+      value: AtomicMarketExamplePanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6a523d0a9ac8124387134e1608148b6, type: 3}
