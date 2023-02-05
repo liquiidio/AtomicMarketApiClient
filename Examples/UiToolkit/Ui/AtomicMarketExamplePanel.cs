@@ -136,7 +136,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 Clear();
                 _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
                 _infoLabel.text = "Type a sales Id to search";
-                _searchButton.text = "Search sale Id";
+                _searchButton.text = "Search Sale Id";
                 _collectionNameOrAssetId.value = "";
             }
             else if (_selectorDropdownField.value == "Auction ID")
@@ -145,7 +145,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 Clear();
                 _queryLabel.text = "Query various details about a specific Auction Id on Atomic Market.";
                 _infoLabel.text = "Type an auction Id to search";
-                _searchButton.text = "Search auction Id";
+                _searchButton.text = "Search Auction Id";
                 _collectionNameOrAssetId.value = "";
             }
             else if (_selectorDropdownField.value == "Asset ID")
@@ -154,7 +154,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 Clear();
                 _queryLabel.text = "Query various details about a specific Asset Id on Atomic Market.";
                 _infoLabel.text = "Type an asset Id to search";
-                _searchButton.text = "Search auction id";
+                _searchButton.text = "Search Asset id";
                 _collectionNameOrAssetId.value = "";
             }
         });
@@ -216,23 +216,6 @@ public class AtomicMarketExamplePanel : MonoBehaviour
         _templateIdLabel.text = auction.Data.Assets[0].Template.TemplateId;
     }
 
-    /// <summary>
-    /// Clear Method Clear the values after rebind
-    /// </summary>
-    private void Clear()
-    {
-        _collectionNameLabel.text = "";
-        _ownerLabel.text = "";
-        _nftNameLabel.text = "";
-        _idLabel.text = "";
-        _mintNumberLabel.text = "";
-        _backedTokenLabel.text = "";
-        _schemaNameLabel.text = "";
-        _templateIdLabel.text = "";
-        _priceLabel.text = "";
-        _sellerLabel.text = "";
-        _tradeOfferIdLabel.text = "";
-    }
     #endregion
 
     #region Others
@@ -333,6 +316,24 @@ public class AtomicMarketExamplePanel : MonoBehaviour
 
         if (_collectionNameOrAssetId != null && _collectionNameOrAssetId.focusController.focusedElement == _collectionNameOrAssetId)
             _collectionNameOrAssetId.SetValueWithoutNotify(pastedText);
+    }
+
+    /// <summary>
+    /// Clear Method Clear the values after rebind
+    /// </summary>
+    private void Clear()
+    {
+        _collectionNameLabel.text = "";
+        _ownerLabel.text = "";
+        _nftNameLabel.text = "";
+        _idLabel.text = "";
+        _mintNumberLabel.text = "";
+        _backedTokenLabel.text = "";
+        _schemaNameLabel.text = "";
+        _templateIdLabel.text = "";
+        _priceLabel.text = "";
+        _sellerLabel.text = "";
+        _tradeOfferIdLabel.text = "";
     }
     #endregion
 }
