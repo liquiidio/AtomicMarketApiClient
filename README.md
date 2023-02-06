@@ -60,7 +60,7 @@ Download the UnityPackage here <<-- (Hyper link this). Then in your Unity projec
     
 ---
 
-#### 4. Install via NuGet (for Standard .NET users only - No Unity3D)
+### 3. Install via NuGet (for Standard .NET users only - No Unity3D)
 
 #### .NET CLI
 
