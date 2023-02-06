@@ -100,6 +100,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
         BindButtons();
 
         Hide(_loadingMask);
+        Hide(_searchDetails);
     }
 
     #region Button Binding
@@ -132,7 +133,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
             _selectorDropdownField.value = _selectorDropdownField.value;
             if (_selectorDropdownField.value == "Sale ID")
             {
-                Show(_searchDetails);
+                Hide(_searchDetails);
                 Clear();
                 _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
                 _infoLabel.text = "Type a sales Id to search";
@@ -141,7 +142,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
             }
             else if (_selectorDropdownField.value == "Auction ID")
             {
-                Show(_searchDetails);
+                Hide(_searchDetails);
                 Clear();
                 _queryLabel.text = "Query various details about a specific Auction Id on Atomic Market.";
                 _infoLabel.text = "Type an auction Id to search";
@@ -150,7 +151,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
             }
             else if (_selectorDropdownField.value == "Asset ID")
             {
-                Show(_searchDetails);
+                Hide(_searchDetails);
                 Clear();
                 _queryLabel.text = "Query various details about a specific Asset Id on Atomic Market.";
                 _infoLabel.text = "Type an asset Id to search";
@@ -232,39 +233,36 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 switch (_selectorDropdownField.value)
                 {
                     case "Asset ID":
-                        Hide(_searchDetails);
                         Show(_loadingMask);
-
                         var assetDto = await _assetsApi.Asset(_collectionNameOrAssetId.value);
                         if (assetDto != null)
                         {
                             Rebind(assetDto);
+                            Hide(_searchDetails);
                             Hide(_loadingMask);
                         }
                         else Debug.Log("asset id not found");
                         break;
 
                     case "Sale ID":
-                        Hide(_searchDetails);
                         Show(_loadingMask);
-
                         var saleDto = await _salesApi.Sale(Convert.ToInt32(_collectionNameOrAssetId.value));
                         if (saleDto != null)
                         {
                             Rebind(saleDto);
+                            Hide(_searchDetails);
                             Hide(_loadingMask);
                         }
                         else Debug.Log("sales id not found");
                         break;
 
                     case "Auction ID":
-                        Hide(_searchDetails);
                         Show(_loadingMask);
-
                         var auctionDto = await _auctionsApi.Auction((Convert.ToInt32(_collectionNameOrAssetId.value)));
                         if (auctionDto != null)
                         {
                             Rebind(auctionDto);
+                            Hide(_searchDetails);
                             Hide(_loadingMask);
                         }
                         else Debug.Log("auction id not found");
@@ -274,6 +272,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
             catch (ApiException ex)
             {
                 AtomicMarketErrorPanel.ErrorText("Content Error", ex.Content);
+                Hide(_loadingMask);
                 Show(AtomicMarketErrorPanel.Root);
             }
         }
