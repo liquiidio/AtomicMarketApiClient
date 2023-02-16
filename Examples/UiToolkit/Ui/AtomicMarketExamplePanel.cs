@@ -109,11 +109,13 @@ public class AtomicMarketExamplePanel : MonoBehaviour
     {
         _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
         _infoLabel.text = "Type a sales Id to search";
+        _collectionNameOrAssetId.value = "Type a sale id to search";
         _searchButton.text = "Search sale Id";
 
         _collectionNameOrAssetId.RegisterCallback<ClickEvent>(evt =>
         { Clear();
           Show(_searchDetails);
+          _collectionNameOrAssetId.value = "";
         });
         _searchButton.clicked += SearchAsset;
 
@@ -138,7 +140,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
                 _infoLabel.text = "Type a sales Id to search";
                 _searchButton.text = "Search Sale Id";
-                _collectionNameOrAssetId.value = "";
+                _collectionNameOrAssetId.value = "Type a sale id to search";
             }
             else if (_selectorDropdownField.value == "Auction ID")
             {
@@ -147,7 +149,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 _queryLabel.text = "Query various details about a specific Auction Id on Atomic Market.";
                 _infoLabel.text = "Type an auction Id to search";
                 _searchButton.text = "Search Auction Id";
-                _collectionNameOrAssetId.value = "";
+                _collectionNameOrAssetId.value = "Type an auction id to search";
             }
             else if (_selectorDropdownField.value == "Asset ID")
             {
@@ -156,7 +158,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 _queryLabel.text = "Query various details about a specific Asset Id on Atomic Market.";
                 _infoLabel.text = "Type an asset Id to search";
                 _searchButton.text = "Search Asset id";
-                _collectionNameOrAssetId.value = "";
+                _collectionNameOrAssetId.value = "Type an asset id to search";
             }
         });
     }
