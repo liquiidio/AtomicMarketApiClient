@@ -108,11 +108,12 @@ public class AtomicMarketExamplePanel : MonoBehaviour
     private void BindButtons()
     {
         _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
-        _infoLabel.text = "Type a sales Id to search";
+        _infoLabel.text = "Type a sale Id to search";
         _collectionNameOrAssetId.value = "Type a sale id to search";
         _searchButton.text = "Search sale Id";
+        _collectionNameOrAssetId.label = "Sale id";
 
-        _collectionNameOrAssetId.RegisterCallback<ClickEvent>(evt =>
+       _collectionNameOrAssetId.RegisterCallback<ClickEvent>(evt =>
         { Clear();
           Show(_searchDetails);
           _collectionNameOrAssetId.value = "";
@@ -138,9 +139,10 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 Hide(_searchDetails);
                 Clear();
                 _queryLabel.text = "Query various details about a specific Sale Id on Atomic Market.";
-                _infoLabel.text = "Type a sales Id to search";
+                _infoLabel.text = "Type a sale Id to search";
                 _searchButton.text = "Search Sale Id";
                 _collectionNameOrAssetId.value = "Type a sale id to search";
+                _collectionNameOrAssetId.label = "Sale id";
             }
             else if (_selectorDropdownField.value == "Auction ID")
             {
@@ -150,6 +152,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 _infoLabel.text = "Type an auction Id to search";
                 _searchButton.text = "Search Auction Id";
                 _collectionNameOrAssetId.value = "Type an auction id to search";
+                _collectionNameOrAssetId.label = "Auction id";
             }
             else if (_selectorDropdownField.value == "Asset ID")
             {
@@ -159,6 +162,7 @@ public class AtomicMarketExamplePanel : MonoBehaviour
                 _infoLabel.text = "Type an asset Id to search";
                 _searchButton.text = "Search Asset id";
                 _collectionNameOrAssetId.value = "Type an asset id to search";
+                _collectionNameOrAssetId.label = "Asset id";
             }
         });
     }
