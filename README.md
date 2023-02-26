@@ -23,13 +23,15 @@
 This package can be included into your project by either:
 
  1. Installing the package via Unity's Package Manager (UPM) in the editor (recommended).
- 2. Importing the .unitypackage which you can download here.
+ 2. Importing the .unitypackage which you can download [here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest/download/atomicmarket.unitypackage). 
  3. Manually add the files in this repo.
  4. Installing it via NuGet.
 ---
 
 ### 1. Installing via Unity Package Manager (UPM).
+
 In your Unity project:
+
  1. Open the Package Manager Window/Tab
 
     ![image](https://user-images.githubusercontent.com/74650011/208429048-37e2277c-3e10-4794-97e7-3ec87f55f8c9.png)
@@ -43,7 +45,10 @@ In your Unity project:
 ---
 
 ### 2. Importing the Unity Package.
-Download the UnityPackage here <<-- (Hyper link this). Then in your Unity project:
+
+Download the [UnityPackage here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest/download/atomicmarket.unitypackage).
+
+Then in your Unity project:
 
  1. Open up the import a custom package window
     
@@ -61,9 +66,14 @@ Download the UnityPackage here <<-- (Hyper link this). Then in your Unity projec
 ---
 
 ### 3. Install manually.
-Download this project there here . Then in your Unity project:
 
- 1. Copy the sources from `AtomicMarketApiClient` into your `Assets` directory.
+Download this [project here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest).
+
+  * [zip](https://github.com/liquiidio/AtomicMarketApiClient-Private/archive/refs/tags/1.0.10.zip) 
+  * [tar.gz](https://github.com/liquiidio/AtomicMarketApiClient-Private/archive/refs/tags/1.0.10.tar.gz) 
+
+Then in your Unity project, copy the sources from `AtomicMarketApiClient` into your Unity `Assets` directory.
+
  
  ---
  
