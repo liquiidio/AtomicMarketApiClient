@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        dotnet-version: ['3.0', '3.1.x', '5.0.x', '6.0.x', '7.0.x']
+        dotnet-version: ['3.1.x', '7.0.103']
     name: Build and test
     steps:
       - name: Checkout
@@ -25,7 +25,8 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      - name: Install dependencies
+          include-prerelease: true
+      - name: Install dependenciesed
         run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
