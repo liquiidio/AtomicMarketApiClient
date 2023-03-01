@@ -7,8 +7,10 @@
 
 <div align="center">
 
-[![builds](https://github.com/liquiidio/AtomicAssetsApiClient-Private/actions/workflows/dotnet-build.yml/badge.svg)](https://github.com/liquiidio/AtomicAssetsApiClient-Private/actions/workflows/dotnet-build.yml)
-[![tests](https://github.com/liquiidio/AtomicAssetsApiClient-Private/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/liquiidio/AtomicAssetsApiClient-Private/actions/workflows/dotnet-test.yml)
+[![Builds](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml)
+[![Tests](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/test.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/test.yml)
+[![Documentation](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/docs.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/docs.yml)
+[![Deployment](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml)
  
 </div>
 
