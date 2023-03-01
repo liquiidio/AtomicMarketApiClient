@@ -1,9 +1,8 @@
-﻿using AtomicMarketApiClient.Core;
-using AtomicMarketApiClient.Transfers;
+﻿using AtomicMarketApiClient.Transfers;
 using FluentAssertions;
 using NUnit.Framework;
 
-namespace AtomicMarketApiClient.Test.Transfers
+namespace AtomicMarketApiClient.Core.Test.Transfers
 {
     [TestFixture]
     public class TransfersUriParameterBuilderTest

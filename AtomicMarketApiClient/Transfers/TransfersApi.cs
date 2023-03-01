@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Core;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.Transfers
 {
     public class TransfersApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal TransfersApi(string baseUrl) => _requestUriBase = baseUrl;
+        internal TransfersApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
 
         /// <summary>
         /// This function will return a list of all transfers for the current user
@@ -17,13 +20,9 @@ namespace AtomicMarketApiClient.Transfers
         /// <returns>
         /// A list of transfers
         /// </returns>
-        public TransfersDto Transfers()
+        public async Task<TransfersDto> Transfers()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(TransfersUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<TransfersDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<TransfersDto>(TransfersUri().OriginalString);
         }
 
         /// <summary>
@@ -34,13 +33,9 @@ namespace AtomicMarketApiClient.Transfers
         /// <returns>
         /// A TransfersDto object.
         /// </returns>
-        public TransfersDto Transfers(TransfersUriParameterBuilder transfersUriParameterBuilder)
+        public async Task<TransfersDto> Transfers(TransfersUriParameterBuilder transfersUriParameterBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(TransfersUri(transfersUriParameterBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<TransfersDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<TransfersDto>(TransfersUri(transfersUriParameterBuilder).OriginalString);
         }
 
         /// <summary>

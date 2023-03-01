@@ -1,4 +1,4 @@
-﻿namespace AtomicMarketApiClient.Core
+﻿namespace AtomicMarketApiClient
 {
     public enum SortStrategy
     {

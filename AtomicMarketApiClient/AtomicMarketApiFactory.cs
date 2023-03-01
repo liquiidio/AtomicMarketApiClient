@@ -20,42 +20,45 @@ namespace AtomicMarketApiClient
 
         public static AtomicMarketApiFactory Version1 => new AtomicMarketApiFactory(Version1BaseUrl);
 
-        public SalesApi SalesApi => new SalesApi(_baseUrl);
+        /**
+         * A shorthand for creating a new instance of the SalesApi class.
+         */
+        public SalesApi SalesApi => new SalesApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the AuctionsApi class.
          */
-        public AuctionsApi AuctionsApi => new AuctionsApi(_baseUrl);
+        public AuctionsApi AuctionsApi => new AuctionsApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the BuyOffersApi class.
          */
-        public BuyOffersApi BuyOffersApi => new BuyOffersApi(_baseUrl);
+        public BuyOffersApi BuyOffersApi => new BuyOffersApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the MarketPlacesApi class.
          */
-        public MarketPlacesApi MarketPlacesApi => new MarketPlacesApi(_baseUrl);
+        public MarketPlacesApi MarketPlacesApi => new MarketPlacesApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the OffersApi class.
          */
-        public OffersApi OffersApi => new OffersApi(_baseUrl);
+        public OffersApi OffersApi => new OffersApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the StatsApi class.
          */
-        public StatsApi StatsApi => new StatsApi(_baseUrl);
+        public StatsApi StatsApi => new StatsApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the ConfigApi class.
          */
-        public ConfigApi ConfigApi => new ConfigApi(_baseUrl);
+        public ConfigApi ConfigApi => new ConfigApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the AssetsApi class.
          */
-        public AssetsApi AssetsApi => new AssetsApi(_baseUrl);
+        public AssetsApi AssetsApi => new AssetsApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the TransfersApi class.
          */
-        public TransfersApi TransfersApi => new TransfersApi(_baseUrl);
+        public TransfersApi TransfersApi => new TransfersApi(_baseUrl, new HttpHandler());
         /**
          * A shorthand for creating a new instance of the PricingApi class.
          */
-        public PricingApi PricingApi => new PricingApi(_baseUrl);
+        public PricingApi PricingApi => new PricingApi(_baseUrl, new HttpHandler());
     }
 }

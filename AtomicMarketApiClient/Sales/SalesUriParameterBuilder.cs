@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using AtomicMarketApiClient.Core;
 
 namespace AtomicMarketApiClient.Sales
 {

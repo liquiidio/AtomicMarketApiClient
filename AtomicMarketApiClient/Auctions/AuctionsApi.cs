@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Core;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.Auctions
 {
     public class AuctionsApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal AuctionsApi(string baseUrl) => _requestUriBase = baseUrl;
+        internal AuctionsApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
 
         /// <summary>  
         /// It returns a list of auctions.
@@ -17,14 +20,11 @@ namespace AtomicMarketApiClient.Auctions
         /// <return>
         /// AuctionsDto
         /// </return> 
-        public AuctionsDto Auctions()
+        public async Task<AuctionsDto> Auctions()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AuctionsUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AuctionsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<AuctionsDto>(AuctionsUri().OriginalString);
         }
+
 
         /// <summary>
         /// It returns a list of auctions.
@@ -34,13 +34,9 @@ namespace AtomicMarketApiClient.Auctions
         /// <return>
         /// AuctionsDto
         /// </return>
-        public AuctionsDto Auctions(AuctionsUriParameterBuilder uriParametersBuilder)
+        public async Task<AuctionsDto> Auctions(AuctionsUriParameterBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AuctionsUri(uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AuctionsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<AuctionsDto>(AuctionsUri(uriParametersBuilder).OriginalString);
         }
 
         /// <summary>
@@ -50,13 +46,9 @@ namespace AtomicMarketApiClient.Auctions
         /// <returns>
         /// An AuctionDto object
         /// </returns>
-        public AuctionDto Auction(int id)
+        public async Task<AuctionDto> Auction(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AuctionUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<AuctionDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<AuctionDto>(AuctionUri(id).OriginalString);
         }
 
         /// <summary>
@@ -66,13 +58,9 @@ namespace AtomicMarketApiClient.Auctions
         /// <returns>
         /// A list of logs for the auction.
         /// </returns>
-        public LogsDto AuctionLogs(int id)
+        public async Task<LogsDto> AuctionLogs(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AuctionsLogsUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(AuctionsLogsUri(id).OriginalString);
         }
 
         /// <summary>
@@ -84,13 +72,9 @@ namespace AtomicMarketApiClient.Auctions
         /// <returns>
         /// A LogsDto object.
         /// </returns>
-        public LogsDto AuctionLogs(int id, AuctionsUriParameterBuilder auctionsUriParametersBuilder)
+        public async Task<LogsDto> AuctionLogs(int id, AuctionsUriParameterBuilder auctionsUriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(AuctionsLogsUri(id, auctionsUriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(AuctionsLogsUri(id, auctionsUriParametersBuilder).OriginalString);
         }
 
         /// <summary>

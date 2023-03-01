@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Net.Http;
-using AtomicMarketApiClient.Core;
+using System.Threading.Tasks;
 
 namespace AtomicMarketApiClient.BuyOffers
 {
     public class BuyOffersApi
     {
         private readonly string _requestUriBase;
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly IHttpHandler _httpHandler;
 
-        internal BuyOffersApi(string baseUrl) => _requestUriBase = baseUrl;
+        internal BuyOffersApi(string baseUrl, IHttpHandler httpHandler)
+        {
+            _requestUriBase = baseUrl;
+            _httpHandler = httpHandler;
+        }
 
         //* <summary>
         //* This function will return a list of buy offers for a given market
@@ -17,13 +20,9 @@ namespace AtomicMarketApiClient.BuyOffers
         //* <returns>
         //* A list of buy offers.
         //* </returns>
-        public BuyOffersDto BuyOffers()
+        public async Task<BuyOffersDto> BuyOffers()
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri()).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<BuyOffersDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<BuyOffersDto>(BuyOffersUri().OriginalString);
         }
 
         //* <summary>
@@ -36,13 +35,9 @@ namespace AtomicMarketApiClient.BuyOffers
         //* <returns>
         //* A BuyOffersDto object.
         //* </returns>
-        public BuyOffersDto BuyOffers(BuyOffersUriParameterBuilder uriParametersBuilder)
+        public async Task<BuyOffersDto> BuyOffers(BuyOffersUriParameterBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri((IUriParameterBuilder) uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<BuyOffersDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<BuyOffersDto>(BuyOffersUri((IUriParameterBuilder)uriParametersBuilder).OriginalString);
         }
 
         //* <summary>
@@ -52,13 +47,9 @@ namespace AtomicMarketApiClient.BuyOffers
         //* <returns>
         //* A BuyOfferDto object
         //* </returns>
-        public BuyOfferDto BuyOffer(int id)
+        public async Task<BuyOfferDto> BuyOffer(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<BuyOfferDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<BuyOfferDto>(BuyOffersUri(id).OriginalString);
         }
 
         //* <summary>
@@ -68,13 +59,9 @@ namespace AtomicMarketApiClient.BuyOffers
         //* <returns>
         //* A list of logs for the buy offer with the given id.
         //* </returns>
-        public LogsDto BuyOffersLogs(int id)
+        public async Task<LogsDto> BuyOffersLogs(int id)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersLogsUri(id)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(BuyOffersLogsUri(id).OriginalString);
         }
 
         //* <summary>
@@ -86,13 +73,9 @@ namespace AtomicMarketApiClient.BuyOffers
         //* <returns>
         //* A list of logs for the buy offer.
         //* </returns>
-        public LogsDto BuyOffersLogs(int id, BuyOffersUriParameterBuilder uriParametersBuilder)
+        public async Task<LogsDto> BuyOffersLogs(int id, BuyOffersUriParameterBuilder uriParametersBuilder)
         {
-            var apiRequest = HttpRequestBuilder.GetRequest(BuyOffersLogsUri(id, uriParametersBuilder)).Build();
-            var apiResponse = Client.SendAsync(apiRequest).Result;
-            if (apiResponse.IsSuccessStatusCode)
-                return apiResponse.ContentAs<LogsDto>();
-            throw new ArgumentException($"An exception has occurred. Status Code: {apiResponse.StatusCode} Error: {apiResponse.Content.ReadAsStringAsync().Result}");
+            return await _httpHandler.GetJsonAsync<LogsDto>(BuyOffersLogsUri(id, uriParametersBuilder).OriginalString);
         }
 
         //* <summary>

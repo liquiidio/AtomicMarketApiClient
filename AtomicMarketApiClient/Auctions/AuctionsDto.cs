@@ -42,7 +42,7 @@ namespace AtomicMarketApiClient.Auctions
             //! Contains information about the Price 
             public PriceDto Price { get; set; }
 
-            [JsonProperty("price")]
+            [JsonProperty("assets")]
             //! The Assets 
             public AssetDto[] Assets { get; set; }
 
@@ -58,7 +58,7 @@ namespace AtomicMarketApiClient.Auctions
             //! The Name of the Taker Marketplace 
             public string TakerMarketplace { get; set; }
 
-            [JsonProperty("taker_marketplace")]
+            [JsonProperty("collection")]
             //! The Collection this belongs to 
             public CollectionDto Collection { get; set; }
 

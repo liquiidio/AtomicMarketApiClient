@@ -10,8 +10,8 @@ namespace AtomicMarketApiClient.Test.Config
         [Test]
         public void Config()
         {
-            AtomicMarketApiFactory.Version1.ConfigApi.Config().Should().BeOfType<ConfigDto>();
-            AtomicMarketApiFactory.Version1.ConfigApi.Config().Data.Should().BeOfType<ConfigDto.DataDto>();
+            AtomicMarketApiFactory.Version1.ConfigApi.Config().GetAwaiter().GetResult().Should().BeOfType<ConfigDto>();
+            AtomicMarketApiFactory.Version1.ConfigApi.Config().GetAwaiter().GetResult().Data.Should().BeOfType<ConfigDto.DataDto>();
         }
     }
 }
