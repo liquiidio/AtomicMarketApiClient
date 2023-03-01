@@ -61,4 +61,3 @@ jobs:
                 git add .
                 git commit -m "updating generated files"
                 git push
-    
