@@ -5,87 +5,87 @@ namespace AtomicMarketApiClient.Auctions
 {
     public class AuctionsUriParameterBuilder : IUriParameterBuilder
     {
-/* A private variable that is used to store the value of the state parameter. */
+        //! A private variable that is used to store the value of the state parameter. 
         private string _state;
-/* A nullable integer specfying max assets per listing. */
+        //! A nullable integer specfying max assets per listing. 
         private int? _maxAssets;
-/* A nullable integer specfying min assets per listing */
+        //! A nullable integer specfying min assets per listing 
         private int? _minAssets;
-/* A nullable boolean specfying which sellerContracts to show. */
+        //! A nullable boolean specfying which sellerContracts to show. 
         private bool? _showSellerContracts;
-/* A nullable boolean specfying accounts with contracts. */
+        //! A nullable boolean specfying accounts with contracts. 
         private bool? _contractWhitelist;
-/* A nullable boolean specfying listing from sellers. */
+        //! A nullable boolean specfying listing from sellers. 
         private bool? _sellerBlacklist;
-/* A nullable integer specifying the assetId. */ 
+        //! A nullable integer specifying the assetId.  
         private int? _assetId;
-/* A private variable that is used to store the value of the maketplace parameter. */
+        //! A private variable that is used to store the value of the maketplace parameter. 
         private string _marketplace;
-/* A private variable that is used to store the value of the makerMarketplace parameter. */
+        //! A private variable that is used to store the value of the makerMarketplace parameter. 
         private string _makerMarketplace;
-/* A private variable that is used to store the value of the takerMarketplace parameter. */
+        //! A private variable that is used to store the value of the takerMarketplace parameter. 
         private string _takerMarketplace;
-/* A private variable that is used to store the value of the symbol parameter. */
+        //! A private variable that is used to store the value of the symbol parameter. 
         private string _symbol;
-/* A private variable that is used to store the value of the seller parameter. */
+        //! A private variable that is used to store the value of the seller parameter. 
         private string _seller;
-/* A private variable that is used to store the value of the buyer parameter. */
+        //! A private variable that is used to store the value of the buyer parameter. 
         private string _buyer;
-/* A nullable integer specifying the min price. */ 
+        //! A nullable integer specifying the min price.  
         private int? _minPrice;
-/* A nullable integer specifying the max price. */ 
+        //! A nullable integer specifying the max price.  
         private int? _maxPrice;
-/* A nullable integer specifying the minTemplateMint. */ 
+        //! A nullable integer specifying the minTemplateMint.  
         private int? _minTemplateMint;
-/* A nullable integer specifying the maxTemplateMint. */ 
+        //! A nullable integer specifying the maxTemplateMint.  
         private int? _maxTemplateMint;
-/* A private variable that is used to store the value of the owner parameter. */
+        //! A private variable that is used to store the value of the owner parameter. 
         private string _owner;
-/* A nullable boolean specfying burned assets. */
+        //! A nullable boolean specfying burned assets. 
         private bool? _burned;
-/* A private variable that is used to store the value of the collectionName parameter. */
+        //! A private variable that is used to store the value of the collectionName parameter. 
         private string _collectionName;
-/* A private variable that is used to store the value of the schemaName parameter. */
+        //! A private variable that is used to store the value of the schemaName parameter. 
         private string _schemaName;
-/* A private variable that is used to store the value of the templateId parameter. */
+        //! A private variable that is used to store the value of the templateId parameter. 
         private string _templateId;
-/* A nullable boolean specfying transferable assets. */
+        //! A nullable boolean specfying transferable assets. 
         private bool? _isTransferable;
-/* A nullable boolean specfying burnable assets. */
+        //! A nullable boolean specfying burnable assets. 
         private bool? _isBurnable;
-/* A private variable that is used to store the value of the match parameter. */
+        //! A private variable that is used to store the value of the match parameter. 
         private string _match;
-/* A private variable that is used to store the value of the collectionBlacklist parameter. */
+        //! A private variable that is used to store the value of the collectionBlacklist parameter. 
         private string _collectionBlacklist;
-/* A private variable that is used to store the value of the collectionWhitelist parameter. */
+        //! A private variable that is used to store the value of the collectionWhitelist parameter. 
         private string _collectionWhitelist;
-/* A private variable that is used to store the value of the ids parameter. */
+        //! A private variable that is used to store the value of the ids parameter. 
         private string _ids;
-/* A private variable that is used to store the value of the lowerBound parameter. */
+        //! A private variable that is used to store the value of the lowerBound parameter. 
         private string _lowerBound;
-/* A private variable that is used to store the value of the upperBound parameter. */
+        //! A private variable that is used to store the value of the upperBound parameter. 
         private string _upperBound;
-/* A nullable integer specifying the previous timestamp. */ 
+        //! A nullable integer specifying the previous timestamp.  
         private int? _before;
-/* A nullable integer specifying the next timestamp. */ 
+        //! A nullable integer specifying the next timestamp.  
         private int? _after;
-/* A nullable integer specifying the page. */ 
+        //! A nullable integer specifying the page.  
         private int? _page;
-/* A nullable integer specifying the limit of returned values. */
+        //! A nullable integer specifying the limit of returned values. 
         private int? _limit;
-/* A nullable enum specifying the sortStrategy. */
+        //! A nullable enum specifying the sortStrategy. 
         private SortStrategy? _sortStrategy;
-/* Declaring a private variable called _sort. */
+        //! Declaring a private variable called _sort. 
         private string _sort;
 
 
-/// <summary>
-///  `WithState` takes a list of `State`s and converts them to a comma separated string of integers
-/// </summary>
-/// <param name="state"> Filters by auction state.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        ///  `WithState` takes a list of `State`s and converts them to a comma separated string of integers
+        /// </summary>
+        /// <param name="state"> Filters by auction state.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithState(params State[] states)
         {
             _state = string.Join(",", Array.ConvertAll(states, value => (int) value));
@@ -93,13 +93,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMaxAssets` sets the `_maxAssets` variable 
-/// </summary>
-/// <param name="maxAssets">Max assets per listing returns.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMaxAssets` sets the `_maxAssets` variable 
+        /// </summary>
+        /// <param name="maxAssets">Max assets per listing returns.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMaxAssets(int maxAssets)
         {
             _maxAssets = maxAssets;
@@ -107,13 +107,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMinAssets` sets the `_minAssets` variable 
-/// </summary>
-/// <param name="minAssets">Min assets per listing returns.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMinAssets` sets the `_minAssets` variable 
+        /// </summary>
+        /// <param name="minAssets">Min assets per listing returns.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMinAssets(int minAssets)
         {
             _minAssets = minAssets;
@@ -121,13 +121,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithShowSellerContracts` sets the `_showSellerContracts` field to the value of the `showSellerContracts` parameter
-/// </summary>
-/// <param name="showSellerContracts">If false,no seller contracts are shown except if they are in contract whitelist.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithShowSellerContracts` sets the `_showSellerContracts` field to the value of the `showSellerContracts` parameter
+        /// </summary>
+        /// <param name="showSellerContracts">If false,no seller contracts are shown except if they are in contract whitelist.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithShowSellerContracts(bool showSellerContracts)
         {
             _showSellerContracts = showSellerContracts;
@@ -135,13 +135,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithContractWhitelist` sets the `_contractWhitelist` field to the value of the `contractWhitelist` parameter
-/// </summary>
-/// <param name="contractWhitelist">Shows accounts even if they are contracts.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithContractWhitelist` sets the `_contractWhitelist` field to the value of the `contractWhitelist` parameter
+        /// </summary>
+        /// <param name="contractWhitelist">Shows accounts even if they are contracts.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithContractWhitelist(bool contractWhitelist)
         {
             _contractWhitelist = contractWhitelist;
@@ -149,13 +149,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithSellerBlacklist` sets the `_sellerBlacklist` field to the value of the `sellerBlacklist` parameter
-/// </summary>
-/// <param name="sellerBlacklist">Doesnot show listing from sellers.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithSellerBlacklist` sets the `_sellerBlacklist` field to the value of the `sellerBlacklist` parameter
+        /// </summary>
+        /// <param name="sellerBlacklist">Doesnot show listing from sellers.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithSellerBlacklist(bool sellerBlacklist)
         {
             _sellerBlacklist = sellerBlacklist;
@@ -163,13 +163,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithAssetId` sets the `_assetId` variable to the value of the `asset_id` parameter
-/// </summary>
-/// <param name="assetId">Shows the asset id in the offer.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithAssetId` sets the `_assetId` variable to the value of the `asset_id` parameter
+        /// </summary>
+        /// <param name="assetId">Shows the asset id in the offer.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithAssetId(int assetId)
         {
             _assetId = assetId;
@@ -177,13 +177,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMarketplace` sets the `marketplace` parameter
-/// </summary>
-/// <param name="marketplace">It filters by all sales where a certain marketplace is either taker or maker marketplace.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMarketplace` sets the `marketplace` parameter
+        /// </summary>
+        /// <param name="marketplace">It filters by all sales where a certain marketplace is either taker or maker marketplace.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMarketplace(string marketplace)
         {
             _marketplace = marketplace;
@@ -191,13 +191,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMakerMarketplace` sets the `makerMarketplace` parameter
-/// </summary>
-/// <param name="makerMarketplace">separate multiple with ",".</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMakerMarketplace` sets the `makerMarketplace` parameter
+        /// </summary>
+        /// <param name="makerMarketplace">separate multiple with ",".</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMakerMarketplace(string makerMarketplace)
         {
             _makerMarketplace = makerMarketplace;
@@ -205,13 +205,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithTakerMarketplace` sets the `takerMarketplace` parameter
-/// </summary>
-/// <param name="takerMarketplace">separate multiple with ",".</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithTakerMarketplace` sets the `takerMarketplace` parameter
+        /// </summary>
+        /// <param name="takerMarketplace">separate multiple with ",".</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithTakerMarketplace(string takerMarketplace)
         {
             _takerMarketplace = takerMarketplace;
@@ -219,13 +219,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithSymbol` sets the `symbol` parameter
-/// </summary>
-/// <param name="symbol">Filters by symbol.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithSymbol` sets the `symbol` parameter
+        /// </summary>
+        /// <param name="symbol">Filters by symbol.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithSymbol(string symbol)
         {
             _symbol = symbol;
@@ -233,13 +233,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithSeller` sets the `seller` parameter
-/// </summary>
-/// <param name="seller">Filter by seller.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithSeller` sets the `seller` parameter
+        /// </summary>
+        /// <param name="seller">Filter by seller.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithSeller(string seller)
         {
             _seller = seller;
@@ -247,13 +247,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithBuyer` sets the `buyer` parameter
-/// </summary>
-/// <param name="buyer">Filter by buyer.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithBuyer` sets the `buyer` parameter
+        /// </summary>
+        /// <param name="buyer">Filter by buyer.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithBuyer(string buyer)
         {
             _buyer = buyer;
@@ -261,13 +261,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMinPrice` sets the `_minPrice` variable to the value of the `minPrice` parameter
-/// </summary>
-/// <param name="minPrice">The lower price limit.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMinPrice` sets the `_minPrice` variable to the value of the `minPrice` parameter
+        /// </summary>
+        /// <param name="minPrice">The lower price limit.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMinPrice(int minPrice)
         {
             _minPrice = minPrice;
@@ -275,13 +275,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMaxPrice` sets the `_maxPrice` variable to the value of the `maxPrice` parameter
-/// </summary>
-/// <param name="maxPrice">The upper price limit.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMaxPrice` sets the `_maxPrice` variable to the value of the `maxPrice` parameter
+        /// </summary>
+        /// <param name="maxPrice">The upper price limit.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMaxPrice(int maxPrice)
         {
             _maxPrice = maxPrice;
@@ -289,13 +289,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMinTemplateMint` sets the `_minTemplateMint` variable to the value of the `minTemplateMint` parameter
-/// </summary>
-/// <param name="minTemplateMint">Min template mint.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMinTemplateMint` sets the `_minTemplateMint` variable to the value of the `minTemplateMint` parameter
+        /// </summary>
+        /// <param name="minTemplateMint">Min template mint.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMinTemplateMint(int minTemplateMint)
         {
             _minTemplateMint = minTemplateMint;
@@ -303,13 +303,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMaxTemplateMint` sets the `_maxTemplateMint` variable to the value of the `maxTemplateMint` parameter
-/// </summary>
-/// <param name="maxTemplateMint">Max template mint.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMaxTemplateMint` sets the `_maxTemplateMint` variable to the value of the `maxTemplateMint` parameter
+        /// </summary>
+        /// <param name="maxTemplateMint">Max template mint.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMaxTemplateMint(int maxTemplateMint)
         {
             _maxTemplateMint = maxTemplateMint;
@@ -317,14 +317,14 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithOwner` sets the `owner` parameter
-/// </summary>
-/// <param name="owner">The owner parameter is used to filter the results. The owner parameter is a
-/// string that is matched against the account name.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithOwner` sets the `owner` parameter
+        /// </summary>
+        /// <param name="owner">The owner parameter is used to filter the results. The owner parameter is a
+        /// string that is matched against the account name.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithOwner(string owner)
         {
             _owner = owner;
@@ -332,13 +332,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithBurned` sets the `_burned` field to the value of the `burned` parameter
-/// </summary>
-/// <param name="burned">It filters for burned assets.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithBurned` sets the `_burned` field to the value of the `burned` parameter
+        /// </summary>
+        /// <param name="burned">It filters for burned assets.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithBurned(bool burned)
         {
             _burned = burned;
@@ -346,14 +346,14 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithCollectionName` is a function that takes a string as a parameter and returns an
-/// `AuctionsUriParameterBuilder` object
-/// </summary>
-/// <param name="collectionName">The name of the collection you want to query.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithCollectionName` is a function that takes a string as a parameter and returns an
+        /// `AuctionsUriParameterBuilder` object
+        /// </summary>
+        /// <param name="collectionName">The name of the collection you want to query.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithCollectionName(string collectionName)
         {
             _collectionName = collectionName;
@@ -361,13 +361,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// > This function sets the schema name for the query
-/// </summary>
-/// <param name="schemaName">The name of the schema to use.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// This function sets the schema name for the query
+        /// </summary>
+        /// <param name="schemaName">The name of the schema to use.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithSchemaName(string schemaName)
         {
             _schemaName = schemaName;
@@ -375,13 +375,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// It sets the value of the templateId variable.
-/// </summary>
-/// <param name="templateId">Results based on only transfers which cointain assets of template.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// It sets the value of the templateId variable.
+        /// </summary>
+        /// <param name="templateId">Results based on only transfers which cointain assets of template.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithTemplateId(string templateId)
         {
             _templateId = templateId;
@@ -389,13 +389,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
-/// </summary>
-/// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithIsTransferable` sets the `_isTransferable` field to the value of the `isTransferable` parameter
+        /// </summary>
+        /// <param name="isTransferable">The isTransferable parameter filters for transferable assets.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithIsTransferable(bool isTransferable)
         {
             _isTransferable = isTransferable;
@@ -403,13 +403,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithIsBurnable` sets the `_isBurnable` field to the value of the `isBurnable` parameter
-/// </summary>
-/// <param name="isBurnable">Filters for burnable assets.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithIsBurnable` sets the `_isBurnable` field to the value of the `isBurnable` parameter
+        /// </summary>
+        /// <param name="isBurnable">Filters for burnable assets.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithIsBurnable(bool isBurnable)
         {
             _isBurnable = isBurnable;
@@ -417,13 +417,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithMatch` sets the `match` parameter
-/// </summary>
-/// <param name="match"> Search for input in asset name on template data.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithMatch` sets the `match` parameter
+        /// </summary>
+        /// <param name="match"> Search for input in asset name on template data.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithMatch(string match)
         {
             _match = match;
@@ -431,14 +431,14 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
-/// `AuctionsUriParameterBuilder` object
-/// </summary>
-/// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithCollectionBlacklist` is a function that takes an array of strings and returns an
+        /// `AuctionsUriParameterBuilder` object
+        /// </summary>
+        /// <param name="collectionBlacklist">A list of collections to exclude from the results.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithCollectionBlacklist(string[] collectionBlacklist)
         {
             _collectionBlacklist = string.Join(",", collectionBlacklist);
@@ -446,14 +446,14 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithCollectionWhitelist` is a function that takes an array of strings and returns an
-/// `AuctionsUriParameterBuilder` object
-/// </summary>
-/// <param name="collectionWhitelist">A list of collections to include in the response.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithCollectionWhitelist` is a function that takes an array of strings and returns an
+        /// `AuctionsUriParameterBuilder` object
+        /// </summary>
+        /// <param name="collectionWhitelist">A list of collections to include in the response.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithCollectionWhitelist(string[] collectionWhitelist)
         {
             _collectionWhitelist = string.Join(",", collectionWhitelist);
@@ -461,13 +461,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// > This function takes an array of strings and joins them together with a comma
-/// </summary>
-/// <param name="ids">A comma-separated list of account IDs.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// This function takes an array of strings and joins them together with a comma
+        /// </summary>
+        /// <param name="ids">A comma-separated list of account IDs.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithIds(string[] ids)
         {
             _ids = string.Join(",", ids);
@@ -475,13 +475,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithLowerBound` sets the lower bound of the `account_ids` parameter
-/// </summary>
-/// <param name="lowerBound">The lower bound of the primary key</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithLowerBound` sets the lower bound of the `account_ids` parameter
+        /// </summary>
+        /// <param name="lowerBound">The lower bound of the primary key</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithLowerBound(string lowerBound)
         {
             _lowerBound = lowerBound;
@@ -489,13 +489,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithUpperBound` sets the upper bound of the range of accounts to be returned
-/// </summary>
-/// <param name="upperBound">The upper bound of the primary key.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithUpperBound` sets the upper bound of the range of accounts to be returned
+        /// </summary>
+        /// <param name="upperBound">The upper bound of the primary key.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithUpperBound(string upperBound)
         {
             _upperBound = upperBound;
@@ -503,13 +503,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithBefore` sets the `_before` variable to the value of the `before` parameter
-/// </summary>
-/// <param name="before">The previous values of the results to return.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithBefore` sets the `_before` variable to the value of the `before` parameter
+        /// </summary>
+        /// <param name="before">The previous values of the results to return.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithBefore(int before)
         {
             _before = before;
@@ -517,13 +517,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithAfter` sets the `_after` variable to the value of the `after` parameter
-/// </summary>
-/// <param name="after">The later values of the results to return.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithAfter` sets the `_after` variable to the value of the `after` parameter
+        /// </summary>
+        /// <param name="after">The later values of the results to return.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithAfter(int after)
         {
             _after = after;
@@ -531,13 +531,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithPage` sets the `_page` variable to the value of the `page` parameter
-/// </summary>
-/// <param name="page">The page number of the results to return.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithPage` sets the `_page` variable to the value of the `page` parameter
+        /// </summary>
+        /// <param name="page">The page number of the results to return.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithPage(int page)
         {
             _page = page;
@@ -545,13 +545,13 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// `WithLimit` sets the `_limit` variable to the value of the `limit` parameter
-/// </summary>
-/// <param name="limit">The number of results to return.</param>
-/// <returns>
-/// The AuctionsUriParameterBuilder object.
-/// </returns>
+        /// <summary>
+        /// `WithLimit` sets the `_limit` variable to the value of the `limit` parameter
+        /// </summary>
+        /// <param name="limit">The number of results to return.</param>
+        /// <returns>
+        /// The AuctionsUriParameterBuilder object.
+        /// </returns>
         public AuctionsUriParameterBuilder WithLimit(int limit)
         {
             _limit = limit;
@@ -559,27 +559,26 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// > This function sets the sort strategy for the query
-/// </summary>
-/// <param name="SortStrategy"></param>
-/// <returns>
-/// The builder object itself.
-/// </returns>
+        /// <summary>
+        /// This function sets the sort strategy for the query
+        /// </summary>
+        /// <param name="SortStrategy"></param>
+        /// <returns>
+        /// The builder object itself.
+        /// </returns>
         public AuctionsUriParameterBuilder WithOrder(SortStrategy sorting)
         {
             _sortStrategy = sorting;
             return this;
         }
 
-/// <summary>
-/// It sets the sort parameter to the value passed in.
-/// </summary>
-/// <param name="sort">The sort order of the results.</param>       
-/// <return>
-/// The AuctionsUriParameterBuilder.object     
-/// </return>      
-        
+        /// <summary>
+        /// It sets the sort parameter to the value passed in.
+        /// </summary>
+        /// <param name="sort">The sort order of the results.</param>       
+        /// <return>
+        /// The AuctionsUriParameterBuilder.object     
+        /// </return>      
         public AuctionsUriParameterBuilder WithSort(string sort)
         {
             _sort = sort;
@@ -587,12 +586,12 @@ namespace AtomicMarketApiClient.Auctions
         }
 
 
-/// <summary>
-/// It builds a query string based on the parameters that have been set
-/// </summary>
-/// <returns>
-/// A string that contains the parameters for the query.
-/// </returns>
+        /// <summary>
+        /// It builds a query string based on the parameters that have been set
+        /// </summary>
+        /// <returns>
+        /// A string that contains the parameters for the query.
+        /// </returns>
         public string Build()
         {
             var parameterString = new StringBuilder("?");

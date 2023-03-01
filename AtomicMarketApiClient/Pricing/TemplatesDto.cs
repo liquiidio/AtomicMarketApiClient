@@ -5,12 +5,15 @@ namespace AtomicMarketApiClient.Pricing
     public class TemplatesDto
     {
         [JsonProperty("success")]
+        //! Whether the Request was Successfull or not 
         public bool Success { get; set; }
 
         [JsonProperty("data")]
+        //! The Data returned from the API 
         public DataDto[] Data { get; set; }
 
         [JsonProperty("query_time")]
+        //! The time this Query took 
         public long QueryTime { get; set; }
 
         public class DataDto
@@ -19,6 +22,7 @@ namespace AtomicMarketApiClient.Pricing
             public string SaleId { get; set; }
 
             [JsonProperty("assets_contract")]
+            //! The Asset Smart Contract 
             public string AssetsContract { get; set; }
 
             [JsonProperty("collection_name")]

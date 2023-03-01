@@ -14,13 +14,13 @@ namespace AtomicMarketApiClient.Config
             _httpHandler = httpHandler;
         }
 
-/// <summary>
-/// > This function will return a `ConfigDto` object that contains the configuration information for the
-/// current user
-/// </summary>
-/// <returns>
-/// A ConfigDto object
-/// </returns>
+        /// <summary>
+        /// This function will return a `ConfigDto` object that contains the configuration information for the
+        /// current user
+        /// </summary>
+        /// <returns>
+        /// A ConfigDto object
+        /// </returns>
         public async Task<ConfigDto> Config()
         {
             return await _httpHandler.GetJsonAsync<ConfigDto>(ConfigUri().OriginalString);

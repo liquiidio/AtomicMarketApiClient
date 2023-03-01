@@ -14,31 +14,38 @@ namespace AtomicMarketApiClient.MarketPlaces
             _httpHandler = httpHandler;
         }
 
-/// <summary>
-/// > This function will return a list of marketplaces that are available to the user
-/// </summary>
-/// <returns>
-/// A list of marketplaces.
-/// </returns>
+        /// <summary>
+        /// This function will return a list of marketplaces that are available to the user
+        /// </summary>
+        /// <returns>
+        /// A list of marketplaces.
+        /// </returns>
         public async Task<MarketplacesDto> Marketplaces()
         {
             return await _httpHandler.GetJsonAsync<MarketplacesDto>(MarketplacesUri().OriginalString);
         }
 
-/// <summary>
-/// > This function will return a `MarketplaceDto` object from the API
-/// </summary>
-/// <param name="name">The name of the marketplace you want to retrieve.</param>
-/// <returns>
-/// A MarketplaceDto object
-/// </returns>
+        /// <summary>
+        /// This function will return a `MarketplaceDto` object from the API
+        /// </summary>
+        /// <param name="name">The name of the marketplace you want to retrieve.</param>
+        /// <returns>
+        /// A MarketplaceDto object
+        /// </returns>
         public async Task<MarketplaceDto> Marketplace(string name)
         {
             return await _httpHandler.GetJsonAsync<MarketplaceDto>(MarketplaceUri(name).OriginalString);
         }
 
 
+        /// <summary>
+        /// It returns a Uri object that represents the URL for the marketplaces endpoint
+        /// </summary>
         private Uri MarketplacesUri() => new Uri($"{_requestUriBase}/marketplaces");
+        /// <summary>
+        /// It takes a string and returns a URI
+        /// </summary>
+        /// <param name="name">The name of the marketplace you want to retrieve.</param>
         private Uri MarketplaceUri(string name) => new Uri($"{_requestUriBase}/marketplaces/{name}");
     }
 }
