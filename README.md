@@ -7,10 +7,10 @@
 
 <div align="center">
 
-[![Builds](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml)
-[![Tests](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/test.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/test.yml)
-[![Documentation](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/docs.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/docs.yml)
-[![Deployment](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml)
+[![Builds](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/build.yml)
+[![Tests](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/test.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/test.yml)
+[![Documentation](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/docs.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/docs.yml)
+[![Deployment](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/deploy.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/deploy.yml)
  
 </div>
 
@@ -25,7 +25,7 @@
 This package can be included into your project by either:
 
  1. Installing the package via Unity's Package Manager (UPM) in the editor (recommended).
- 2. Importing the .unitypackage which you can download [here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest/download/atomicmarket.unitypackage). 
+ 2. Importing the .unitypackage which you can download [here](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest/download/atomicmarket.unitypackage). 
  3. Manually add the files in this repo.
  4. Installing it via NuGet.
 ---
@@ -42,13 +42,13 @@ In your Unity project:
 
     ![image](https://user-images.githubusercontent.com/74650011/208429298-76fe1101-95f3-4ab0-bbd5-f0a32a1cc652.png)
 
- 3. Enter URL:  `https://github.com/liquiidio/AtomicMarketApiClient-Private.git#upm`
+ 3. Enter URL:  `https://github.com/liquiidio/AtomicMarketApiClient.git#upm`
    
 ---
 
 ### 2. Importing the Unity Package.
 
-Download the [UnityPackage here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest/download/atomicmarket.unitypackage).
+Download the [UnityPackage here](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest/download/atomicmarket.unitypackage).
 
 Then in your Unity project:
 
@@ -69,10 +69,7 @@ Then in your Unity project:
 
 ### 3. Install manually.
 
-Download this [project here](https://github.com/liquiidio/AtomicMarketApiClient-Private/releases/latest).
-
-  * [zip](https://github.com/liquiidio/AtomicMarketApiClient-Private/archive/refs/tags/1.0.10.zip) 
-  * [tar.gz](https://github.com/liquiidio/AtomicMarketApiClient-Private/archive/refs/tags/1.0.10.tar.gz) 
+Download [the latest Release](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest).
 
 Then in your Unity project, copy the sources from `AtomicMarketApiClient` into your Unity `Assets` directory.
 
@@ -83,11 +80,11 @@ Then in your Unity project, copy the sources from `AtomicMarketApiClient` into y
 
 #### .NET CLI
 
-`> dotnet add package Liquiid.io.AtomicMarket --version 1.0.6`
+`> dotnet add package Liquiid.io.AtomicMarket`
 
 #### Package Manager
 
-`PM> Install-Package Liquiid.io.AtomicMarket -Version 1.0.6`
+`PM> Install-Package Liquiid.io.AtomicMarket`
 
 ---
 
