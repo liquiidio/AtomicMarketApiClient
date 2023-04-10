@@ -60,4 +60,4 @@ jobs:
                 git config --global --add safe.directory '*' 
                 git add .
                 git commit -m "updating generated files"
-                git push
+                git push --no-verify
