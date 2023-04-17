@@ -1,86 +1,170 @@
 <div align="center">
-
-[![Build](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/build.yml)
-[![Deploy](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient-Private/actions/workflows/deploy.yml)
-       
+ <img src="https://avatars.githubusercontent.com/u/82725791?s=200&v=4" align="center"
+     alt="Liquiid logo" width="280" height="300">
 </div>
+
+---
 
 # AtomicMarketApiClient
 
 .NET and Unity3D-compatible (Desktop, Mobile, WebGL) ApiClient for AtomicMarket
 
- ## Usage
+# Installation
 
- The entry point to the APIs is in the AtomicMarketApiFactory. You can initialise any supported API from there.
- You can then call any endpoint from the initialised API.
- Each endpoint has its own set of parameters that you may build up and pass in to the relevant function.
+**_Requires Unity 2019.1+ with .NET 4.x+ Runtime_**
 
- ## Examples
- ### Getting assets available for trading on the exchange
- ```csharp
+This package can be included into your project by either:
 
-async Task GettingAllTheAssets()
-{
-    // Initialize the v1 assets API
-    var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
+ 1. Installing the package via Unity's Package Manager (UPM) in the editor (recommended).
+ 2. Importing the .unitypackage which you can download [here](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest/download/atomicmarket.unitypackage). 
+ 3. Manually add the files in this repo.
+ 4. Installing it via NuGet.
+---
 
-    //Getting all the assets that are available for trading on the exchange.
-    var assets = await assetsApi.Assets();
+### 1. Installing via Unity Package Manager (UPM).
 
-    // Print their IDs on the console.
-    assets.Data.ToList().ForEach(a => Console.WriteLine(a.AssetId));
-}
+In your Unity project:
 
+ 1. Open the Package Manager Window/Tab
+
+    ![image](https://user-images.githubusercontent.com/74650011/208429048-37e2277c-3e10-4794-97e7-3ec87f55f8c9.png)
+
+ 2. Click on + icon and then click on "Add Package From Git URL"
+
+    ![image](https://user-images.githubusercontent.com/74650011/208429298-76fe1101-95f3-4ab0-bbd5-f0a32a1cc652.png)
+
+ 3. Enter URL:  `https://github.com/liquiidio/AtomicMarketApiClient.git#upm`
+   
+---
+
+### 2. Importing the Unity Package.
+
+Download the [UnityPackage here](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest/download/atomicmarket.unitypackage).
+
+Then in your Unity project:
+
+ 1. Open up the import a custom package window
+    
+    ![image](https://user-images.githubusercontent.com/74650011/208430044-caf91dd9-111e-4224-8441-95d116dbec3b.png)
+
+ 2. Navigate to where you downloaded the file and open it.
+    
+    ![image](https://user-images.githubusercontent.com/86061433/217053958-815fcd3e-902f-4ed0-86f5-073a55d39b5e.jpg)
+
+    
+ 3. Check all the relevant files needed (if this is a first time import, just select ALL) and click on import.
+   
+    ![image](https://user-images.githubusercontent.com/86061433/217054414-d0a1b56b-1404-4341-8630-5a92cb697b24.jpg)
+    
+---
+
+### 3. Install manually.
+
+Download [the latest Release](https://github.com/liquiidio/AtomicMarketApiClient/releases/latest).
+
+Then in your Unity project, copy the sources from `AtomicMarketApiClient` into your Unity `Assets` directory.
+
+ 
+ ---
+ 
+### 4. Install via NuGet (for Standard .NET users only - No Unity3D)
+
+#### .NET CLI
+
+`> dotnet add package Liquiid.io.AtomicMarket`
+
+#### Package Manager
+
+`PM> Install-Package Liquiid.io.AtomicMarket`
+
+---
+
+# Usage
+.NET and Unity3D-compatible (Desktop, Mobile, WebGL) ApiClient for the different  APIs. 
+Endpoints have its own set of parameters that you may build up and pass in to the relevant function.
+
+---
+
+# Examples
+
+## Example calling the /v1/assets endpoint
+ ### Initialise the Assets API
+```csharp
+     var assetsApi = AtomicAssetsApiFactory.Version1.AssetsApi;
+```
+ 
+ ### Call the assets endpoint
+```csharp
+     var assets = await assetsApi.Assets();
+```
+ 
+ ### Print all asset ids
+```csharp
+     assets.Data.ToList().ForEach(a => Console.WriteLine(a.AssetId));
+```
+ 
+ ##### Example output
+ 
+1099567200114
+
+1099567200113  
+
+1099567200112  
+
+1099567200111 
+
+1099567200110  
+
+1099567200109  
+
+1099567200108 
+
+1099567200107 
+
+1099567200106  
+ ...
+ 
+## Example calling the /v1/assets endpoint with parameters
+### Initialise the Assets API
+```csharp
+     var assetsApi = AtomicAssetsApiFactory.Version1.AssetsApi;
+```
+ 
+### Build up the AssetsParameters with the AssetsUriParameterBuilder
+```csharp
+     var builder = new AssetsUriParameterBuilder().WithLimit(1);
+```
+ 
+### Call the assets endpoint, passing in the builder
+```csharp
+     var assets = await assetsApi.Assets(builder);
+```
+
+
+### Print all asset ids
+
+```csharp
+assets.Data.ToList().ForEach(a => Console.WriteLine(a.AssetId));
  ```
- 
- ### Getting a filtered assets list that is available for trading
- ```csharp
+##### Example output
 
-async Task GettingFilteredAssetsList()
-{
-    // Initialize the v1 assets API
-    var assetsApi = AtomicMarketApiFactory.Version1.AssetsApi;
+1099567200114
 
-    // Build up the AssetsParameters with the AssetsUriParameterBuilder
-    // This can be used to fine tune the kind of results we want
-    // For example, here were limiting the results to just five assets
-    // More information can be found on the documentation
-    var builder = new AssetsUriParameterBuilder().WithLimit(5);
+1099567200113  
 
-    //Getting all the assets that are available for trading on the exchange.
-    var assets = await assetsApi.Assets(builder);
+1099567200112  
 
-    // Print their IDs on the console.
-    assets.Data.ToList().ForEach(a => Console.WriteLine(a.AssetId));
-}
+1099567200111 
 
- ```
- 
- ### Getting an Offer
- ```csharp
+1099567200110  
 
-async Task GetOffer(string offerId)
-{
+1099567200109  
 
-    // Initialize the v1 offers API
-    var api = AtomicMarketApiFactory.Version1.OffersApi;
+1099567200108 
 
-    // Call the offers endpoint passing the offerId as an input
-    var sales = await api.Offer(offerId);
+1099567200107 
 
-    // Access different informations about the offer using the Data property in the result
-    Console.WriteLine(sales.Data.SenderName);
-}
+1099567200106 
 
- ```
- ### Unity Examples
- 
- Our unity packages come with examples to help you get started as quickly as possible.
- 
-An example showing the result for searching for a sale with ID #105106129
+....
 
-<img width="836" alt="image" src="https://user-images.githubusercontent.com/31707324/213105963-0916568e-eea2-456f-ac39-3758ad0f4514.png">
-
-An example showing the result for searching for an auction with ID #1016310
-
-<img width="838" alt="image" src="https://user-images.githubusercontent.com/31707324/213106315-cd67121b-adb9-4ff3-a42f-610868206921.png">
