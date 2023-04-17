@@ -5,15 +5,6 @@
 
 ---
 
-<div align="center">
-
-[![Builds](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/build.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/build.yml)
-[![Tests](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/test.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/test.yml)
-[![Documentation](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/docs.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/docs.yml)
-[![Deployment](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/deploy.yml/badge.svg)](https://github.com/liquiidio/AtomicMarketApiClient/actions/workflows/deploy.yml)
- 
-</div>
-
 # AtomicMarketApiClient
 
 .NET and Unity3D-compatible (Desktop, Mobile, WebGL) ApiClient for AtomicMarket
